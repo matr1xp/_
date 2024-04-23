@@ -9,22 +9,27 @@
 
 **Day 2: Universal Studios Japan**
 - Full day: Enjoy Universal Studios Japan. Note: Event schedules and special attractions for December are subject to change. It's recommended to check the official website closer to your visit date.
-<video controls>
+<video controls width="700">
   <source src="videos/universal_studios_jp.mp4" type="video/mp4">
 </video>
 
 **Day 3: Cultural Day**
 - Morning: Visit Osaka Castle.
+![Osaka Castle](images/osakajo.png)
 - Afternoon: Explore the Osaka Museum of History.
+
 - Evening: Traditional Japanese dinner in a local restaurant.
 
 **Day 4: Science and Nature**
 - Morning: Visit the Osaka Science Museum.
 - Afternoon: Spend time at Osaka Aquarium Kaiyukan.
+![Osaka Aquarium](images/kaiyukan.png)
 - Evening: Relax at Tempozan Ferris Wheel.
+![Tempozan Ferris Wheel](images/tempozan.png)
 
 **Day 5: Day trip to Kyoto**
 - Full day: Explore the historic sites of Kyoto, including Fushimi Inari Shrine and the Arashiyama Bamboo Grove.
+![](https://youtu.be/2G0Hh8f9Cc8)
 
 **Day 6: Leisure and Shopping**
 - Morning: Leisure time. Suggestions include Namba Parks or visiting local markets.
