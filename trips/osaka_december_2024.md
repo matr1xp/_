@@ -12,7 +12,7 @@
 **Day 2: Universal Studios Japan**
 - Full day: Enjoy Universal Studios Japan. Note: Event schedules and special attractions for December are subject to change. It's recommended to check the official website closer to your visit date.
 
-<iframe width="75%" height="393" src="https://github.com/matr1xp/pages/blob/master/trips/videos/universal_studios_jp.mp4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="75%" height="393" src="https://www.youtube.com/embed/bBkCbm4b0vI?si=uNclmth-2M4nINLf" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 **Day 3: Cultural Day**
 - Morning: Visit Osaka Castle.
