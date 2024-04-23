@@ -3,10 +3,15 @@
 **Day 1: Arrival and Orientation**
 - Morning: Arrive in Osaka. Check into your hotel and get settled.
 - Afternoon: Visit the Umeda Sky Building for panoramic city views.
+![Umeda Sky Building](images/umeda_sky_building.png)
 - Evening: Explore the Dotonbori area for dinner and vibrant nightlife scenes.
+![Dotonbori](images/dotonbori.png)
 
 **Day 2: Universal Studios Japan**
 - Full day: Enjoy Universal Studios Japan. Note: Event schedules and special attractions for December are subject to change. It's recommended to check the official website closer to your visit date.
+<video controls>
+  <source src="videos/universal_studios_jp.mp4" type="video/mp4">
+</video>
 
 **Day 3: Cultural Day**
 - Morning: Visit Osaka Castle.
