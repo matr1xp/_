@@ -36,9 +36,7 @@
 **Day 5: Day trip to Kyoto**
 - Full day: Explore the historic sites of Kyoto, including Fushimi Inari Shrine and the Arashiyama Bamboo Grove.
 
-    <video controls width="700">
-    <source src="https://youtu.be/2G0Hh8f9Cc8" type="video/mp4">
-    </video>
+<iframe width="700" height="393" src="https://www.youtube.com/embed/2G0Hh8f9Cc8?si=01QBZLLBPLCnU6SE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 **Day 6: Leisure and Shopping**
 - Morning: Leisure time. Suggestions include Namba Parks or visiting local markets.
