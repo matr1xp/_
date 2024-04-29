@@ -1,23 +1,35 @@
+<div style="width: 70%; margin: 0 auto;">
+
 ### Osaka, Japan Itinerary
 
 **Day 1: Arrival and Orientation**
 - Morning: Arrive in Osaka. Check into your hotel and get settled.
 - Afternoon: Visit the Umeda Sky Building for panoramic city views.
 
-![Umeda Sky Building](images/umeda_sky_building.png)
+<div style="text-align: center;">
+<img src="images/umeda_sky_building.png" width="550" height="300">
+</div>
+
 - Evening: Explore the Dotonbori area for dinner and vibrant nightlife scenes.
 
-![Dotonbori](images/dotonbori.png)
+<div style="text-align: center;">
+<img src="images/dotonbori.png" width="550" height="300">
+</div>
 
 **Day 2: Universal Studios Japan**
 - Full day: Enjoy Universal Studios Japan. Note: Event schedules and special attractions for December are subject to change. It's recommended to check the official website closer to your visit date.
 
-<iframe width="93%" height="443" src="https://www.youtube.com/embed/bBkCbm4b0vI?si=uNclmth-2M4nINLf" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div style="text-align: center;">
+<iframe width="550" height="300" src="https://www.youtube.com/embed/bBkCbm4b0vI?si=uNclmth-2M4nINLf" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 **Day 3: Cultural Day**
 - Morning: Visit Osaka Castle.
 
-![Osaka Castle](images/osakajo.png)
+<div style="text-align: center;">
+<img src="images/osakajo.png" width="550" height="300">
+</div>
+
 - Afternoon: Explore the Osaka Museum of History.
 
 - Evening: Traditional Japanese dinner in a local restaurant.
@@ -26,15 +38,17 @@
 - Morning: Visit the Osaka Science Museum.
 - Afternoon: Spend time at Osaka Aquarium Kaiyukan.
 
-![Osaka Aquarium](images/kaiyukan.png)
+![Osaka Aquarium](images/kaiyukan.png =450x300)
 - Evening: Relax at Tempozan Ferris Wheel.
 
-![Tempozan Ferris Wheel](images/tempozan.png)
+![Tempozan Ferris Wheel](images/tempozan.png =450x300)
 
 **Day 5: Day trip to Kyoto**
 - Full day: Explore the historic sites of Kyoto, including Fushimi Inari Shrine and the Arashiyama Bamboo Grove.
 
-<iframe width="93%" height="443" src="https://www.youtube.com/embed/2G0Hh8f9Cc8?si=01QBZLLBPLCnU6SE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div style="text-align: center;">
+<iframe width="550" height="300" src="https://www.youtube.com/embed/2G0Hh8f9Cc8?si=01QBZLLBPLCnU6SE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 **Day 6: Leisure and Shopping**
 - Morning: Leisure time. Suggestions include Namba Parks or visiting local markets.
@@ -53,3 +67,6 @@
 - For transportation around Osaka and to neighboring cities like Kyoto, consider purchasing an ICOCA card for convenience.
 
 This itinerary offers a broad range of activities suitable for all ages, ensuring a memorable family trip to Osaka. Please check specific attractions closer to your travel date for the latest information and events.
+
+~AutoGPT
+</div>
