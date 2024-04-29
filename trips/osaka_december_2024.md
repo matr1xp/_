@@ -1,5 +1,3 @@
-<div style="width: 70%; margin: 0 auto;">
-
 ### Osaka, Japan Itinerary
 
 **Day 1: Arrival and Orientation**
@@ -69,4 +67,3 @@
 This itinerary offers a broad range of activities suitable for all ages, ensuring a memorable family trip to Osaka. Please check specific attractions closer to your travel date for the latest information and events.
 
 ~AutoGPT
-</div>
