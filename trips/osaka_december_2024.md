@@ -36,10 +36,15 @@
 - Morning: Visit the Osaka Science Museum.
 - Afternoon: Spend time at Osaka Aquarium Kaiyukan.
 
-![Osaka Aquarium](images/kaiyukan.png =450x300)
+<div style="text-align: center;">
+<img src="images/kaiyukan.png" width="550" height="300">
+</div>
+
 - Evening: Relax at Tempozan Ferris Wheel.
 
-![Tempozan Ferris Wheel](images/tempozan.png =450x300)
+<div style="text-align: center;">
+<img src="images/tempozan.png" width="550" height="300">
+</div>
 
 **Day 5: Day trip to Kyoto**
 - Full day: Explore the historic sites of Kyoto, including Fushimi Inari Shrine and the Arashiyama Bamboo Grove.
