@@ -5,3 +5,4 @@
 
 # Projects
 [Secure-GPT Agent (April 2024)](projects/SecureAI.md)
+[Running your own local AI server](projects/Local_AI_Server.md)
