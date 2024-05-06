@@ -1,8 +1,14 @@
-### Osaka, Kyoto and Tokyo Itinerary
+### 7 day - Osaka, Kyoto and Tokyo Itinerary
 
 **Day 1: Arrival in Osaka**
 
 * Arrive at Kansai International Airport
+
+<div style="text-align: center;">
+<img src="images/kix.jpg" width="550" height="300">
+</div>
+
+
 * Take the train to Osaka city (~30 minutes)
 * Check-in at a family-friendly hotel, such as Hotel Nikko Osaka or similar
 * Visit the famous Dotonbori area for dinner and explore the neon lights
@@ -15,6 +21,10 @@
 
 **Day 3: Kyoto**
 
+<div style="text-align: center;">
+<img src="images/kyoto.jpg" width="550" height="300">
+</div>
+
 * Take the train to Kyoto (~2 hours from Osaka)
 * Visit the iconic Fushimi Inari Shrine, famous for its thousands of vermilion torii gates
 * Explore the nearby Nishinokyo district and enjoy a traditional Japanese lunch at Gion Nanba or similar
@@ -26,6 +36,10 @@
 * Enjoy a family-friendly dinner at Gion Nanba or similar
 
 **Day 5: Tokyo**
+
+<div style="text-align: center;">
+<img src="images/tokyo.jpg" width="550" height="300">
+</div>
 
 * Take the bullet train to Tokyo (~2.5 hours from Kyoto)
 * Check-in at a hotel in Shinjuku district, such as Hotel Sunroute Plaza Shinjuku or similar
