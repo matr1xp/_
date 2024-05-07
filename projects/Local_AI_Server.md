@@ -1,21 +1,27 @@
 # Setting up your local AI server #
 
+Run AI models on your own server. Benefits include:
+* Enhanced Privacy and Data Security
+* Fully offline (no internet required)
+* Improved Performance and Speed
+* Autonomy and Control
+
 ## Pre-requisites
 
-1. [Ollama](https://ollama.com)
-2. [Docker](https://docs.docker.com/)
-3. [Open WebUI](https://github.com/open-webui/open-webui)
-4. [Ngrok](https://ngrok.com/product/platform)
+1. Ollama - [https://ollama.com](https://ollama.com)
+2. Docker - [https://docs.docker.com](https://docs.docker.com)
+3. Open WebUI - [https://github.com/open-webui/open-webui](https://github.com/open-webui/open-webui)
+4. Ngrok - [https://ngrok.com/product/platform](https://ngrok.com/product/platform)
 
 ### Ollama
 1. Windows
-   Recommend using Linux. Install ***Windows Subsystem for Linux*** (WSL) using command
+   Recommend using Linux. Install *WSL*.
    ```
    wsl --install
    ```
 
 3. Mac
-   Download from https://ollama.com/download/mac
+   Download [ollama](https://ollama.com/download/mac).
 
 4. Linux
    ```
@@ -23,13 +29,7 @@
    ```
    
 ### Docker
-1. Windows
-   Follow Linux installation after setting up WSL.
-
-2. Mac
-   Download from https://docs.docker.com/desktop/install/mac-install
-
-3. Linux
+1. Windows (WSL) and Linux
    ```
    # Add Docker's official GPG key:
    sudo apt-get update
@@ -44,6 +44,8 @@
    $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
    sudo tee /etc/apt/sources.list.d/docker.list 
    ```
+2. Mac
+   Download [docker](https://docs.docker.com/desktop/install/mac-install).
    
 ### Open WebUI
 1. Windows (WSL),  Mac and Linux
@@ -58,5 +60,7 @@
     curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | sudo tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null && echo "deb https://ngrok-agent.s3.amazonaws.com buster main" | sudo tee /etc/apt/sources.list.d/ngrok.list && sudo apt update && sudo apt install ngrok
     ```
 2. Mac   
-   Follow instructions based on your architecture - https://ngrok.com/download
+   Download [ngrok](https://ngrok.com/download).
 
+**Kudos**
+Thanks to NetworkChuck for this wonderful [YouTube](https://youtu.be/Wjrdr0NU4Sk?si=dZbwRFkGGLMBIMcZ) guide.
