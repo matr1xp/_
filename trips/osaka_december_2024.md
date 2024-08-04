@@ -70,5 +70,3 @@
 - For transportation around Osaka and to neighboring cities like Kyoto, consider purchasing an ICOCA card for convenience.
 
 This itinerary offers a broad range of activities suitable for all ages, ensuring a memorable family trip to Osaka. Please check specific attractions closer to your travel date for the latest information and events.
-
-~AutoGPT
