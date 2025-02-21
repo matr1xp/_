@@ -7,6 +7,8 @@
 [Osaka, Kyoto and Tokyo (Llama3)](trips/osaka_kyoto_tokyo.md)
 
 # Projects
+[APT Mobile app](projects/APTMobile.html)
+
 [Secure-GPT Agent (April 2024)](projects/SecureAI.md)
 
 [Running your own local AI server](projects/Local_AI_Server.md)
