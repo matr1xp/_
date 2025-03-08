@@ -4,6 +4,7 @@
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>APTMobile application</title>
+      <link rel="icon" href="favicon.png" type="image/png">
       <style>
         body {
           margin: 0;
@@ -12,6 +13,17 @@
           flex-direction: column;
           align-items: center;
           text-align: center;
+        }
+        .title-container {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 15px;
+          margin-bottom: 10px;
+        }
+        .app-icon {
+          width: 50px;
+          height: 50px;
         }
         img {
           max-width: 100%;
@@ -33,7 +45,10 @@
       </style>
   </head>
   <body>
-    <h1>Welcome to APT!</h1>
+    <div class="title-container">
+      <img src="icon.png" alt="APT Icon" class="app-icon">
+      <h1>Welcome to APT!</h1>
+    </div>
     <p>APT Mobile is a Product tracking app powered by Google Cloud Vision and Price API.</p>
     <img src="https://marlsantos.com/projects/images/APTMobile-beta.png" alt="APT Mobile screenshot" />
     <footer>
