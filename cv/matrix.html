@@ -560,7 +560,7 @@
         <section id="qualifications">
             <h2>Summary of Qualifications</h2>
             <div class="card">
-                <ul>
+                <ul id="qualifications-text">
                     <li>Information Technology professional with expertise in Software Engineering & Development.</li>
                     <li>Diverse industry experience spanning Government, Higher Education, and Private sectors.</li>
                     <li>Proven track record in delivering high-quality software solutions and leading technical teams.</li>
@@ -937,6 +937,28 @@
                 
                 // Start typing effect
                 typeWriter(li, text, cursor, 30);
+            });
+
+            // Typing effect for qualifications section
+            const qualificationsElement = document.getElementById('qualifications-text');
+            const qualificationsList = qualificationsElement.querySelectorAll('li');
+            
+            // Clear the original list
+            qualificationsElement.innerHTML = '';
+            
+            // Create new list items with typing effect
+            qualificationsList.forEach((item, index) => {
+                const li = document.createElement('li');
+                qualificationsElement.appendChild(li);
+                
+                // Add typing cursor
+                const cursor = document.createElement('span');
+                cursor.className = 'typing-cursor';
+                
+                // Start typing effect with delay based on index
+                setTimeout(() => {
+                    typeWriter(li, item.textContent, cursor, 30);
+                }, index * 1000); // 1 second delay between each qualification
             });
             
             // Typing effect function
