@@ -1,4 +1,7 @@
-# Projects
+# My Online Resume
+[Matrix Theme](cv/index.html)
+
+# Current Projects
 [APT Mobile app](projects/APTMobile.html)
 
 [Secure-GPT Agent (April 2024)](projects/SecureAI.md)
