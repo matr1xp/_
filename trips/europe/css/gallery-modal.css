@@ -1,0 +1,124 @@
+/* Gallery Attribution and Modal Styles */
+
+/* Attribution container */
+.attribution-container {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    background-color: var(--light);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.attribution-container h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.attribution-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.attribution-list h4 {
+    color: var(--primary);
+    border-bottom: 1px solid var(--secondary);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.attribution-list ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+}
+
+.attribution-list li {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* Gallery Modal */
+.gallery-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 2000;
+    padding: 2rem;
+}
+
+.gallery-modal-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    background-color: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-modal-content img {
+    display: block;
+    width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    z-index: 2001;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+}
+
+.modal-caption {
+    padding: 1rem;
+    background-color: white;
+}
+
+.modal-caption h4 {
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+}
+
+.modal-caption p {
+    margin-bottom: 0.5rem;
+}
+
+.modal-caption .attribution {
+    font-size: 0.8rem;
+    font-style: italic;
+    color: #666;
+}
+
+/* Make gallery items more interactive */
+.gallery-item {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--box-shadow-hover);
+}
+
+/* Print styles */
+@media print {
+    .attribution-container {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+    
+    .attribution-list {
+        display: block;
+    }
+}

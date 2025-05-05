@@ -1,0 +1,150 @@
+/* Print-specific styles */
+@media print {
+    /* General print styles */
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+        background: white;
+        color: black;
+    }
+    
+    .container {
+        width: 100%;
+        max-width: none;
+        padding: 0;
+    }
+    
+    /* Hide non-essential elements */
+    .site-header, 
+    .hero, 
+    .main-nav, 
+    .map-section, 
+    .gallery, 
+    .footer-links, 
+    .footer-print, 
+    .itinerary-controls, 
+    .tab-buttons,
+    .menu-toggle {
+        display: none !important;
+    }
+    
+    /* Page breaks */
+    .day-card, 
+    .info-card, 
+    .country-section {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+    
+    /* Show all content */
+    .day-content {
+        display: block !important;
+    }
+    
+    .tab-pane {
+        display: block !important;
+    }
+    
+    /* Section spacing */
+    .section-padding {
+        padding: 1rem 0;
+        margin-bottom: 2rem;
+    }
+    
+    /* Remove decorative elements */
+    .section-title::after {
+        display: none;
+    }
+    
+    /* Header styling */
+    .section-title {
+        font-size: 18pt;
+        margin-bottom: 1rem;
+        border-bottom: 1pt solid #000;
+        padding-bottom: 0.5rem;
+    }
+    
+    .country-title {
+        font-size: 16pt;
+        margin-top: 2rem;
+    }
+    
+    /* Card styling */
+    .day-card {
+        margin-bottom: 1.5rem;
+        border: 1pt solid #ddd;
+    }
+    
+    .day-header {
+        background-color: #f0f0f0 !important;
+        color: black !important;
+        padding: 0.5rem 1rem;
+    }
+    
+    .toggle-btn {
+        display: none;
+    }
+    
+    .day-content {
+        padding: 1rem;
+    }
+    
+    /* Info cards */
+    .info-card, 
+    .weather-card, 
+    .overview-card {
+        box-shadow: none;
+        border: 1pt solid #ddd;
+        margin-bottom: 1rem;
+    }
+    
+    /* Links */
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    
+    /* Add page numbers */
+    @page {
+        margin: 2cm;
+        @bottom-center {
+            content: "Page " counter(page) " of " counter(pages);
+        }
+    }
+    
+    /* Print title */
+    body::before {
+        content: "European Winter Adventure: UK, France, and Italy";
+        display: block;
+        text-align: center;
+        font-size: 24pt;
+        font-weight: bold;
+        margin: 0 0 1cm 0;
+    }
+    
+    body::after {
+        content: "Family Trip Itinerary | December 14-31, 2025";
+        display: block;
+        text-align: center;
+        font-size: 14pt;
+        margin: 0.5cm 0 1.5cm 0;
+    }
+    
+    /* Table of contents */
+    .overview::before {
+        content: "Table of Contents";
+        display: block;
+        font-size: 16pt;
+        font-weight: bold;
+        margin: 1cm 0 0.5cm 0;
+        text-align: center;
+    }
+    
+    /* Footer */
+    .footer-attribution {
+        border-top: 1pt solid #ddd;
+        padding-top: 0.5rem;
+        margin-top: 2rem;
+        font-size: 9pt;
+    }
+}
