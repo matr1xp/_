@@ -210,9 +210,10 @@ img {
 
 /* ===== HERO SECTION ===== */
 .hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images01.nicepagecdn.com/page/12/92/website-design-preview-1292342.jpg');
-    background-size: cover;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/euro-background.png');
+    background-size: auto 500px;
     background-position: center;
+    background-repeat: space;
     color: white;
     text-align: center;
     padding: var(--spacing-xl) 0;
