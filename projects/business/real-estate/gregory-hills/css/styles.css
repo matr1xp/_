@@ -930,18 +930,18 @@ ul, ol {
   }
   
   .main-nav {
+    display: none;
     position: absolute;
     top: 100%;
     left: 0;
-    right: 0;
+    width: 100%;
     background-color: var(--primary-color);
-    display: none;
+    flex-direction: column;
     padding: var(--spacing-md);
-    box-shadow: var(--box-shadow-md);
   }
   
   .main-nav.active {
-    display: block;
+    display: flex;
   }
   
   .main-nav ul {
@@ -949,13 +949,14 @@ ul, ol {
   }
   
   .main-nav li {
-    margin: 0;
-    margin-bottom: var(--spacing-sm);
+    margin: var(--spacing-sm) 0;
+    margin-left: 0;
   }
   
   .main-nav a {
     display: block;
     padding: var(--spacing-sm);
+    font-size: 1.2rem;
   }
   
   .hero h1 {

@@ -1,8 +1,15 @@
 // main.js - Main JavaScript functionality for Gregory Hills Real Estate Investment Website
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize mobile navigation
-    initMobileNav();
+    // Mobile Navigation Toggle
+    const mobileNavToggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.main-nav');
+    
+    if (mobileNavToggle) {
+        mobileNavToggle.addEventListener('click', function() {
+            nav.classList.toggle('active');
+        });
+    }
     
     // Initialize smooth scrolling for anchor links
     initSmoothScroll();
@@ -13,50 +20,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize tooltips
     initTooltips();
 });
-
-// Function to initialize mobile navigation
-function initMobileNav() {
-    const navToggle = document.querySelector('.nav-toggle');
-    const mainNav = document.querySelector('.main-nav');
-    
-    if (navToggle && mainNav) {
-        navToggle.addEventListener('click', function() {
-            // Toggle the active class on the navigation
-            mainNav.classList.toggle('active');
-            
-            // Update the aria-expanded attribute
-            const expanded = mainNav.classList.contains('active');
-            navToggle.setAttribute('aria-expanded', expanded);
-            
-            // Update the icon
-            if (expanded) {
-                navToggle.innerHTML = '<i class="fas fa-times"></i>';
-            } else {
-                navToggle.innerHTML = '<i class="fas fa-bars"></i>';
-            }
-        });
-        
-        // Close mobile nav when clicking outside
-        document.addEventListener('click', function(event) {
-            if (!event.target.closest('.main-nav') && !event.target.closest('.nav-toggle')) {
-                if (mainNav.classList.contains('active')) {
-                    mainNav.classList.remove('active');
-                    navToggle.setAttribute('aria-expanded', 'false');
-                    navToggle.innerHTML = '<i class="fas fa-bars"></i>';
-                }
-            }
-        });
-        
-        // Close mobile nav when window is resized to desktop size
-        window.addEventListener('resize', function() {
-            if (window.innerWidth > 768) {
-                mainNav.classList.remove('active');
-                navToggle.setAttribute('aria-expanded', 'false');
-                navToggle.innerHTML = '<i class="fas fa-bars"></i>';
-            }
-        });
-    }
-}
 
 // Function to initialize smooth scrolling for anchor links
 function initSmoothScroll() {
