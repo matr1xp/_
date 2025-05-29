@@ -1,0 +1,11 @@
+address,property_type,bedrooms,bathrooms,parking,land_size_sqm,sale_price,sale_date
+"24 Honor Street, Ermington NSW 2115",House,6,2,4,,2130000,2024-05-01
+"10 Trumper Street, Ermington NSW 2115",House,3,,,,"1738000",2024-05-28
+"19 River Road, Ermington NSW 2115",House,,,,,"1900000",2024-03-31
+"River Road, Ermington NSW 2115",House,,,,,"2005888",2024-03-18
+"39 Hinkler Street, Ermington NSW 2115",House,,,,,"1700000",2023-02-22
+"43 Ulm Street, Ermington NSW 2115",House,,,,,"1708000",2023-03-03
+"611 Victoria Road, Ermington NSW 2115",House,3,,,,"1400000",2024-05-09
+"Unnamed Property, Ermington NSW 2115",House,4,2,,,"1750000",2024-01-24
+"Bundarra St, Ermington NSW 2115",Unit,,,,,"757500",2024-05-10
+"Broadoaks St, Ermington NSW 2115",House,,,,,"1310000",2024-05-10

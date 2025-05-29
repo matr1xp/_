@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Property Flipping Checklist | Ermington Property Flipping</title>
+<meta content="Interactive checklist for property flipping in Ermington, NSW, covering acquisition, renovation, and sales processes." name="description"/>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+<!-- Custom CSS -->
+<link href="css/styles.min.css" rel="stylesheet"/>
+<style>
+        /* Additional styles specific to the checklist page */
+        .checklist-container {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .checklist-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-md);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 1px solid #eee;
+        }
+        
+        .checklist-actions {
+            display: flex;
+            gap: var(--spacing-sm);
+        }
+        
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: var(--spacing-sm);
+            padding: var(--spacing-sm);
+            border-bottom: 1px solid #eee;
+            transition: background-color 0.3s ease;
+        }
+        
+        .checklist-item:hover {
+            background-color: #f9f9f9;
+        }
+        
+        .checklist-item:last-child {
+            border-bottom: none;
+        }
+        
+        .checklist-checkbox {
+            margin-right: var(--spacing-sm);
+            margin-top: 5px;
+            width: 20px;
+            height: 20px;
+        }
+        
+        .checklist-text {
+            flex: 1;
+        }
+        
+        .checklist-item.completed .checklist-text {
+            text-decoration: line-through;
+            color: #999;
+        }
+        
+        .checklist-description {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        .progress-container {
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .progress-bar {
+            height: 10px;
+            background-color: #eee;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background-color: var(--secondary);
+            transition: width 0.3s ease;
+        }
+        
+        .progress-text {
+            text-align: right;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+        
+        .checklist-section {
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .checklist-section-title {
+            margin-bottom: var(--spacing-md);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 2px solid var(--secondary);
+        }
+        
+        .btn-sm {
+            padding: 0.25rem 0.5rem;
+            font-size: 0.875rem;
+        }
+        
+        .print-only {
+            display: none;
+        }
+        
+        @media print {
+            .header, .footer, .btn, .checklist-actions {
+                display: none !important;
+            }
+            
+            .print-only {
+                display: block;
+            }
+            
+            .checklist-container {
+                box-shadow: none;
+                padding: 0;
+            }
+            
+            .checklist-item {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- Header -->
+<header class="header">
+<div class="container header-container">
+<div class="logo">
+<a href="index.html">Ermington Property Flipping</a>
+</div>
+<nav>
+<ul class="nav">
+<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="market-research.html">Market Research</a></li>
+<li class="nav-item"><a class="nav-link" href="business-strategy.html">Business Strategy</a></li>
+<li class="nav-item"><a class="nav-link active" href="checklist.html">Checklist</a></li>
+</ul>
+<button class="mobile-nav-toggle">
+<i class="fas fa-bars"></i>
+</button>
+</nav>
+</div>
+</header>
+<!-- Page Title -->
+<section class="section section-alt">
+<div class="container">
+<h1>Interactive Property Flipping Checklist</h1>
+<p class="lead">A comprehensive checklist to guide you through the entire property flipping process in Ermington, NSW.</p>
+</div>
+</section>
+<!-- Checklist Overview -->
+<section class="section">
+<div class="container">
+<div class="row">
+<div class="col-50">
+<h2>How to Use This Checklist</h2>
+<p>This interactive checklist is designed to guide you through the entire property flipping process in Ermington, from initial research to final sale. Use it to track your progress and ensure you don't miss any critical steps.</p>
+<h3>Features:</h3>
+<ul>
+<li>Check off items as you complete them</li>
+<li>Track your overall progress</li>
+<li>Save your progress automatically</li>
+<li>Print the checklist for offline use</li>
+<li>Reset the checklist when starting a new project</li>
+</ul>
+<div class="progress-container">
+<h3>Your Progress</h3>
+<div class="progress-bar">
+<div class="progress-fill" id="overall-progress" style="width: 0%"></div>
+</div>
+<div class="progress-text">
+<span id="completed-count">0</span> of <span id="total-count">0</span> tasks completed (<span id="progress-percentage">0%</span>)
+                        </div>
+</div>
+</div>
+<div class="col-50">
+<div class="card">
+<div class="card-content">
+<h3>Checklist Actions</h3>
+<div class="checklist-actions">
+<button class="btn btn-primary" id="save-btn">Save Progress</button>
+<button class="btn btn-outline" id="print-btn" onclick="window.print()">Print Checklist</button>
+<button class="btn btn-accent" id="reset-btn">Reset Checklist</button>
+</div>
+<p class="mt-3">Your progress is automatically saved to your browser's local storage. If you clear your browser data, your progress will be lost.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Checklist -->
+<section class="section section-alt">
+<div class="container">
+<div class="print-only">
+<h2>Ermington Property Flipping Checklist</h2>
+<p>Date: <span id="print-date"></span></p>
+</div>
+<!-- Market Research Checklist -->
+<div class="checklist-section" id="market-research">
+<div class="checklist-header">
+<h2 class="checklist-section-title">1. Market Research</h2>
+<div class="progress-text">
+<span class="section-completed">0</span>/<span class="section-total">0</span> completed
+                    </div>
+</div>
+<div class="checklist-container">
+<div class="checklist-item">
+<input class="checklist-checkbox" id="research-1" type="checkbox"/>
+<div class="checklist-text">
+<label for="research-1">Analyze current Ermington property market data</label>
+<div class="checklist-description">Review median prices, growth rates, and sales volumes from reliable sources.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="research-2" type="checkbox"/>
+<div class="checklist-text">
+<label for="research-2">Study demographic information for Ermington</label>
+<div class="checklist-description">Understand population trends, age distribution, and household composition.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="research-3" type="checkbox"/>
+<div class="checklist-text">
+<label for="research-3">Identify target property types based on market demand</label>
+<div class="checklist-description">Focus on 3-4 bedroom houses with renovation potential.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="research-4" type="checkbox"/>
+<div class="checklist-text">
+<label for="research-4">Research recent comparable sales in Ermington</label>
+<div class="checklist-description">Analyze at least 10 recent sales of similar properties to understand pricing.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="research-5" type="checkbox"/>
+<div class="checklist-text">
+<label for="research-5">Analyze renovation costs specific to Ermington area</label>
+<div class="checklist-description">Get quotes from local contractors for typical renovation work.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="research-6" type="checkbox"/>
+<div class="checklist-text">
+<label for="research-6">Review local council regulations and zoning</label>
+<div class="checklist-description">Check Parramatta City Council requirements for renovations and development.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="research-7" type="checkbox"/>
+<div class="checklist-text">
+<label for="research-7">Identify high-performing local real estate agents</label>
+<div class="checklist-description">Research agents with strong sales records in Ermington.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="research-8" type="checkbox"/>
+<div class="checklist-text">
+<label for="research-8">Create target property profile criteria</label>
+<div class="checklist-description">Document specific criteria for property selection based on research.</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Property Acquisition Checklist -->
+<div class="checklist-section" id="acquisition">
+<div class="checklist-header">
+<h2 class="checklist-section-title">2. Property Acquisition</h2>
+<div class="progress-text">
+<span class="section-completed">0</span>/<span class="section-total">0</span> completed
+                    </div>
+</div>
+<div class="checklist-container">
+<div class="checklist-item">
+<input class="checklist-checkbox" id="acquisition-1" type="checkbox"/>
+<div class="checklist-text">
+<label for="acquisition-1">Set up property alerts on real estate websites</label>
+<div class="checklist-description">Create alerts on realestate.com.au and Domain for properties matching criteria.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="acquisition-2" type="checkbox"/>
+<div class="checklist-text">
+<label for="acquisition-2">Contact local real estate agents about off-market opportunities</label>
+<div class="checklist-description">Build relationships with at least 3 local agents.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="acquisition-3" type="checkbox"/>
+<div class="checklist-text">
+<label for="acquisition-3">Secure financing pre-approval</label>
+<div class="checklist-description">Obtain pre-approval for property purchase to enable quick action.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="acquisition-4" type="checkbox"/>
+<div class="checklist-text">
+<label for="acquisition-4">Conduct initial property inspections</label>
+<div class="checklist-description">Inspect at least 5 properties that meet basic criteria.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="acquisition-5" type="checkbox"/>
+<div class="checklist-text">
+<label for="acquisition-5">Perform preliminary renovation assessment</label>
+<div class="checklist-description">Evaluate renovation potential and rough cost estimates for shortlisted properties.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="acquisition-6" type="checkbox"/>
+<div class="checklist-text">
+<label for="acquisition-6">Conduct building and pest inspection</label>
+<div class="checklist-description">Hire professional inspectors before making an offer.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="acquisition-7" type="checkbox"/>
+<div class="checklist-text">
+<label for="acquisition-7">Calculate after-repair value (ARV)</label>
+<div class="checklist-description">Determine potential sale price after renovations based on comparable sales.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="acquisition-8" type="checkbox"/>
+<div class="checklist-text">
+<label for="acquisition-8">Perform detailed financial analysis</label>
+<div class="checklist-description">Calculate all costs, potential profit, and ROI before making an offer.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="acquisition-9" type="checkbox"/>
+<div class="checklist-text">
+<label for="acquisition-9">Make offer and negotiate purchase</label>
+<div class="checklist-description">Submit offer with appropriate conditions and negotiate terms.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="acquisition-10" type="checkbox"/>
+<div class="checklist-text">
+<label for="acquisition-10">Complete legal due diligence</label>
+<div class="checklist-description">Conduct title search, review contract, and check for easements or restrictions.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="acquisition-11" type="checkbox"/>
+<div class="checklist-text">
+<label for="acquisition-11">Finalize financing</label>
+<div class="checklist-description">Complete loan application and secure funds for purchase.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="acquisition-12" type="checkbox"/>
+<div class="checklist-text">
+<label for="acquisition-12">Complete settlement process</label>
+<div class="checklist-description">Finalize purchase and obtain keys to the property.</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Renovation Planning Checklist -->
+<div class="checklist-section" id="renovation-planning">
+<div class="checklist-header">
+<h2 class="checklist-section-title">3. Renovation Planning</h2>
+<div class="progress-text">
+<span class="section-completed">0</span>/<span class="section-total">0</span> completed
+                    </div>
+</div>
+<div class="checklist-container">
+<div class="checklist-item">
+<input class="checklist-checkbox" id="planning-1" type="checkbox"/>
+<div class="checklist-text">
+<label for="planning-1">Create detailed renovation scope of work</label>
+<div class="checklist-description">Document all renovation tasks with specifications.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="planning-2" type="checkbox"/>
+<div class="checklist-text">
+<label for="planning-2">Develop renovation budget</label>
+<div class="checklist-description">Create itemized budget for all renovation costs with 10% contingency.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="planning-3" type="checkbox"/>
+<div class="checklist-text">
+<label for="planning-3">Create renovation timeline</label>
+<div class="checklist-description">Develop detailed schedule with milestones and completion date.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="planning-4" type="checkbox"/>
+<div class="checklist-text">
+<label for="planning-4">Determine if council approvals are needed</label>
+<div class="checklist-description">Check if Development Application or Complying Development Certificate is required.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="planning-5" type="checkbox"/>
+<div class="checklist-text">
+<label for="planning-5">Submit necessary council applications</label>
+<div class="checklist-description">Prepare and submit required documentation for approvals.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="planning-6" type="checkbox"/>
+<div class="checklist-text">
+<label for="planning-6">Source and select contractors</label>
+<div class="checklist-description">Get at least 3 quotes for major trades and select contractors.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="planning-7" type="checkbox"/>
+<div class="checklist-text">
+<label for="planning-7">Finalize contractor agreements</label>
+<div class="checklist-description">Create written contracts with clear scope, timeline, and payment terms.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="planning-8" type="checkbox"/>
+<div class="checklist-text">
+<label for="planning-8">Order materials and fixtures</label>
+<div class="checklist-description">Source and order key materials with sufficient lead time.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="planning-9" type="checkbox"/>
+<div class="checklist-text">
+<label for="planning-9">Set up project management system</label>
+<div class="checklist-description">Implement system to track progress, costs, and communications.</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Renovation Execution Checklist -->
+<div class="checklist-section" id="renovation-execution">
+<div class="checklist-header">
+<h2 class="checklist-section-title">4. Renovation Execution</h2>
+<div class="progress-text">
+<span class="section-completed">0</span>/<span class="section-total">0</span> completed
+                    </div>
+</div>
+<div class="checklist-container">
+<div class="checklist-item">
+<input class="checklist-checkbox" id="execution-1" type="checkbox"/>
+<div class="checklist-text">
+<label for="execution-1">Conduct pre-renovation documentation</label>
+<div class="checklist-description">Take detailed photos and notes of pre-renovation condition.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="execution-2" type="checkbox"/>
+<div class="checklist-text">
+<label for="execution-2">Complete demolition work</label>
+<div class="checklist-description">Remove unwanted fixtures, walls, and materials.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="execution-3" type="checkbox"/>
+<div class="checklist-text">
+<label for="execution-3">Address structural modifications</label>
+<div class="checklist-description">Complete any structural changes requiring engineering approval.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="execution-4" type="checkbox"/>
+<div class="checklist-text">
+<label for="execution-4">Complete rough-in plumbing</label>
+<div class="checklist-description">Install or modify plumbing systems before walls are closed.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="execution-5" type="checkbox"/>
+<div class="checklist-text">
+<label for="execution-5">Complete rough-in electrical</label>
+<div class="checklist-description">Install or modify electrical systems before walls are closed.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="execution-6" type="checkbox"/>
+<div class="checklist-text">
+<label for="execution-6">Install insulation and drywall</label>
+<div class="checklist-description">Complete wall and ceiling surfaces.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="execution-7" type="checkbox"/>
+<div class="checklist-text">
+<label for="execution-7">Install flooring</label>
+<div class="checklist-description">Complete all floor surfaces throughout the property.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="execution-8" type="checkbox"/>
+<div class="checklist-text">
+<label for="execution-8">Complete kitchen renovation</label>
+<div class="checklist-description">Install cabinetry, countertops, appliances, and fixtures.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="execution-9" type="checkbox"/>
+<div class="checklist-text">
+<label for="execution-9">Complete bathroom renovations</label>
+<div class="checklist-description">Install fixtures, tile, vanities, and accessories.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="execution-10" type="checkbox"/>
+<div class="checklist-text">
+<label for="execution-10">Complete interior painting</label>
+<div class="checklist-description">Paint all interior walls, ceilings, trim, and doors.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="execution-11" type="checkbox"/>
+<div class="checklist-text">
+<label for="execution-11">Complete exterior improvements</label>
+<div class="checklist-description">Address façade, landscaping, and outdoor living areas.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="execution-12" type="checkbox"/>
+<div class="checklist-text">
+<label for="execution-12">Install fixtures and hardware</label>
+<div class="checklist-description">Install light fixtures, door hardware, and accessories.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="execution-13" type="checkbox"/>
+<div class="checklist-text">
+<label for="execution-13">Conduct quality control inspection</label>
+<div class="checklist-description">Perform detailed inspection of all renovation work.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="execution-14" type="checkbox"/>
+<div class="checklist-text">
+<label for="execution-14">Address defects and touch-ups</label>
+<div class="checklist-description">Complete any necessary corrections or improvements.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="execution-15" type="checkbox"/>
+<div class="checklist-text">
+<label for="execution-15">Final cleaning</label>
+<div class="checklist-description">Complete professional cleaning of entire property.</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Marketing and Sale Checklist -->
+<div class="checklist-section" id="marketing-sale">
+<div class="checklist-header">
+<h2 class="checklist-section-title">5. Marketing and Sale</h2>
+<div class="progress-text">
+<span class="section-completed">0</span>/<span class="section-total">0</span> completed
+                    </div>
+</div>
+<div class="checklist-container">
+<div class="checklist-item">
+<input class="checklist-checkbox" id="marketing-1" type="checkbox"/>
+<div class="checklist-text">
+<label for="marketing-1">Select and engage real estate agent</label>
+<div class="checklist-description">Interview and select top-performing agent for Ermington.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="marketing-2" type="checkbox"/>
+<div class="checklist-text">
+<label for="marketing-2">Determine optimal listing price</label>
+<div class="checklist-description">Research comparable sales and set strategic price point.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="marketing-3" type="checkbox"/>
+<div class="checklist-text">
+<label for="marketing-3">Arrange professional photography</label>
+<div class="checklist-description">Schedule professional photos, including aerial shots if appropriate.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="marketing-4" type="checkbox"/>
+<div class="checklist-text">
+<label for="marketing-4">Arrange property styling/staging</label>
+<div class="checklist-description">Engage professional stager to showcase the property's potential.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="marketing-5" type="checkbox"/>
+<div class="checklist-text">
+<label for="marketing-5">Create compelling property listing</label>
+<div class="checklist-description">Develop engaging description highlighting key features and improvements.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="marketing-6" type="checkbox"/>
+<div class="checklist-text">
+<label for="marketing-6">Implement marketing campaign</label>
+<div class="checklist-description">Launch online listings, signage, and other marketing materials.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="marketing-7" type="checkbox"/>
+<div class="checklist-text">
+<label for="marketing-7">Schedule and prepare for open houses</label>
+<div class="checklist-description">Plan open house schedule and prepare property for showings.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="marketing-8" type="checkbox"/>
+<div class="checklist-text">
+<label for="marketing-8">Collect and review feedback from inspections</label>
+<div class="checklist-description">Gather buyer feedback and adjust strategy if needed.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="marketing-9" type="checkbox"/>
+<div class="checklist-text">
+<label for="marketing-9">Negotiate offers</label>
+<div class="checklist-description">Review and respond to purchase offers.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="marketing-10" type="checkbox"/>
+<div class="checklist-text">
+<label for="marketing-10">Accept offer and complete contract</label>
+<div class="checklist-description">Finalize sale contract with buyer.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="marketing-11" type="checkbox"/>
+<div class="checklist-text">
+<label for="marketing-11">Complete settlement process</label>
+<div class="checklist-description">Work with solicitor to complete property transfer.</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Project Analysis Checklist -->
+<div class="checklist-section" id="project-analysis">
+<div class="checklist-header">
+<h2 class="checklist-section-title">6. Project Analysis</h2>
+<div class="progress-text">
+<span class="section-completed">0</span>/<span class="section-total">0</span> completed
+                    </div>
+</div>
+<div class="checklist-container">
+<div class="checklist-item">
+<input class="checklist-checkbox" id="analysis-1" type="checkbox"/>
+<div class="checklist-text">
+<label for="analysis-1">Calculate final profit and ROI</label>
+<div class="checklist-description">Determine actual profit and return on investment.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="analysis-2" type="checkbox"/>
+<div class="checklist-text">
+<label for="analysis-2">Compare actual vs. projected costs</label>
+<div class="checklist-description">Analyze variances between budget and actual expenses.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="analysis-3" type="checkbox"/>
+<div class="checklist-text">
+<label for="analysis-3">Compare actual vs. projected timeline</label>
+<div class="checklist-description">Analyze variances between planned and actual schedule.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="analysis-4" type="checkbox"/>
+<div class="checklist-text">
+<label for="analysis-4">Evaluate contractor performance</label>
+<div class="checklist-description">Rate and document performance of all contractors.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="analysis-5" type="checkbox"/>
+<div class="checklist-text">
+<label for="analysis-5">Document lessons learned</label>
+<div class="checklist-description">Record insights and improvements for future projects.</div>
+</div>
+</div>
+<div class="checklist-item">
+<input class="checklist-checkbox" id="analysis-6" type="checkbox"/>
+<div class="checklist-text">
+<label for="analysis-6">Update business strategy based on results</label>
+<div class="checklist-description">Refine approach for future property flipping projects.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Call to Action -->
+<section class="section">
+<div class="container">
+<div class="text-center">
+<h2>Ready to Start Your Next Project?</h2>
+<p>Review our market research and business strategy to ensure your property flipping success in Ermington.</p>
+<div class="cta-buttons">
+<a class="btn btn-primary" href="market-research.html">Market Research</a>
+<a class="btn btn-accent" href="business-strategy.html">Business Strategy</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="footer">
+<div class="container">
+<div class="footer-content">
+<div class="footer-section">
+<h3 class="footer-title">Ermington Property Flipping</h3>
+<p>Comprehensive research and business strategy for property flipping in Ermington, NSW, Australia.</p>
+</div>
+<div class="footer-section">
+<h3 class="footer-title">Quick Links</h3>
+<ul class="footer-links">
+<li class="footer-link"><a href="index.html">Home</a></li>
+<li class="footer-link"><a href="market-research.html">Market Research</a></li>
+<li class="footer-link"><a href="business-strategy.html">Business Strategy</a></li>
+<li class="footer-link"><a href="checklist.html">Checklist</a></li>
+</ul>
+</div>
+<div class="footer-section">
+<h3 class="footer-title">Checklist Sections</h3>
+<ul class="footer-links">
+<li class="footer-link"><a href="#market-research">Market Research</a></li>
+<li class="footer-link"><a href="#acquisition">Property Acquisition</a></li>
+<li class="footer-link"><a href="#renovation-planning">Renovation Planning</a></li>
+<li class="footer-link"><a href="#renovation-execution">Renovation Execution</a></li>
+<li class="footer-link"><a href="#marketing-sale">Marketing and Sale</a></li>
+<li class="footer-link"><a href="#project-analysis">Project Analysis</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2025 Ermington Property Flipping. All rights reserved.</p>
+</div>
+</div>
+</footer>
+<!-- JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script><script src="js/main.min.js"></script>
+</body>
+</html>
