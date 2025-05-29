@@ -4,11 +4,13 @@
 # Current Projects
 [APT Mobile app](projects/APTMobile.html)
 
-[Secure-GPT Agent (April 2024)](projects/SecureAI.md)
+[Strategic Property Flipping in Ermington](https://dub.sh/ermington)
+
+[Gregory Hills Real Estate Investment](https://dub.sh/gregory-hills)
 
 [Running your own local AI server](projects/Local_AI_Server.md)
 
-[Professional AI Headshots in minutes](https://ml1.app)
+[Secure-GPT Agent (April 2024)](projects/SecureAI.md)
 
-[Strategic Property Flipping in Ermington](https://bit.ly/ermington) 
+[Professional AI Headshots in minutes](https://ml1.app)
 
