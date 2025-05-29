@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Function to load checklist data from JSON file
 async function loadChecklistData() {
     try {
-        const response = await fetch('../research/updated_checklist_items.json');
+        const response = await fetch('../gregory-hills/research/updated_checklist_items.json');
         if (!response.ok) {
             throw new Error('Failed to load checklist data');
         }

@@ -4,14 +4,9 @@
 async function loadMarketData() {
     try {
         // Fix the path to point to the research directory
-        const response = await fetch('/research/market_data.json');
+        const response = await fetch('../gregory-hills/research/market_data.json');
         if (!response.ok) {
-            // Fallback to relative path if the first attempt fails
-            const fallbackResponse = await fetch('../research/market_data.json');
-            if (!fallbackResponse.ok) {
-                throw new Error('Failed to load market data');
-            }
-            return await fallbackResponse.json();
+            throw new Error('Failed to load market data');
         }
         return await response.json();
     } catch (error) {
