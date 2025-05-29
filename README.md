@@ -1,5 +1,5 @@
 # Portfolio
-[Matrix Theme](cv/index.html) 
+[Online CV](cv/index.html)
 
 # Current Projects
 [APT Mobile app](projects/APTMobile.html) 📲
