@@ -1,0 +1,757 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2025-05-29",
+  "checklistMetadata": {
+    "title": "Gregory Hills Property Investment Checklist",
+    "description": "A comprehensive checklist for buying, renovating, and selling property in Gregory Hills, NSW",
+    "region": "Gregory Hills, NSW, Australia"
+  },
+  "phases": [
+    {
+      "id": "research",
+      "name": "Research & Planning",
+      "icon": "fas fa-search",
+      "description": "Initial research and planning for your Gregory Hills investment",
+      "categories": [
+        {
+          "id": "market-research",
+          "name": "Market Research",
+          "items": [
+            {
+              "id": "market-research-1",
+              "text": "Research current Gregory Hills property values ($960,000-$1,000,000 median)",
+              "priority": "high",
+              "estimatedTime": "3-5 days",
+              "helpText": "Check recent sales on real estate websites and speak with local agents",
+              "resources": ["market-trends.html"]
+            },
+            {
+              "id": "market-research-2",
+              "text": "Analyze Gregory Hills growth trends (8.25% annual growth)",
+              "priority": "high",
+              "estimatedTime": "2-3 days",
+              "helpText": "Review historical data and growth projections",
+              "resources": ["market-trends.html"]
+            },
+            {
+              "id": "market-research-3",
+              "text": "Identify high-potential streets and neighborhoods within Gregory Hills",
+              "priority": "medium",
+              "estimatedTime": "3-4 days",
+              "helpText": "Focus on areas with good amenities, schools, and transport links"
+            },
+            {
+              "id": "market-research-4",
+              "text": "Research buyer demographics (primarily 30-39 year old couples with children)",
+              "priority": "medium",
+              "estimatedTime": "2 days",
+              "helpText": "Understanding the target market will help with property selection and renovation decisions"
+            },
+            {
+              "id": "market-research-5",
+              "text": "Analyze rental yields in Gregory Hills (approximately 3.66%)",
+              "priority": "low",
+              "estimatedTime": "1-2 days",
+              "helpText": "Useful for understanding holding costs if property doesn't sell immediately"
+            },
+            {
+              "id": "market-research-6",
+              "text": "Research upcoming infrastructure and development projects",
+              "priority": "medium",
+              "estimatedTime": "2-3 days",
+              "helpText": "Check Camden Council website and local news sources"
+            }
+          ]
+        },
+        {
+          "id": "financial-planning",
+          "name": "Financial Planning",
+          "items": [
+            {
+              "id": "financial-planning-1",
+              "text": "Determine your total investment budget",
+              "priority": "high",
+              "estimatedTime": "3-5 days",
+              "helpText": "Include purchase price, renovation costs, holding costs, and a contingency buffer",
+              "resources": ["financial-analysis.html"]
+            },
+            {
+              "id": "financial-planning-2",
+              "text": "Research financing options and interest rates",
+              "priority": "high",
+              "estimatedTime": "3-4 days",
+              "helpText": "Compare loans from different lenders and consider pre-approval"
+            },
+            {
+              "id": "financial-planning-3",
+              "text": "Calculate potential ROI based on purchase price, renovation costs, and projected sale price",
+              "priority": "high",
+              "estimatedTime": "1-2 days",
+              "helpText": "Aim for a minimum 15% return after all costs",
+              "resources": ["financial-analysis.html"]
+            },
+            {
+              "id": "financial-planning-4",
+              "text": "Create a detailed budget breakdown for purchase, renovation, holding costs, and selling costs",
+              "priority": "high",
+              "estimatedTime": "2-3 days",
+              "helpText": "Be conservative in your estimates and include a 10-15% contingency"
+            },
+            {
+              "id": "financial-planning-5",
+              "text": "Plan for tax implications and set aside funds for potential capital gains tax",
+              "priority": "medium",
+              "estimatedTime": "1-2 days",
+              "helpText": "Consider consulting with a tax professional",
+              "resources": ["tax-information.html"]
+            }
+          ]
+        },
+        {
+          "id": "strategy-development",
+          "name": "Strategy Development",
+          "items": [
+            {
+              "id": "strategy-development-1",
+              "text": "Define your investment strategy (quick flip vs. medium-term hold)",
+              "priority": "high",
+              "estimatedTime": "2-3 days",
+              "helpText": "Consider market conditions and your financial situation",
+              "resources": ["investment-strategy.html"]
+            },
+            {
+              "id": "strategy-development-2",
+              "text": "Create a detailed timeline for the entire investment process",
+              "priority": "medium",
+              "estimatedTime": "1-2 days",
+              "helpText": "Include purchase, renovation, and sale phases with realistic timeframes"
+            },
+            {
+              "id": "strategy-development-3",
+              "text": "Develop criteria for property selection based on renovation potential",
+              "priority": "high",
+              "estimatedTime": "2-3 days",
+              "helpText": "Consider layout, structural condition, and potential for value-add"
+            },
+            {
+              "id": "strategy-development-4",
+              "text": "Establish relationships with local real estate agents in Gregory Hills",
+              "priority": "medium",
+              "estimatedTime": "1-2 weeks",
+              "helpText": "Agents can provide market insights and help with both buying and selling"
+            },
+            {
+              "id": "strategy-development-5",
+              "text": "Research local council regulations and zoning requirements",
+              "priority": "medium",
+              "estimatedTime": "2-3 days",
+              "helpText": "Check Camden Council website or speak with a council representative"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "acquisition",
+      "name": "Property Acquisition",
+      "icon": "fas fa-home",
+      "description": "Finding and purchasing the right property in Gregory Hills",
+      "categories": [
+        {
+          "id": "property-search",
+          "name": "Property Search",
+          "items": [
+            {
+              "id": "property-search-1",
+              "text": "Set up property alerts on real estate websites for Gregory Hills",
+              "priority": "high",
+              "estimatedTime": "1 hour",
+              "helpText": "Use sites like Domain, realestate.com.au, and local agency websites"
+            },
+            {
+              "id": "property-search-2",
+              "text": "Contact local agents to inquire about off-market opportunities",
+              "priority": "medium",
+              "estimatedTime": "1-2 days",
+              "helpText": "Build relationships with agents who specialize in Gregory Hills"
+            },
+            {
+              "id": "property-search-3",
+              "text": "Attend open houses and inspections in target neighborhoods",
+              "priority": "high",
+              "estimatedTime": "Ongoing",
+              "helpText": "Visit multiple properties to understand the market and spot opportunities"
+            },
+            {
+              "id": "property-search-4",
+              "text": "Create a shortlist of potential properties based on your criteria",
+              "priority": "high",
+              "estimatedTime": "Ongoing",
+              "helpText": "Consider location, condition, price, and renovation potential"
+            },
+            {
+              "id": "property-search-5",
+              "text": "Research recent sales history of shortlisted properties",
+              "priority": "medium",
+              "estimatedTime": "1 day per property",
+              "helpText": "Check how long the property has been on the market and previous sale prices"
+            }
+          ]
+        },
+        {
+          "id": "property-assessment",
+          "name": "Property Assessment",
+          "items": [
+            {
+              "id": "property-assessment-1",
+              "text": "Conduct preliminary property assessments",
+              "priority": "high",
+              "estimatedTime": "1-2 hours per property",
+              "helpText": "Look for structural issues, renovation potential, and major problems"
+            },
+            {
+              "id": "property-assessment-2",
+              "text": "Arrange professional building and pest inspections",
+              "priority": "high",
+              "estimatedTime": "2-3 days",
+              "helpText": "Budget $400-$800 for comprehensive inspections"
+            },
+            {
+              "id": "property-assessment-3",
+              "text": "Assess renovation potential and estimate costs",
+              "priority": "high",
+              "estimatedTime": "1-2 days",
+              "helpText": "Consider kitchen ($20,000-$50,000), bathroom ($15,000-$30,000), and other renovations"
+            },
+            {
+              "id": "property-assessment-4",
+              "text": "Check for council approval requirements for planned renovations",
+              "priority": "medium",
+              "estimatedTime": "1-2 days",
+              "helpText": "Contact Camden Council or check their website for requirements"
+            },
+            {
+              "id": "property-assessment-5",
+              "text": "Review strata reports (if applicable)",
+              "priority": "high",
+              "estimatedTime": "1 day",
+              "helpText": "Check for any issues, upcoming special levies, or restrictions on renovations"
+            },
+            {
+              "id": "property-assessment-6",
+              "text": "Calculate potential profit margin based on purchase price and estimated sale price",
+              "priority": "high",
+              "estimatedTime": "1 day",
+              "helpText": "Aim for at least 15-20% profit after all costs"
+            }
+          ]
+        },
+        {
+          "id": "financing",
+          "name": "Financing",
+          "items": [
+            {
+              "id": "financing-1",
+              "text": "Arrange pre-approval for financing",
+              "priority": "high",
+              "estimatedTime": "1-2 weeks",
+              "helpText": "Shop around for the best rates and terms"
+            },
+            {
+              "id": "financing-2",
+              "text": "Prepare documentation for loan application",
+              "priority": "high",
+              "estimatedTime": "3-5 days",
+              "helpText": "Gather income statements, tax returns, asset documentation, etc."
+            },
+            {
+              "id": "financing-3",
+              "text": "Consider different loan structures (interest-only vs. principal and interest)",
+              "priority": "medium",
+              "estimatedTime": "2-3 days",
+              "helpText": "Interest-only loans may be better for short-term flips"
+            },
+            {
+              "id": "financing-4",
+              "text": "Calculate holding costs for the expected project duration",
+              "priority": "medium",
+              "estimatedTime": "1 day",
+              "helpText": "Include mortgage payments, council rates, utilities, and insurance"
+            }
+          ]
+        },
+        {
+          "id": "purchase-process",
+          "name": "Purchase Process",
+          "items": [
+            {
+              "id": "purchase-process-1",
+              "text": "Engage a solicitor/conveyancer for legal review",
+              "priority": "high",
+              "estimatedTime": "1-2 days",
+              "helpText": "Choose someone with experience in Gregory Hills property transactions"
+            },
+            {
+              "id": "purchase-process-2",
+              "text": "Review contract of sale thoroughly",
+              "priority": "high",
+              "estimatedTime": "2-3 days",
+              "helpText": "Pay attention to special conditions, inclusions/exclusions, and settlement terms"
+            },
+            {
+              "id": "purchase-process-3",
+              "text": "Make an offer or bid at auction",
+              "priority": "high",
+              "estimatedTime": "1 day",
+              "helpText": "Have a maximum price in mind and stick to it"
+            },
+            {
+              "id": "purchase-process-4",
+              "text": "Negotiate purchase terms and conditions",
+              "priority": "high",
+              "estimatedTime": "1-3 days",
+              "helpText": "Consider price, settlement period, and special conditions"
+            },
+            {
+              "id": "purchase-process-5",
+              "text": "Pay deposit (typically 10%)",
+              "priority": "high",
+              "estimatedTime": "1 day",
+              "helpText": "Ensure funds are ready to transfer"
+            },
+            {
+              "id": "purchase-process-6",
+              "text": "Finalize financing arrangements",
+              "priority": "high",
+              "estimatedTime": "1-2 weeks",
+              "helpText": "Submit all required documentation to your lender"
+            },
+            {
+              "id": "purchase-process-7",
+              "text": "Arrange building insurance from exchange date",
+              "priority": "high",
+              "estimatedTime": "1-2 days",
+              "helpText": "Required from the moment contracts are exchanged"
+            },
+            {
+              "id": "purchase-process-8",
+              "text": "Conduct pre-settlement inspection",
+              "priority": "high",
+              "estimatedTime": "1 day",
+              "helpText": "Ensure property is in the same condition as when purchased"
+            },
+            {
+              "id": "purchase-process-9",
+              "text": "Complete settlement and obtain keys",
+              "priority": "high",
+              "estimatedTime": "1 day",
+              "helpText": "Standard settlement period is 42 days (6 weeks) in NSW"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "renovation",
+      "name": "Renovation",
+      "icon": "fas fa-hammer",
+      "description": "Planning and executing renovations to maximize property value",
+      "categories": [
+        {
+          "id": "renovation-planning",
+          "name": "Renovation Planning",
+          "items": [
+            {
+              "id": "renovation-planning-1",
+              "text": "Conduct detailed property assessment",
+              "priority": "high",
+              "estimatedTime": "1-2 days",
+              "helpText": "Identify all areas requiring renovation and prioritize work"
+            },
+            {
+              "id": "renovation-planning-2",
+              "text": "Create renovation scope of work",
+              "priority": "high",
+              "estimatedTime": "2-3 days",
+              "helpText": "Detail all work to be done in each area of the property"
+            },
+            {
+              "id": "renovation-planning-3",
+              "text": "Develop renovation budget ($3,000-$5,000 per square meter for good quality)",
+              "priority": "high",
+              "estimatedTime": "2-3 days",
+              "helpText": "Break down costs for each area and include a contingency"
+            },
+            {
+              "id": "renovation-planning-4",
+              "text": "Check if renovations require council approval",
+              "priority": "high",
+              "estimatedTime": "1-2 days",
+              "helpText": "Contact Camden Council for specific requirements"
+            },
+            {
+              "id": "renovation-planning-5",
+              "text": "Apply for necessary permits and approvals",
+              "priority": "high",
+              "estimatedTime": "2-4 weeks",
+              "helpText": "Submit applications through the NSW Planning Portal"
+            },
+            {
+              "id": "renovation-planning-6",
+              "text": "Research and select contractors",
+              "priority": "high",
+              "estimatedTime": "1-2 weeks",
+              "helpText": "Get recommendations and check reviews, licenses, and insurance"
+            },
+            {
+              "id": "renovation-planning-7",
+              "text": "Obtain multiple quotes for major work",
+              "priority": "high",
+              "estimatedTime": "1-2 weeks",
+              "helpText": "Get at least three quotes for each major renovation component"
+            },
+            {
+              "id": "renovation-planning-8",
+              "text": "Create renovation timeline",
+              "priority": "high",
+              "estimatedTime": "1-2 days",
+              "helpText": "Develop a realistic schedule with buffer time for delays"
+            },
+            {
+              "id": "renovation-planning-9",
+              "text": "Order materials and fixtures",
+              "priority": "medium",
+              "estimatedTime": "1-2 weeks",
+              "helpText": "Consider lead times for special order items"
+            },
+            {
+              "id": "renovation-planning-10",
+              "text": "Plan renovations to appeal to Gregory Hills demographics (30-39 year old families)",
+              "priority": "medium",
+              "estimatedTime": "1-2 days",
+              "helpText": "Focus on family-friendly features and modern amenities"
+            }
+          ]
+        },
+        {
+          "id": "renovation-execution",
+          "name": "Renovation Execution",
+          "items": [
+            {
+              "id": "renovation-execution-1",
+              "text": "Demolition and site preparation",
+              "priority": "high",
+              "estimatedTime": "3-7 days",
+              "helpText": "Remove unwanted fixtures, fittings, and materials"
+            },
+            {
+              "id": "renovation-execution-2",
+              "text": "Structural modifications (if applicable)",
+              "priority": "high",
+              "estimatedTime": "1-3 weeks",
+              "helpText": "Ensure all structural work is approved and certified"
+            },
+            {
+              "id": "renovation-execution-3",
+              "text": "Plumbing and electrical updates",
+              "priority": "high",
+              "estimatedTime": "1-2 weeks",
+              "helpText": "Use licensed professionals and obtain certificates of compliance"
+            },
+            {
+              "id": "renovation-execution-4",
+              "text": "Kitchen renovation ($20,000-$50,000)",
+              "priority": "high",
+              "estimatedTime": "2-3 weeks",
+              "helpText": "Focus on modern, open-plan designs with island benches"
+            },
+            {
+              "id": "renovation-execution-5",
+              "text": "Bathroom renovation ($15,000-$30,000)",
+              "priority": "high",
+              "estimatedTime": "1-2 weeks per bathroom",
+              "helpText": "Create contemporary bathrooms with quality fixtures"
+            },
+            {
+              "id": "renovation-execution-6",
+              "text": "Flooring installation",
+              "priority": "medium",
+              "estimatedTime": "3-7 days",
+              "helpText": "Consider durable options like engineered timber or quality laminate"
+            },
+            {
+              "id": "renovation-execution-7",
+              "text": "Painting and finishing",
+              "priority": "medium",
+              "estimatedTime": "1-2 weeks",
+              "helpText": "Use neutral colors with broad appeal"
+            },
+            {
+              "id": "renovation-execution-8",
+              "text": "Landscaping and outdoor improvements",
+              "priority": "medium",
+              "estimatedTime": "1-2 weeks",
+              "helpText": "Create appealing outdoor entertainment areas"
+            },
+            {
+              "id": "renovation-execution-9",
+              "text": "Install energy-efficient features",
+              "priority": "low",
+              "estimatedTime": "1-2 weeks",
+              "helpText": "Consider solar panels, insulation, and energy-efficient appliances"
+            },
+            {
+              "id": "renovation-execution-10",
+              "text": "Final inspections and approvals",
+              "priority": "high",
+              "estimatedTime": "1-2 weeks",
+              "helpText": "Ensure all work meets building codes and standards"
+            },
+            {
+              "id": "renovation-execution-11",
+              "text": "Final cleaning",
+              "priority": "medium",
+              "estimatedTime": "1-2 days",
+              "helpText": "Professional cleaning of the entire property"
+            }
+          ]
+        },
+        {
+          "id": "renovation-management",
+          "name": "Renovation Management",
+          "items": [
+            {
+              "id": "renovation-management-1",
+              "text": "Regular site inspections",
+              "priority": "high",
+              "estimatedTime": "Ongoing",
+              "helpText": "Visit the site regularly to monitor progress and quality"
+            },
+            {
+              "id": "renovation-management-2",
+              "text": "Track expenses against budget",
+              "priority": "high",
+              "estimatedTime": "Ongoing",
+              "helpText": "Keep detailed records of all expenses"
+            },
+            {
+              "id": "renovation-management-3",
+              "text": "Manage contractor relationships",
+              "priority": "high",
+              "estimatedTime": "Ongoing",
+              "helpText": "Maintain clear communication and address issues promptly"
+            },
+            {
+              "id": "renovation-management-4",
+              "text": "Document renovation process with photos",
+              "priority": "medium",
+              "estimatedTime": "Ongoing",
+              "helpText": "Take before, during, and after photos for records and marketing"
+            },
+            {
+              "id": "renovation-management-5",
+              "text": "Adjust plans as needed based on discoveries during renovation",
+              "priority": "medium",
+              "estimatedTime": "Ongoing",
+              "helpText": "Be flexible and prepared to modify plans if issues arise"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sale",
+      "name": "Property Sale",
+      "icon": "fas fa-dollar-sign",
+      "description": "Preparing and selling your renovated property for maximum profit",
+      "categories": [
+        {
+          "id": "pre-sale-preparation",
+          "name": "Pre-Sale Preparation",
+          "items": [
+            {
+              "id": "pre-sale-preparation-1",
+              "text": "Deep clean the entire property",
+              "priority": "high",
+              "estimatedTime": "1-2 days",
+              "helpText": "Consider hiring professional cleaners"
+            },
+            {
+              "id": "pre-sale-preparation-2",
+              "text": "Arrange professional staging",
+              "priority": "high",
+              "estimatedTime": "1 week",
+              "helpText": "Staged homes sell 30-50% faster than unstaged properties"
+            },
+            {
+              "id": "pre-sale-preparation-3",
+              "text": "Hire professional photographer",
+              "priority": "high",
+              "estimatedTime": "1-2 days",
+              "helpText": "Quality photos are essential for online listings"
+            },
+            {
+              "id": "pre-sale-preparation-4",
+              "text": "Prepare property description and marketing materials",
+              "priority": "high",
+              "estimatedTime": "2-3 days",
+              "helpText": "Highlight features that appeal to Gregory Hills buyers"
+            },
+            {
+              "id": "pre-sale-preparation-5",
+              "text": "Research current market conditions for pricing strategy",
+              "priority": "high",
+              "estimatedTime": "1 week",
+              "helpText": "Analyze recent comparable sales in Gregory Hills"
+            },
+            {
+              "id": "pre-sale-preparation-6",
+              "text": "Interview and select real estate agents",
+              "priority": "high",
+              "estimatedTime": "1 week",
+              "helpText": "Choose an agent with experience in Gregory Hills"
+            },
+            {
+              "id": "pre-sale-preparation-7",
+              "text": "Prepare all necessary legal documents for sale",
+              "priority": "high",
+              "estimatedTime": "1-2 weeks",
+              "helpText": "Work with your solicitor to prepare the contract of sale"
+            },
+            {
+              "id": "pre-sale-preparation-8",
+              "text": "Consider timing of sale (Spring/Autumn are peak seasons)",
+              "priority": "medium",
+              "estimatedTime": "N/A",
+              "helpText": "Market conditions and seasonality can affect sale price"
+            },
+            {
+              "id": "pre-sale-preparation-9",
+              "text": "Obtain building and pest inspection reports to provide to buyers",
+              "priority": "medium",
+              "estimatedTime": "1 week",
+              "helpText": "Transparency can help build buyer confidence"
+            }
+          ]
+        },
+        {
+          "id": "marketing-and-sale",
+          "name": "Marketing & Sale Process",
+          "items": [
+            {
+              "id": "marketing-and-sale-1",
+              "text": "List property on real estate websites",
+              "priority": "high",
+              "estimatedTime": "1-2 days",
+              "helpText": "Ensure listing appears on major platforms like Domain and realestate.com.au"
+            },
+            {
+              "id": "marketing-and-sale-2",
+              "text": "Develop marketing strategy targeting 30-39 year old families",
+              "priority": "high",
+              "estimatedTime": "1 week",
+              "helpText": "Focus on family-friendly features and local amenities"
+            },
+            {
+              "id": "marketing-and-sale-3",
+              "text": "Conduct open houses",
+              "priority": "high",
+              "estimatedTime": "Ongoing (typically weekends)",
+              "helpText": "Ensure property is perfectly presented for each open house"
+            },
+            {
+              "id": "marketing-and-sale-4",
+              "text": "Review and negotiate offers",
+              "priority": "high",
+              "estimatedTime": "Ongoing",
+              "helpText": "Consider price, conditions, and settlement terms"
+            },
+            {
+              "id": "marketing-and-sale-5",
+              "text": "Accept offer and sign contract of sale",
+              "priority": "high",
+              "estimatedTime": "1-2 days",
+              "helpText": "Ensure all terms are favorable and clearly understood"
+            },
+            {
+              "id": "marketing-and-sale-6",
+              "text": "Complete any required repairs from building inspection",
+              "priority": "medium",
+              "estimatedTime": "1-2 weeks",
+              "helpText": "Address any issues identified during buyer's inspection"
+            },
+            {
+              "id": "marketing-and-sale-7",
+              "text": "Prepare for settlement",
+              "priority": "high",
+              "estimatedTime": "1-2 weeks",
+              "helpText": "Work with your solicitor to prepare all necessary documentation"
+            },
+            {
+              "id": "marketing-and-sale-8",
+              "text": "Complete settlement (typically 42 days/6 weeks)",
+              "priority": "high",
+              "estimatedTime": "1 day",
+              "helpText": "Ensure all conditions are met before settlement date"
+            }
+          ]
+        },
+        {
+          "id": "post-sale",
+          "name": "Post-Sale Analysis",
+          "items": [
+            {
+              "id": "post-sale-1",
+              "text": "Document all expenses and profits",
+              "priority": "high",
+              "estimatedTime": "1-2 days",
+              "helpText": "Create a detailed financial summary of the project"
+            },
+            {
+              "id": "post-sale-2",
+              "text": "Calculate final profit and ROI",
+              "priority": "high",
+              "estimatedTime": "1 day",
+              "helpText": "Analyze the financial success of the project"
+            },
+            {
+              "id": "post-sale-3",
+              "text": "Analyze what worked well and what didn't",
+              "priority": "medium",
+              "estimatedTime": "1-2 days",
+              "helpText": "Document lessons learned for future projects"
+            },
+            {
+              "id": "post-sale-4",
+              "text": "Prepare tax documentation",
+              "priority": "high",
+              "estimatedTime": "1 week",
+              "helpText": "Gather all receipts and financial records for tax purposes"
+            },
+            {
+              "id": "post-sale-5",
+              "text": "Consult with accountant regarding capital gains tax implications",
+              "priority": "high",
+              "estimatedTime": "1-2 weeks",
+              "helpText": "Understand tax obligations and potential strategies"
+            },
+            {
+              "id": "post-sale-6",
+              "text": "Update investment strategy for next property",
+              "priority": "medium",
+              "estimatedTime": "1 week",
+              "helpText": "Apply lessons learned to improve future investments"
+            },
+            {
+              "id": "post-sale-7",
+              "text": "Begin research for next investment property",
+              "priority": "low",
+              "estimatedTime": "Ongoing",
+              "helpText": "Start the process again with improved knowledge and experience"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

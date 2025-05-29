@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - Gregory Hills Real Estate Investment</title>
+    <meta name="description" content="Useful resources for real estate investors in Gregory Hills, NSW, including local contacts, market reports, and investment tools.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="site-logo">
+                <h1 class="site-title">Gregory Hills Investment</h1>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="market-trends.html">Market Trends</a></li>
+                    <li><a href="investment-strategy.html">Strategy</a></li>
+                    <li><a href="financial-analysis.html">Financial Analysis</a></li>
+                    <li><a href="tax-information.html">Tax Info</a></li>
+                    <li><a href="checklist.html">Checklist</a></li>
+                    <li><a href="resources.html" class="active">Resources</a></li>
+                </ul>
+            </nav>
+            <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/gregory_hills_development.jpg');">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Investment Resources</h1>
+                <p>Useful tools, contacts, and information for Gregory Hills real estate investors</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Introduction -->
+    <section class="section bg-white">
+        <div class="container">
+            <h2 class="section-title">Essential Resources</h2>
+            <p class="section-subtitle">Everything you need for successful property investment in Gregory Hills</p>
+            
+            <div class="row">
+                <div class="col col-md-8 col-sm-12 offset-md-2">
+                    <div class="card">
+                        <div class="card-content">
+                            <p>We've compiled a comprehensive collection of resources to support your real estate investment journey in Gregory Hills. From local council information to financial calculators, these tools will help you make informed decisions throughout the buying, renovating, and selling process.</p>
+                            
+                            <p>Use the filters below to find specific resources, or browse through the categories to discover valuable information for each stage of your investment.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="section bg-light">
+        <div class="container">
+            <!-- Resource Filters -->
+            <div class="row mb-4">
+                <div class="col col-md-8 col-sm-12">
+                    <div class="resource-filters">
+                        <button class="resource-filter-btn active" data-filter="all">All Resources</button>
+                        <button class="resource-filter-btn" data-filter="market">Market Research</button>
+                        <button class="resource-filter-btn" data-filter="legal">Legal & Finance</button>
+                        <button class="resource-filter-btn" data-filter="renovation">Renovation</button>
+                        <button class="resource-filter-btn" data-filter="local">Local Services</button>
+                        <button class="resource-filter-btn" data-filter="tools">Tools & Calculators</button>
+                    </div>
+                    <p><span id="resource-count">24</span> resources found in <span id="current-filter">All Resources</span></p>
+                </div>
+                <div class="col col-md-4 col-sm-12">
+                    <div class="resource-search-container">
+                        <input type="text" id="resource-search" placeholder="Search resources..." class="form-control">
+                        <button id="bookmark-filter" aria-label="Show bookmarked resources">
+                            <i class="far fa-bookmark"></i> Bookmarks
+                        </button>
+                    </div>
+                    <div class="resource-sort-container">
+                        <select id="resource-sort" class="form-control">
+                            <option value="title-asc">Title (A-Z)</option>
+                            <option value="title-desc">Title (Z-A)</option>
+                            <option value="date-newest">Newest First</option>
+                            <option value="date-oldest">Oldest First</option>
+                            <option value="rating-highest">Highest Rated</option>
+                            <option value="rating-lowest">Lowest Rated</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Resource List -->
+            <div class="resource-list">
+                <!-- Market Research Resources -->
+                <div class="resource-item" data-id="resource-1" data-categories="market" data-title="Camden Council Property Information" data-date="2025-03-15" data-rating="4.8" data-tags="council property zoning regulations">
+                    <div class="resource-header">
+                        <h3 class="resource-title">Camden Council Property Information</h3>
+                        <button class="bookmark-btn" aria-label="Add to bookmarks">
+                            <i class="far fa-bookmark bookmark-icon"></i>
+                        </button>
+                    </div>
+                    <div class="resource-meta">
+                        <span><i class="fas fa-calendar"></i> Updated: March 2025</span>
+                        <span><i class="fas fa-star"></i> 4.8/5</span>
+                    </div>
+                    <div class="resource-description">
+                        <p>Official Camden Council resource for property information in Gregory Hills, including zoning regulations, development applications, and planning certificates.</p>
+                    </div>
+                    <div class="resource-link">
+                        <a href="https://www.camden.nsw.gov.au/planning/property-information/" target="_blank" rel="noopener noreferrer">Visit Website <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <div class="resource-tags">
+                        <span class="resource-tag">Council</span>
+                        <span class="resource-tag">Zoning</span>
+                        <span class="resource-tag">Property Information</span>
+                    </div>
+                </div>
+                
+                <div class="resource-item" data-id="resource-2" data-categories="market" data-title="Gregory Hills Market Report" data-date="2025-04-10" data-rating="4.7" data-tags="market report trends analysis">
+                    <div class="resource-header">
+                        <h3 class="resource-title">Gregory Hills Market Report</h3>
+                        <button class="bookmark-btn" aria-label="Add to bookmarks">
+                            <i class="far fa-bookmark bookmark-icon"></i>
+                        </button>
+                    </div>
+                    <div class="resource-meta">
+                        <span><i class="fas fa-calendar"></i> Updated: April 2025</span>
+                        <span><i class="fas fa-star"></i> 4.7/5</span>
+                    </div>
+                    <div class="resource-description">
+                        <p>Comprehensive quarterly market report for Gregory Hills, featuring price trends, sales data, rental yields, and growth projections.</p>
+                    </div>
+                    <div class="resource-link">
+                        <a href="https://www.realestate.com.au/neighbourhoods/gregory-hills-2557-nsw" target="_blank" rel="noopener noreferrer">View Report <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <div class="resource-tags">
+                        <span class="resource-tag">Market Report</span>
+                        <span class="resource-tag">Price Trends</span>
+                        <span class="resource-tag">Analysis</span>
+                    </div>
+                </div>
+                
+                <div class="resource-item" data-id="resource-3" data-categories="market" data-title="Gregory Hills Development Map" data-date="2025-02-20" data-rating="4.5" data-tags="development infrastructure planning">
+                    <div class="resource-header">
+                        <h3 class="resource-title">Gregory Hills Development Map</h3>
+                        <button class="bookmark-btn" aria-label="Add to bookmarks">
+                            <i class="far fa-bookmark bookmark-icon"></i>
+                        </button>
+                    </div>
+                    <div class="resource-meta">
+                        <span><i class="fas fa-calendar"></i> Updated: February 2025</span>
+                        <span><i class="fas fa-star"></i> 4.5/5</span>
+                    </div>
+                    <div class="resource-description">
+                        <p>Interactive map showing current and planned developments in Gregory Hills, including infrastructure projects, new housing estates, and commercial developments.</p>
+                    </div>
+                    <div class="resource-link">
+                        <a href="https://www.gregoryhills.com.au/" target="_blank" rel="noopener noreferrer">View Map <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <div class="resource-tags">
+                        <span class="resource-tag">Development</span>
+                        <span class="resource-tag">Infrastructure</span>
+                        <span class="resource-tag">Planning</span>
+                    </div>
+                </div>
+                
+                <div class="resource-item" data-id="resource-4" data-categories="market" data-title="Property Value Estimator" data-date="2025-05-01" data-rating="4.6" data-tags="property valuation estimate tool">
+                    <div class="resource-header">
+                        <h3 class="resource-title">Property Value Estimator</h3>
+                        <button class="bookmark-btn" aria-label="Add to bookmarks">
+                            <i class="far fa-bookmark bookmark-icon"></i>
+                        </button>
+                    </div>
+                    <div class="resource-meta">
+                        <span><i class="fas fa-calendar"></i> Updated: May 2025</span>
+                        <span><i class="fas fa-star"></i> 4.6/5</span>
+                    </div>
+                    <div class="resource-description">
+                        <p>Online tool to estimate property values in Gregory Hills based on recent sales data, property features, and location factors.</p>
+                    </div>
+                    <div class="resource-link">
+                        <a href="https://www.domain.com.au/property-profile" target="_blank" rel="noopener noreferrer">Use Tool <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <div class="resource-tags">
+                        <span class="resource-tag">Valuation</span>
+                        <span class="resource-tag">Estimation</span>
+                        <span class="resource-tag">Tool</span>
+                    </div>
+                </div>
+                
+                <!-- Legal & Finance Resources -->
+                <div class="resource-item" data-id="resource-5" data-categories="legal" data-title="NSW Stamp Duty Calculator" data-date="2025-01-15" data-rating="4.9" data-tags="stamp duty tax calculator">
+                    <div class="resource-header">
+                        <h3 class="resource-title">NSW Stamp Duty Calculator</h3>
+                        <button class="bookmark-btn" aria-label="Add to bookmarks">
+                            <i class="far fa-bookmark bookmark-icon"></i>
+                        </button>
+                    </div>
+                    <div class="resource-meta">
+                        <span><i class="fas fa-calendar"></i> Updated: January 2025</span>
+                        <span><i class="fas fa-star"></i> 4.9/5</span>
+                    </div>
+                    <div class="resource-description">
+                        <p>Calculate stamp duty costs for property purchases in NSW, including any applicable concessions or exemptions.</p>
+                    </div>
+                    <div class="resource-link">
+                        <a href="https://www.revenue.nsw.gov.au/taxes-duties-levies-royalties/transfer-duty" target="_blank" rel="noopener noreferrer">Calculate Stamp Duty <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <div class="resource-tags">
+                        <span class="resource-tag">Stamp Duty</span>
+                        <span class="resource-tag">Tax</span>
+                        <span class="resource-tag">Calculator</span>
+                    </div>
+                </div>
+                
+                <div class="resource-item" data-id="resource-6" data-categories="legal" data-title="Property Investment Tax Guide" data-date="2025-03-01" data-rating="4.7" data-tags="tax guide investment property">
+                    <div class="resource-header">
+                        <h3 class="resource-title">Property Investment Tax Guide</h3>
+                        <button class="bookmark-btn" aria-label="Add to bookmarks">
+                            <i class="far fa-bookmark bookmark-icon"></i>
+                        </button>
+                    </div>
+                    <div class="resource-meta">
+                        <span><i class="fas fa-calendar"></i> Updated: March 2025</span>
+                        <span><i class="fas fa-star"></i> 4.7/5</span>
+                    </div>
+                    <div class="resource-description">
+                        <p>Comprehensive guide to tax implications for property investors, including deductions, capital gains tax, and record-keeping requirements.</p>
+                    </div>
+                    <div class="resource-link">
+                        <a href="https://www.ato.gov.au/individuals/investments-and-assets/residential-rental-properties/" target="_blank" rel="noopener noreferrer">View Guide <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <div class="resource-tags">
+                        <span class="resource-tag">Tax</span>
+                        <span class="resource-tag">Investment</span>
+                        <span class="resource-tag">Guide</span>
+                    </div>
+                </div>
+                
+                <div class="resource-item" data-id="resource-7" data-categories="legal" data-title="Mortgage Comparison Tool" data-date="2025-04-20" data-rating="4.5" data-tags="mortgage loan comparison calculator">
+                    <div class="resource-header">
+                        <h3 class="resource-title">Mortgage Comparison Tool</h3>
+                        <button class="bookmark-btn" aria-label="Add to bookmarks">
+                            <i class="far fa-bookmark bookmark-icon"></i>
+                        </button>
+                    </div>
+                    <div class="resource-meta">
+                        <span><i class="fas fa-calendar"></i> Updated: April 2025</span>
+                        <span><i class="fas fa-star"></i> 4.5/5</span>
+                    </div>
+                    <div class="resource-description">
+                        <p>Compare mortgage options from multiple lenders, including interest rates, fees, and loan features for investment properties.</p>
+                    </div>
+                    <div class="resource-link">
+                        <a href="https://www.canstar.com.au/home-loans/compare/" target="_blank" rel="noopener noreferrer">Compare Mortgages <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <div class="resource-tags">
+                        <span class="resource-tag">Mortgage</span>
+                        <span class="resource-tag">Loan</span>
+                        <span class="resource-tag">Comparison</span>
+                    </div>
+                </div>
+                
+                <div class="resource-item" data-id="resource-8" data-categories="legal" data-title="Conveyancing Services Directory" data-date="2025-02-10" data-rating="4.3" data-tags="conveyancing legal services directory">
+                    <div class="resource-header">
+                        <h3 class="resource-title">Conveyancing Services Directory</h3>
+                        <button class="bookmark-btn" aria-label="Add to bookmarks">
+                            <i class="far fa-bookmark bookmark-icon"></i>
+                        </button>
+                    </div>
+                    <div class="resource-meta">
+                        <span><i class="fas fa-calendar"></i> Updated: February 2025</span>
+                        <span><i class="fas fa-star"></i> 4.3/5</span>
+                    </div>
+                    <div class="resource-description">
+                        <p>Directory of conveyancing services in the Camden area, including solicitors and conveyancers experienced with Gregory Hills properties.</p>
+                    </div>
+                    <div class="resource-link">
+                        <a href="https://www.lawsociety.com.au/for-the-public/find-a-lawyer" target="_blank" rel="noopener noreferrer">Find a Conveyancer <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <div class="resource-tags">
+                        <span class="resource-tag">Conveyancing</span>
+                        <span class="resource-tag">Legal</span>
+                        <span class="resource-tag">Directory</span>
+                    </div>
+                </div>
+                
+                <!-- Renovation Resources -->
+                <div class="resource-item" data-id="resource-9" data-categories="renovation" data-title="Renovation Cost Calculator" data-date="2025-03-25" data-rating="4.6" data-tags="renovation cost calculator budget">
+                    <div class="resource-header">
+                        <h3 class="resource-title">Renovation Cost Calculator</h3>
+                        <button class="bookmark-btn" aria-label="Add to bookmarks">
+                            <i class="far fa-bookmark bookmark-icon"></i>
+                        </button>
+                    </div>
+                    <div class="resource-meta">
+                        <span><i class="fas fa-calendar"></i> Updated: March 2025</span>
+                        <span><i class="fas fa-star"></i> 4.6/5</span>
+                    </div>
+                    <div class="resource-description">
+                        <p>Estimate renovation costs for different types of projects, including kitchen, bathroom, and whole-house renovations based on Sydney market rates.</p>
+                    </div>
+                    <div class="resource-link">
+                        <a href="https://www.archicentreaustralia.com.au/resources/renovation-cost-guide/" target="_blank" rel="noopener noreferrer">Calculate Costs <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <div class="resource-tags">
+                        <span class="resource-tag">Renovation</span>
+                        <span class="resource-tag">Cost</span>
+                        <span class="resource-tag">Calculator</span>
+                    </div>
+                </div>
+                
+                <div class="resource-item" data-id="resource-10" data-categories="renovation" data-title="Camden Council Building Approvals" data-date="2025-01-05" data-rating="4.7" data-tags="building approvals permits council">
+                    <div class="resource-header">
+                        <h3 class="resource-title">Camden Council Building Approvals</h3>
+                        <button class="bookmark-btn" aria-label="Add to bookmarks">
+                            <i class="far fa-bookmark bookmark-icon"></i>
+                        </button>
+                    </div>
+                    <div class="resource-meta">
+                        <span><i class="fas fa-calendar"></i> Updated: January 2025</span>
+                        <span><i class="fas fa-star"></i> 4.7/5</span>
+                    </div>
+                    <div class="resource-description">
+                        <p>Information on building approval processes, requirements, and applications for renovation projects in Gregory Hills.</p>
+                    </div>
+                    <div class="resource-link">
+                        <a href="https://www.camden.nsw.gov.au/development/building-and-renovating/" target="_blank" rel="noopener noreferrer">View Requirements <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <div class="resource-tags">
+                        <span class="resource-tag">Building</span>
+                        <span class="resource-tag">Approvals</span>
+                        <span class="resource-tag">Council</span>
+                    </div>
+                </div>
+                
+                <div class="resource-item" data-id="resource-11" data-categories="renovation" data-title="Local Contractors Directory" data-date="2025-04-15" data-rating="4.4" data-tags="contractors tradies directory local">
+                    <div class="resource-header">
+                        <h3 class="resource-title">Local Contractors Directory</h3>
+                        <button class="bookmark-btn" aria-label="Add to bookmarks">
+                            <i class="far fa-bookmark bookmark-icon"></i>
+                        </button>
+                    </div>
+                    <div class="resource-meta">
+                        <span><i class="fas fa-calendar"></i> Updated: April 2025</span>
+                        <span><i class="fas fa-star"></i> 4.4/5</span>
+                    </div>
+                    <div class="resource-description">
+                        <p>Directory of verified contractors and tradespeople in the Gregory Hills area, including builders, plumbers, electricians, and landscapers.</p>
+                    </div>
+                    <div class="resource-link">
+                        <a href="https://www.hipages.com.au/" target="_blank" rel="noopener noreferrer">Find Contractors <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <div class="resource-tags">
+                        <span class="resource-tag">Contractors</span>
+                        <span class="resource-tag">Tradies</span>
+                        <span class="resource-tag">Directory</span>
+                    </div>
+                </div>
+                
+                <div class="resource-item" data-id="resource-12" data-categories="renovation" data-title="Renovation Value-Add Guide" data-date="2025-02-28" data-rating="4.8" data-tags="renovation value-add guide ROI">
+                    <div class="resource-header">
+                        <h3 class="resource-title">Renovation Value-Add Guide</h3>
+                        <button class="bookmark-btn" aria-label="Add to bookmarks">
+                            <i class="far fa-bookmark bookmark-icon"></i>
+                        </button>
+                    </div>
+                    <div class="resource-meta">
+                        <span><i class="fas fa-calendar"></i> Updated: February 2025</span>
+                        <span><i class="fas fa-star"></i> 4.8/5</span>
+                    </div>
+                    <div class="resource-description">
+                        <p>Guide to renovation projects that add the most value to properties in Gregory Hills, based on local market preferences and buyer demographics.</p>
+                    </div>
+                    <div class="resource-link">
+                        <a href="https://www.realestate.com.au/advice/renovation/" target="_blank" rel="noopener noreferrer">View Guide <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <div class="resource-tags">
+                        <span class="resource-tag">Renovation</span>
+                        <span class="resource-tag">Value-Add</span>
+                        <span class="resource-tag">ROI</span>
+                    </div>
+                </div>
+                
+                <!-- Local Services Resources -->
+                <div class="resource-item" data-id="resource-13" data-categories="local" data-title="Gregory Hills Real Estate Agents" data-date="2025-05-10" data-rating="4.5" data-tags="real estate agents local directory">
+                    <div class="resource-header">
+                        <h3 class="resource-title">Gregory Hills Real Estate Agents</h3>
+                        <button class="bookmark-btn" aria-label="Add to bookmarks">
+                            <i class="far fa-bookmark bookmark-icon"></i>
+                        </button>
+                    </div>
+                    <div class="resource-meta">
+                        <span><i class="fas fa-calendar"></i> Updated: May 2025</span>
+                        <span><i class="fas fa-star"></i> 4.5/5</span>
+                    </div>
+                    <div class="resource-description">
+                        <p>Directory of real estate agents specializing in Gregory Hills properties, including performance metrics and client reviews.</p>
+                    </div>
+                    <div class="resource-link">
+                        <a href="https://www.ratemyagent.com.au/real-estate-agency/gregory-hills-nsw/best-real-estate-agents" target="_blank" rel="noopener noreferrer">Find Agents <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <div class="resource-tags">
+                        <span class="resource-tag">Real Estate</span>
+                        <span class="resource-tag">Agents</span>
+                        <span class="resource-tag">Directory</span>
+                    </div>
+                </div>
+                
+                <div class="resource-item" data-id="resource-14" data-categories="local" data-title="Property Managers Directory" data-date="2025-03-20" data-rating="4.3" data-tags="property managers rental directory">
+                    <div class="resource-header">
+                        <h3 class="resource-title">Property Managers Directory</h3>
+                        <button class="bookmark-btn" aria-label="Add to bookmarks">
+                            <i class="far fa-bookmark bookmark-icon"></i>
+                        </button>
+                    </div>
+                    <div class="resource-meta">
+                        <span><i class="fas fa-calendar"></i> Updated: March 2025</span>
+                        <span><i class="fas fa-star"></i> 4.3/5</span>
+                    </div>
+                    <div class="resource-description">
+                        <p>Directory of property management services in Gregory Hills and surrounding areas, including fees, services, and client reviews.</p>
+                    </div>
+                    <div class="resource-link">
+                        <a href="https://www.localagentfinder.com.au/property-managers" target="_blank" rel="noopener noreferrer">Find Property Managers <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <div class="resource-tags">
+                        <span class="resource-tag">Property Managers</span>
+                        <span class="resource-tag">Rental</span>
+                        <span class="resource-tag">Directory</span>
+                    </div>
+                </div>
+                
+                <div class="resource-item" data-id="resource-15" data-categories="local" data-title="Building Inspectors Directory" data-date="2025-02-15" data-rating="4.6" data-tags="building inspectors pest inspection directory">
+                    <div class="resource-header">
+                        <h3 class="resource-title">Building Inspectors Directory</h3>
+                        <button class="bookmark-btn" aria-label="Add to bookmarks">
+                            <i class="far fa-bookmark bookmark-icon"></i>
+                        </button>
+                    </div>
+                    <div class="resource-meta">
+                        <span><i class="fas fa-calendar"></i> Updated: February 2025</span>
+                        <span><i class="fas fa-star"></i> 4.6/5</span>
+                    </div>
+                    <div class="resource-description">
+                        <p>Directory of qualified building and pest inspectors serving Gregory Hills, including qualifications, services, and pricing information.</p>
+                    </div>
+                    <div class="resource-link">
+                        <a href="https://www.asbec.asn.au/find-an-inspector/" target="_blank" rel="noopener noreferrer">Find Inspectors <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <div class="resource-tags">
+                        <span class="resource-tag">Building</span>
+                        <span class="resource-tag">Inspectors</span>
+                        <span class="resource-tag">Directory</span>
+                    </div>
+                </div>
+                
+                <div class="resource-item" data-id="resource-16" data-categories="local" data-title="Gregory Hills Community Information" data-date="2025-04-05" data-rating="4.7" data-tags="community information local amenities">
+                    <div class="resource-header">
+                        <h3 class="resource-title">Gregory Hills Community Information</h3>
+                        <button class="bookmark-btn" aria-label="Add to bookmarks">
+                            <i class="far fa-bookmark bookmark-icon"></i>
+                        </button>
+                    </div>
+                    <div class="resource-meta">
+                        <span><i class="fas fa-calendar"></i> Updated: April 2025</span>
+                        <span><i class="fas fa-star"></i> 4.7/5</span>
+                    </div>
+                    <div class="resource-description">
+                        <p>Comprehensive information about Gregory Hills community, including schools, shopping centers, parks, and local amenities.</p>
+                    </div>
+                    <div class="resource-link">
+                        <a href="https://www.gregoryhills.com.au/community/" target="_blank" rel="noopener noreferrer">View Community Info <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <div class="resource-tags">
+                        <span class="resource-tag">Community</span>
+                        <span class="resource-tag">Local</span>
+                        <span class="resource-tag">Amenities</span>
+                    </div>
+                </div>
+                
+                <!-- Tools & Calculators Resources -->
+                <div class="resource-item" data-id="resource-17" data-categories="tools" data-title="Investment Property Calculator" data-date="2025-03-10" data-rating="4.9" data-tags="investment calculator ROI property">
+                    <div class="resource-header">
+                        <h3 class="resource-title">Investment Property Calculator</h3>
+                        <button class="bookmark-btn" aria-label="Add to bookmarks">
+                            <i class="far fa-bookmark bookmark-icon"></i>
+                        </button>
+                    </div>
+                    <div class="resource-meta">
+                        <span><i class="fas fa-calendar"></i> Updated: March 2025</span>
+                        <span><i class="fas fa-star"></i> 4.9/5</span>
+                    </div>
+                    <div class="resource-description">
+                        <p>Comprehensive calculator for analyzing investment property potential, including cash flow, ROI, capital growth, and tax implications.</p>
+                    </div>
+                    <div class="resource-link">
+                        <a href="https://www.yourinvestmentpropertymag.com.au/investment-calculator/" target="_blank" rel="noopener noreferrer">Use Calculator <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <div class="resource-tags">
+                        <span class="resource-tag">Investment</span>
+                        <span class="resource-tag">Calculator</span>
+                        <span class="resource-tag">ROI</span>
+                    </div>
+                </div>
+                
+                <div class="resource-item" data-id="resource-18" data-categories="tools" data-title="Renovation Budget Planner" data-date="2025-02-05" data-rating="4.5" data-tags="renovation budget planner tool">
+                    <div class="resource-header">
+                        <h3 class="resource-title">Renovation Budget Planner</h3>
+                        <button class="bookmark-btn" aria-label="Add to bookmarks">
+                            <i class="far fa-bookmark bookmark-icon"></i>
+                        </button>
+                    </div>
+                    <div class="resource-meta">
+                        <span><i class="fas fa-calendar"></i> Updated: February 2025</span>
+                        <span><i class="fas fa-star"></i> 4.5/5</span>
+                    </div>
+                    <div class="resource-description">
+                        <p>Interactive tool for planning and tracking renovation budgets, including materials, labor, permits, and contingency costs.</p>
+                    </div>
+                    <div class="resource-link">
+                        <a href="https://www.houzz.com.au/ideabooks/renovation-budget-basics" target="_blank" rel="noopener noreferrer">Use Planner <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <div class="resource-tags">
+                        <span class="resource-tag">Renovation</span>
+                        <span class="resource-tag">Budget</span>
+                        <span class="resource-tag">Planner</span>
+                    </div>
+                </div>
+                
+                <div class="resource-item" data-id="resource-19" data-categories="tools" data-title="Property Depreciation Calculator" data-date="2025-01-20" data-rating="4.8" data-tags="depreciation tax calculator property">
+                    <div class="resource-header">
+                        <h3 class="resource-title">Property Depreciation Calculator</h3>
+                        <button class="bookmark-btn" aria-label="Add to bookmarks">
+                            <i class="far fa-bookmark bookmark-icon"></i>
+                        </button>
+                    </div>
+                    <div class="resource-meta">
+                        <span><i class="fas fa-calendar"></i> Updated: January 2025</span>
+                        <span><i class="fas fa-star"></i> 4.8/5</span>
+                    </div>
+                    <div class="resource-description">
+                        <p>Calculate potential tax deductions through property depreciation for investment properties in Gregory Hills.</p>
+                    </div>
+                    <div class="resource-link">
+                        <a href="https://www.bmtqs.com.au/tax-depreciation-calculator" target="_blank" rel="noopener noreferrer">Calculate Depreciation <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <div class="resource-tags">
+                        <span class="resource-tag">Depreciation</span>
+                        <span class="resource-tag">Tax</span>
+                        <span class="resource-tag">Calculator</span>
+                    </div>
+                </div>
+                
+                <div class="resource-item" data-id="resource-20" data-categories="tools" data-title="Capital Gains Tax Calculator" data-date="2025-04-25" data-rating="4.7" data-tags="capital gains tax calculator property">
+                    <div class="resource-header">
+                        <h3 class="resource-title">Capital Gains Tax Calculator</h3>
+                        <button class="bookmark-btn" aria-label="Add to bookmarks">
+                            <i class="far fa-bookmark bookmark-icon"></i>
+                        </button>
+                    </div>
+                    <div class="resource-meta">
+                        <span><i class="fas fa-calendar"></i> Updated: April 2025</span>
+                        <span><i class="fas fa-star"></i> 4.7/5</span>
+                    </div>
+                    <div class="resource-description">
+                        <p>Estimate potential capital gains tax liability when selling investment properties in Gregory Hills.</p>
+                    </div>
+                    <div class="resource-link">
+                        <a href="https://www.ato.gov.au/calculators-and-tools/capital-gains-tax-property-exemption-tool/" target="_blank" rel="noopener noreferrer">Calculate CGT <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <div class="resource-tags">
+                        <span class="resource-tag">Capital Gains</span>
+                        <span class="resource-tag">Tax</span>
+                        <span class="resource-tag">Calculator</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Resources -->
+    <section class="section bg-white">
+        <div class="container">
+            <h2 class="section-title">Recommended Reading</h2>
+            <p class="section-subtitle">Books and publications for property investors</p>
+            
+            <div class="row">
+                <div class="col col-md-4 col-sm-12">
+                    <div class="card">
+                        <div class="card-content">
+                            <h4>Market Reports</h4>
+                            <ul>
+                                <li><a href="https://www.corelogic.com.au/reports" target="_blank" rel="noopener noreferrer">CoreLogic Monthly Housing Market Update</a></li>
+                                <li><a href="https://www.domain.com.au/research/" target="_blank" rel="noopener noreferrer">Domain Property Market Reports</a></li>
+                                <li><a href="https://www.realestate.com.au/insights/property-outlook/" target="_blank" rel="noopener noreferrer">REA Property Outlook Report</a></li>
+                                <li><a href="https://www.yourinvestmentpropertymag.com.au/top-suburbs/" target="_blank" rel="noopener noreferrer">Your Investment Property Top Suburbs Guide</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-md-4 col-sm-12">
+                    <div class="card">
+                        <div class="card-content">
+                            <h4>Books</h4>
+                            <ul>
+                                <li>"From 0 to 130 Properties in 3.5 Years" by Steve McKnight</li>
+                                <li>"The Armchair Guide to Property Investing" by Ben Kingsley and Bryce Holdaway</li>
+                                <li>"The Successful Property Investor" by Margaret Lomas</li>
+                                <li>"Australian Residential Property Development for Investors" by Ron Forlee</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-md-4 col-sm-12">
+                    <div class="card">
+                        <div class="card-content">
+                            <h4>Podcasts</h4>
+                            <ul>
+                                <li><a href="https://www.propertychat.com.au/community/podcasts/" target="_blank" rel="noopener noreferrer">The Property Chat Podcast</a></li>
+                                <li><a href="https://www.propertyinvestor.com.au/podcast" target="_blank" rel="noopener noreferrer">The Property Investor Podcast</a></li>
+                                <li><a href="https://www.theproperty.coach/podcast" target="_blank" rel="noopener noreferrer">The Property Couch</a></li>
+                                <li><a href="https://www.smartpropertyinvestment.com.au/podcasts" target="_blank" rel="noopener noreferrer">Smart Property Investment Show</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section bg-primary">
+        <div class="container text-center">
+            <h2 style="color: white;">Ready to Start Your Investment Journey?</h2>
+            <p class="mb-4" style="color: white;">Use our interactive checklist to track your progress through the investment process.</p>
+            <a href="checklist.html" class="cta-button">View Investment Checklist</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3 class="footer-title">Gregory Hills Investment</h3>
+                    <p>A comprehensive guide to real estate investing in Gregory Hills, NSW, Australia.</p>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="market-trends.html">Market Trends</a></li>
+                        <li><a href="investment-strategy.html">Strategy</a></li>
+                        <li><a href="financial-analysis.html">Financial Analysis</a></li>
+                        <li><a href="tax-information.html">Tax Info</a></li>
+                        <li><a href="checklist.html">Checklist</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Disclaimer</h3>
+                    <p>This website is for informational purposes only. The information provided is based on research and should not be considered as financial advice. Always consult with a qualified professional before making investment decisions.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Gregory Hills Investment Guide. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/resources.js"></script>
+</body>
+</html>

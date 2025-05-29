@@ -1,0 +1,113 @@
+{
+  "price_trends": {
+    "historical": [
+      {"year": "2023", "quarter": "Q1", "median_price": 930000},
+      {"year": "2023", "quarter": "Q2", "median_price": 945000},
+      {"year": "2023", "quarter": "Q3", "median_price": 960000},
+      {"year": "2023", "quarter": "Q4", "median_price": 975000},
+      {"year": "2024", "quarter": "Q1", "median_price": 990000},
+      {"year": "2024", "quarter": "Q2", "median_price": 1007500},
+      {"year": "2025", "quarter": "Q1", "median_price": 1010000}
+    ],
+    "projected": [
+      {"year": "2025", "quarter": "Q2", "median_price": 1030000},
+      {"year": "2025", "quarter": "Q3", "median_price": 1050000},
+      {"year": "2025", "quarter": "Q4", "median_price": 1070000},
+      {"year": "2026", "quarter": "Q1", "median_price": 1090000}
+    ],
+    "annual_growth_rate": 8.3,
+    "quarterly_growth_rate": 3.86
+  },
+  "suburb_comparison": {
+    "median_house_prices": [
+      {"suburb": "Gregory Hills", "price": 1007500, "annual_growth": 8.3},
+      {"suburb": "Gledswood Hills", "price": 1323500, "annual_growth": 7.77},
+      {"suburb": "Oran Park", "price": 1075000, "annual_growth": 0.47},
+      {"suburb": "Harrington Park", "price": 1150000, "annual_growth": 5.2}
+    ],
+    "days_on_market": [
+      {"suburb": "Gregory Hills", "days": 27},
+      {"suburb": "Gledswood Hills", "days": 32},
+      {"suburb": "Oran Park", "days": 35},
+      {"suburb": "Harrington Park", "days": 30}
+    ],
+    "rental_yield": [
+      {"suburb": "Gregory Hills", "yield_percentage": 3.66},
+      {"suburb": "Gledswood Hills", "yield_percentage": 3.45},
+      {"suburb": "Oran Park", "yield_percentage": 3.52},
+      {"suburb": "Harrington Park", "yield_percentage": 3.38}
+    ]
+  },
+  "property_types": {
+    "distribution": [
+      {"type": "Separate Houses", "percentage": 96.7},
+      {"type": "Medium Density", "percentage": 3.2},
+      {"type": "Other", "percentage": 0.1}
+    ],
+    "current_listings": [
+      {"type": "Houses", "count": 674},
+      {"type": "House and Land Packages", "count": 184},
+      {"type": "Apartments", "count": 12},
+      {"type": "Other", "count": 2}
+    ],
+    "bedroom_performance": [
+      {"bedrooms": 3, "median_price": 920000, "days_on_market": 25},
+      {"bedrooms": 4, "median_price": 1050000, "days_on_market": 22},
+      {"bedrooms": 5, "median_price": 1200000, "days_on_market": 30}
+    ]
+  },
+  "demographics": {
+    "age_groups": [
+      {"age_range": "0-9", "percentage": 22},
+      {"age_range": "10-19", "percentage": 12},
+      {"age_range": "20-29", "percentage": 15},
+      {"age_range": "30-39", "percentage": 25},
+      {"age_range": "40-49", "percentage": 15},
+      {"age_range": "50-59", "percentage": 7},
+      {"age_range": "60+", "percentage": 4}
+    ],
+    "household_composition": [
+      {"type": "Family Households", "percentage": 90.9},
+      {"type": "Single-person Households", "percentage": 7.6},
+      {"type": "Group Households", "percentage": 1.4}
+    ],
+    "income_distribution": [
+      {"income_range": "$0-$999", "percentage": 5},
+      {"income_range": "$1,000-$1,999", "percentage": 20},
+      {"income_range": "$2,000-$2,999", "percentage": 40},
+      {"income_range": "$3,000+", "percentage": 35}
+    ]
+  },
+  "market_activity": {
+    "total_properties": 4991,
+    "properties_sold_last_12_months": 177,
+    "current_listings": {
+      "for_sale": 52,
+      "for_rent": 27
+    },
+    "average_time_to_sell": 27,
+    "price_range": {
+      "entry_level": 885000,
+      "median": 1007500,
+      "high_end": 1320000
+    }
+  },
+  "investment_metrics": {
+    "rental_data": {
+      "median_weekly_rent": 700,
+      "rental_yield": 3.66,
+      "vacancy_rate": 1.2
+    },
+    "renovation_potential": {
+      "average_renovation_cost": 50000,
+      "average_value_add_percentage": 15,
+      "recommended_renovation_focus": [
+        "Kitchen modernization",
+        "Bathroom upgrades",
+        "Open plan living conversion",
+        "Outdoor entertainment areas",
+        "Energy efficiency improvements"
+      ]
+    }
+  }
+}
