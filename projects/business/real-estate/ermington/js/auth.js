@@ -1,4 +1,6 @@
 // Password protection for Ermington real estate pages
+import { CONFIG } from './config.js';
+
 const PASSWORD = 'nodramas77';
 
 function checkAuth() {
@@ -63,6 +65,11 @@ function showLoginForm() {
     errorMsg.style.color = 'red';
     errorMsg.style.display = 'none';
 
+    // Create PayPal button container
+    const paypalContainer = document.createElement('div');
+    paypalContainer.id = 'paypal-button-container';
+    paypalContainer.style.marginTop = '1rem';
+
     button.onclick = () => {
         if (input.value === PASSWORD) {
             sessionStorage.setItem('ermingtonAuth', 'true');
@@ -77,8 +84,58 @@ function showLoginForm() {
     loginForm.appendChild(input);
     loginForm.appendChild(button);
     loginForm.appendChild(errorMsg);
+    loginForm.appendChild(paypalContainer);
     loginContainer.appendChild(loginForm);
     document.body.appendChild(loginContainer);
+
+    // Add PayPal script
+    const paypalScript = document.createElement('script');
+    paypalScript.src = `${CONFIG.PAYPAL.SDK_URL}?client-id=${CONFIG.PAYPAL.CLIENT_ID}&currency=${CONFIG.PAYPAL.CURRENCY}&components=${CONFIG.PAYPAL.COMPONENTS}`;
+    
+    paypalScript.onload = () => {
+        if (window.paypal) {
+            paypal.Buttons({
+                style: {
+                    layout: 'vertical',
+                    color: 'blue',
+                    shape: 'rect',
+                    label: 'pay'
+                },
+                createOrder: function(data, actions) {
+                    return actions.order.create({
+                        purchase_units: [{
+                            amount: {
+                                value: `${CONFIG.PAYPAL.AMOUNT}`
+                            }
+                        }]
+                    });
+                },
+                onApprove: function(data, actions) {
+                    return actions.order.capture().then(function(details) {
+                        alert('Transaction completed by ' + details.payer.name.given_name);
+                    });
+                },
+                onError: function(err) {
+                    console.error('PayPal Error:', err);
+                    alert('There was an error processing your payment. Please try again.');
+                }
+            }).render('#paypal-button-container')
+            .catch(function(error) {
+                console.error('PayPal Button Render Error:', error);
+                paypalContainer.innerHTML = '<p style="color: red;">Error loading PayPal button. Please refresh the page.</p>';
+            });
+        } else {
+            console.error('PayPal SDK failed to load');
+            paypalContainer.innerHTML = '<p style="color: red;">Error loading PayPal. Please refresh the page.</p>';
+        }
+    };
+
+    paypalScript.onerror = () => {
+        console.error('Failed to load PayPal SDK');
+        paypalContainer.innerHTML = '<p style="color: red;">Error loading PayPal. Please refresh the page.</p>';
+    };
+
+    document.body.appendChild(paypalScript);
 }
 
 // Check authentication when page loads
