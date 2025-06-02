@@ -1,8 +1,74 @@
 // Password protection for Gregory Hills real estate pages
+import { CONFIG } from './config.js';
+
 const PASSWORD = 'nodramas23';
+const AUTH_COOKIE_NAME = 'gregoryhills_paid_access';
+
+// Customize right-click menu to only show Print option
+function customizeContextMenu() {
+    document.addEventListener('contextmenu', (e) => {
+        // Prevent the default context menu
+        e.preventDefault();
+        
+        // Create custom context menu
+        const contextMenu = document.createElement('div');
+        contextMenu.style.cssText = `
+            position: fixed;
+            left: ${e.pageX}px;
+            top: ${e.pageY}px;
+            background: white;
+            border: 1px solid #ccc;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+            padding: 5px 0;
+            z-index: 1000;
+        `;
+
+        // Add Print option
+        const printOption = document.createElement('div');
+        printOption.textContent = 'Print...';
+        printOption.style.cssText = `
+            padding: 5px 20px;
+            cursor: pointer;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        `;
+        printOption.onmouseover = () => printOption.style.backgroundColor = '#f0f0f0';
+        printOption.onmouseout = () => printOption.style.backgroundColor = 'white';
+        printOption.onclick = () => {
+            window.print();
+            document.body.removeChild(contextMenu);
+        };
+
+        contextMenu.appendChild(printOption);
+        document.body.appendChild(contextMenu);
+
+        // Remove context menu when clicking elsewhere
+        const removeMenu = (e) => {
+            if (!contextMenu.contains(e.target)) {
+                document.body.removeChild(contextMenu);
+                document.removeEventListener('click', removeMenu);
+            }
+        };
+        document.addEventListener('click', removeMenu);
+    });
+}
+
+function setAuthCookie() {
+    const expiryDate = new Date();
+    expiryDate.setDate(expiryDate.getDate() + 365); // 365 days from now
+    document.cookie = `${AUTH_COOKIE_NAME}=true; expires=${expiryDate.toUTCString()}; path=/`;
+}
 
 function checkAuth() {
-    const isAuthenticated = sessionStorage.getItem('gregoryHillsAuth');
+    // Skip authentication for index.html
+    if (window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/')) {
+        return;
+    }
+
+    // Check for auth cookie
+    const hasAuthCookie = document.cookie.split(';').some(c => c.trim().startsWith(`${AUTH_COOKIE_NAME}=`));
+    const isAuthenticated = sessionStorage.getItem('gregoryhillsAuth') || hasAuthCookie;
+    
     if (!isAuthenticated) {
         showLoginForm();
     }
@@ -63,9 +129,14 @@ function showLoginForm() {
     errorMsg.style.color = 'red';
     errorMsg.style.display = 'none';
 
+    // Create PayPal button container
+    const paypalContainer = document.createElement('div');
+    paypalContainer.id = 'paypal-button-container';
+    paypalContainer.style.marginTop = '1rem';
+
     button.onclick = () => {
         if (input.value === PASSWORD) {
-            sessionStorage.setItem('gregoryHillsAuth', 'true');
+            sessionStorage.setItem('gregoryhillsAuth', 'true');
             window.location.reload();
         } else {
             errorMsg.textContent = 'Incorrect password';
@@ -77,9 +148,69 @@ function showLoginForm() {
     loginForm.appendChild(input);
     loginForm.appendChild(button);
     loginForm.appendChild(errorMsg);
+    loginForm.appendChild(paypalContainer);
     loginContainer.appendChild(loginForm);
     document.body.appendChild(loginContainer);
+
+    // Add PayPal script
+    const paypalScript = document.createElement('script');
+    paypalScript.src = `${CONFIG.PAYPAL.SDK_URL}?client-id=${CONFIG.PAYPAL.CLIENT_ID}&currency=${CONFIG.PAYPAL.CURRENCY}&components=${CONFIG.PAYPAL.COMPONENTS}`;
+    
+    paypalScript.onload = () => {
+        if (window.paypal) {
+            paypal.Buttons({
+                style: {
+                    layout: 'vertical',
+                    color: 'blue',
+                    shape: 'rect',
+                    label: 'pay'
+                },
+                createOrder: function(data, actions) {
+                    return actions.order.create({
+                        purchase_units: [{
+                            amount: {
+                                value: `${CONFIG.PAYPAL.AMOUNT}`
+                            }
+                        }]
+                    });
+                },
+                onApprove: function(data, actions) {
+                    return actions.order.capture().then(function(details) {
+                        // Set the auth cookie
+                        setAuthCookie();
+                        // Also set session storage for immediate access
+                        sessionStorage.setItem('gregoryhillsAuth', 'true');
+                        // Show success message
+                        alert('Thank you for your purchase! You now have access to all content for 365 days.');
+                        // Reload the page to show the content
+                        window.location.reload();
+                    });
+                },
+                onError: function(err) {
+                    console.error('PayPal Error:', err);
+                    alert('There was an error processing your payment. Please try again.');
+                }
+            }).render('#paypal-button-container')
+            .catch(function(error) {
+                console.error('PayPal Button Render Error:', error);
+                paypalContainer.innerHTML = '<p style="color: red;">Error loading PayPal button. Please refresh the page.</p>';
+            });
+        } else {
+            console.error('PayPal SDK failed to load');
+            paypalContainer.innerHTML = '<p style="color: red;">Error loading PayPal. Please refresh the page.</p>';
+        }
+    };
+
+    paypalScript.onerror = () => {
+        console.error('Failed to load PayPal SDK');
+        paypalContainer.innerHTML = '<p style="color: red;">Error loading PayPal. Please refresh the page.</p>';
+    };
+
+    document.body.appendChild(paypalScript);
 }
 
 // Check authentication when page loads
-document.addEventListener('DOMContentLoaded', checkAuth); 
+document.addEventListener('DOMContentLoaded', () => {
+    checkAuth();
+    customizeContextMenu();
+}); 
