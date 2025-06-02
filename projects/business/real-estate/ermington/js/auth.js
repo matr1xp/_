@@ -4,11 +4,52 @@ import { CONFIG } from './config.js';
 const PASSWORD = 'nodramas77';
 const AUTH_COOKIE_NAME = 'ermington_paid_access';
 
-// Disable right-click
-function disableRightClick() {
+// Customize right-click menu to only show Print option
+function customizeContextMenu() {
     document.addEventListener('contextmenu', (e) => {
+        // Prevent the default context menu
         e.preventDefault();
-        return false;
+        
+        // Create custom context menu
+        const contextMenu = document.createElement('div');
+        contextMenu.style.cssText = `
+            position: fixed;
+            left: ${e.pageX}px;
+            top: ${e.pageY}px;
+            background: white;
+            border: 1px solid #ccc;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+            padding: 5px 0;
+            z-index: 1000;
+        `;
+
+        // Add Print option
+        const printOption = document.createElement('div');
+        printOption.textContent = 'Print...';
+        printOption.style.cssText = `
+            padding: 5px 20px;
+            cursor: pointer;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        `;
+        printOption.onmouseover = () => printOption.style.backgroundColor = '#f0f0f0';
+        printOption.onmouseout = () => printOption.style.backgroundColor = 'white';
+        printOption.onclick = () => {
+            window.print();
+            document.body.removeChild(contextMenu);
+        };
+
+        contextMenu.appendChild(printOption);
+        document.body.appendChild(contextMenu);
+
+        // Remove context menu when clicking elsewhere
+        const removeMenu = (e) => {
+            if (!contextMenu.contains(e.target)) {
+                document.body.removeChild(contextMenu);
+                document.removeEventListener('click', removeMenu);
+            }
+        };
+        document.addEventListener('click', removeMenu);
     });
 }
 
@@ -171,5 +212,5 @@ function showLoginForm() {
 // Check authentication when page loads
 document.addEventListener('DOMContentLoaded', () => {
     checkAuth();
-    disableRightClick();
+    customizeContextMenu();
 }); 
