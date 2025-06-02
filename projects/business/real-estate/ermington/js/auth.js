@@ -2,9 +2,32 @@
 import { CONFIG } from './config.js';
 
 const PASSWORD = 'nodramas77';
+const AUTH_COOKIE_NAME = 'ermington_paid_access';
+
+// Disable right-click
+function disableRightClick() {
+    document.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+        return false;
+    });
+}
+
+function setAuthCookie() {
+    const expiryDate = new Date();
+    expiryDate.setDate(expiryDate.getDate() + 365); // 365 days from now
+    document.cookie = `${AUTH_COOKIE_NAME}=true; expires=${expiryDate.toUTCString()}; path=/`;
+}
 
 function checkAuth() {
-    const isAuthenticated = sessionStorage.getItem('ermingtonAuth');
+    // Skip authentication for index.html
+    if (window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/')) {
+        return;
+    }
+
+    // Check for auth cookie
+    const hasAuthCookie = document.cookie.split(';').some(c => c.trim().startsWith(`${AUTH_COOKIE_NAME}=`));
+    const isAuthenticated = sessionStorage.getItem('ermingtonAuth') || hasAuthCookie;
+    
     if (!isAuthenticated) {
         showLoginForm();
     }
@@ -112,7 +135,14 @@ function showLoginForm() {
                 },
                 onApprove: function(data, actions) {
                     return actions.order.capture().then(function(details) {
-                        alert('Transaction completed by ' + details.payer.name.given_name);
+                        // Set the auth cookie
+                        setAuthCookie();
+                        // Also set session storage for immediate access
+                        sessionStorage.setItem('ermingtonAuth', 'true');
+                        // Show success message
+                        alert('Thank you for your purchase! You now have access to all content for 365 days.');
+                        // Reload the page to show the content
+                        window.location.reload();
                     });
                 },
                 onError: function(err) {
@@ -139,4 +169,7 @@ function showLoginForm() {
 }
 
 // Check authentication when page loads
-document.addEventListener('DOMContentLoaded', checkAuth); 
+document.addEventListener('DOMContentLoaded', () => {
+    checkAuth();
+    disableRightClick();
+}); 
