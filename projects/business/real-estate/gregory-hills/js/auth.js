@@ -1,8 +1,13 @@
 // Password protection for Gregory Hills real estate pages
 import { CONFIG } from './config.js';
 
-const PASSWORD = 'nodramas23';
-const AUTH_COOKIE_NAME = 'gregoryhills_paid_access';
+async function hashPassword(password) {
+    const encoder = new TextEncoder();
+    const data = encoder.encode(password);
+    const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+}
 
 // Customize right-click menu to only show Print option
 function customizeContextMenu() {
@@ -56,7 +61,7 @@ function customizeContextMenu() {
 function setAuthCookie() {
     const expiryDate = new Date();
     expiryDate.setDate(expiryDate.getDate() + 365); // 365 days from now
-    document.cookie = `${AUTH_COOKIE_NAME}=true; expires=${expiryDate.toUTCString()}; path=/`;
+    document.cookie = `${CONFIG.AUTH.COOKIE_NAME}=${CONFIG.AUTH.PASSWORD_HASH}; expires=${expiryDate.toUTCString()}; path=/`;
 }
 
 function checkAuth() {
@@ -66,7 +71,9 @@ function checkAuth() {
     }
 
     // Check for auth cookie
-    const hasAuthCookie = document.cookie.split(';').some(c => c.trim().startsWith(`${AUTH_COOKIE_NAME}=`));
+    const cookies = document.cookie.split(';');
+    const authCookie = cookies.find(c => c.trim().startsWith(`${CONFIG.AUTH.COOKIE_NAME}=`));
+    const hasAuthCookie = authCookie && authCookie.split('=')[1] === CONFIG.AUTH.PASSWORD_HASH;
     const isAuthenticated = sessionStorage.getItem('gregoryhillsAuth') || hasAuthCookie;
     
     if (!isAuthenticated) {
@@ -134,8 +141,10 @@ function showLoginForm() {
     paypalContainer.id = 'paypal-button-container';
     paypalContainer.style.marginTop = '1rem';
 
-    button.onclick = () => {
-        if (input.value === PASSWORD) {
+    button.onclick = async () => {
+        const userInput = input.value.trim();
+        const inputHash = await hashPassword(userInput);
+        if (inputHash === CONFIG.AUTH.PASSWORD_HASH) {
             sessionStorage.setItem('gregoryhillsAuth', 'true');
             window.location.reload();
         } else {
