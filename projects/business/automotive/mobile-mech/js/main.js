@@ -21,6 +21,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize charts if they exist
     initCharts();
+
+    // Initialize print functionality
+    initPrintChecklist();
 });
 
 /**
@@ -527,3 +530,83 @@ function initBackToTopButton() {
 
 // Initialize back to top button
 initBackToTopButton();
+
+/**
+ * Initialize print checklist functionality
+ */
+function initPrintChecklist() {
+    const printButton = document.getElementById('print-checklist');
+    if (printButton) {
+        printButton.addEventListener('click', function() {
+            // Create a new window for printing
+            const printWindow = window.open('', '_blank');
+            
+            // Get the checklist content
+            const checklistContainer = document.querySelector('.checklist-container');
+            if (!checklistContainer) return;
+
+            // Create the print content
+            const printContent = `
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <title>Mobile Auto-Repair Checklist</title>
+                    <style>
+                        body {
+                            font-family: Arial, sans-serif;
+                            line-height: 1.6;
+                            padding: 20px;
+                        }
+                        .checklist-section {
+                            margin-bottom: 20px;
+                        }
+                        .checklist-section h3 {
+                            color: #333;
+                            border-bottom: 2px solid #ddd;
+                            padding-bottom: 5px;
+                        }
+                        .checklist-item {
+                            margin: 10px 0;
+                            padding: 5px 0;
+                        }
+                        .checklist-item-title {
+                            font-weight: bold;
+                        }
+                        .checklist-item-description {
+                            color: #666;
+                            font-size: 0.9em;
+                            margin-top: 3px;
+                        }
+                        .completed {
+                            text-decoration: line-through;
+                            color: #27ae60;
+                        }
+                        @media print {
+                            .checklist-item {
+                                page-break-inside: avoid;
+                            }
+                        }
+                    </style>
+                </head>
+                <body>
+                    <h1>Mobile Auto-Repair Checklist</h1>
+                    ${checklistContainer.innerHTML}
+                </body>
+                </html>
+            `;
+
+            // Write the content to the new window
+            printWindow.document.write(printContent);
+            printWindow.document.close();
+
+            // Wait for content to load then print
+            printWindow.onload = function() {
+                printWindow.print();
+                // Close the window after printing
+                printWindow.onafterprint = function() {
+                    printWindow.close();
+                };
+            };
+        });
+    }
+}
