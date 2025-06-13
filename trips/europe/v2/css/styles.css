@@ -566,6 +566,24 @@ img {
     left: 0;
 }
 
+.daily-itinerary .city-card-content {
+    border: none;
+    padding: 0;
+}
+
+.daily-itinerary .city-card {
+    margin-bottom: 2rem;
+}
+
+.daily-itinerary .city-card:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.daily-itinerary .city-card h3 {
+    margin-bottom: 0;
+}
+
 /* ===== ACCOMMODATION STYLES ===== */
 .accommodation-options {
     display: flex;
