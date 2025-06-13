@@ -152,8 +152,10 @@ function initMainMap() {
         
         // Add markers for each city
         const cities = [
-            { name: 'Rome', coords: [41.9028, 12.4964], dates: 'December 15-20' },
-            { name: 'Paris', coords: [48.8566, 2.3522], dates: 'December 21-26' },
+            { name: 'Rome', coords: [41.9028, 12.4964], dates: 'December 15-17' },
+            { name: 'Venice', coords: [45.4408, 12.3155], dates: 'December 18-19' },
+            { name: 'Milan', coords: [45.4642, 9.1900], dates: 'December 20-22' },
+            { name: 'Paris', coords: [48.8566, 2.3522], dates: 'December 23-26' },
             { name: 'London', coords: [51.5074, -0.1278], dates: 'December 27-31' }
         ];
         

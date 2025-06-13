@@ -1980,6 +1980,10 @@ body.dark-mode .weather-details h4,
 body.dark-mode .packing-tips h4 {
     color: var(--gold);
 }
+body.dark-mode .itinerary-card h3,
+body.dark-mode .itinerary-content {
+    color: var(--text-color-dark);
+}
 
 /* Theme toggle button styles */
 .theme-toggle {
@@ -2012,16 +2016,27 @@ body.dark-mode .theme-toggle {
 }
 
 .itinerary-card {
-    background: var(--white);
-    border-radius: 8px;
+    background: var(--card-bg);
+    border-radius: 12px;
     padding: 1.5rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    display: block;
 }
 
 .itinerary-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    color: #666;
+}
+
+.itinerary-card:focus {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
 }
 
 .itinerary-card h3 {
