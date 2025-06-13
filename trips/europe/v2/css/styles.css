@@ -1997,3 +1997,174 @@ body.dark-mode .packing-tips h4 {
 body.dark-mode .theme-toggle {
     color: var(--gold);
 }
+
+/* ===== ITINERARY SUMMARY STYLES ===== */
+.itinerary-summary {
+    padding: 4rem 0;
+    background-color: var(--light-bg);
+}
+
+.itinerary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.itinerary-card {
+    background: var(--white);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.itinerary-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.itinerary-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.itinerary-content h4 {
+    color: var(--secondary-color);
+    margin: 1rem 0 0.5rem;
+    font-size: 1.1rem;
+}
+
+.itinerary-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.itinerary-content li {
+    padding: 0.3rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.itinerary-content li::before {
+    content: "•";
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+}
+
+/* ===== WEATHER SECTION STYLES ===== */
+.weather-section {
+    padding: 4rem 0;
+    background-color: var(--white);
+}
+
+.weather-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.weather-card {
+    background: var(--light-bg);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.weather-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.weather-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.weather-content {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.weather-icon {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.weather-details {
+    flex: 1;
+}
+
+.weather-details h4 {
+    color: var(--secondary-color);
+    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+}
+
+.weather-details ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.weather-details li {
+    padding: 0.3rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.weather-details li::before {
+    content: "•";
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+}
+
+/* Dark mode styles for new sections */
+body.dark-mode .itinerary-summary {
+    background-color: var(--dark-bg);
+}
+
+body.dark-mode .itinerary-card,
+body.dark-mode .weather-card {
+    background: var(--dark-card);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .itinerary-card:hover,
+body.dark-mode .weather-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .weather-section {
+    background-color: var(--dark-bg);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .weather-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .weather-icon {
+        margin-bottom: 1rem;
+    }
+
+    .weather-details li {
+        padding-left: 0;
+    }
+
+    .weather-details li::before {
+        display: none;
+    }
+}
