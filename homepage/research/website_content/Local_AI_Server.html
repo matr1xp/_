@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Setting up your local AI server # | home</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Setting up your local AI server #" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Hosting digital information using Github" />
+<meta property="og:description" content="Hosting digital information using Github" />
+<link rel="canonical" href="https://marlsantos.com/projects/Local_AI_Server.html" />
+<meta property="og:url" content="https://marlsantos.com/projects/Local_AI_Server.html" />
+<meta property="og:site_name" content="home" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Setting up your local AI server #" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Hosting digital information using Github","headline":"Setting up your local AI server #","url":"https://marlsantos.com/projects/Local_AI_Server.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=a2312f62e7098123649a9cad90aaeac5b2156080">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      
+      <h1><a href="https://marlsantos.com/">home</a></h1>
+      
+
+      <h1 id="setting-up-your-local-ai-server">Setting up your local AI server</h1>
+
+<p>Run AI models on your own server. Benefits include:</p>
+<ul>
+  <li>Enhanced Privacy and Data Security</li>
+  <li>Fully offline (no internet required)</li>
+  <li>Improved Performance and Speed</li>
+  <li>Autonomy and Control</li>
+</ul>
+
+<h2 id="pre-requisites">Pre-requisites</h2>
+
+<ol>
+  <li>Ollama - <a href="https://ollama.com">https://ollama.com</a></li>
+  <li>Docker - <a href="https://docs.docker.com">https://docs.docker.com</a></li>
+  <li>Open WebUI - <a href="https://github.com/open-webui/open-webui">https://github.com/open-webui/open-webui</a></li>
+  <li>Ngrok - <a href="https://ngrok.com/product/platform">https://ngrok.com/product/platform</a></li>
+</ol>
+
+<h3 id="ollama">Ollama</h3>
+<ol>
+  <li>Windows
+Recommend using Linux. Install <em>WSL</em>.
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wsl --install
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Mac
+Download <a href="https://ollama.com/download/mac">ollama</a>.</p>
+  </li>
+  <li>Linux
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -fsSL https://ollama.com/install.sh | sh
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="docker">Docker</h3>
+<ol>
+  <li>Windows (WSL) and Linux
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Add Docker's official GPG key:
+sudo apt-get update
+sudo apt-get install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+   
+# Add the repository to Apt sources:
+echo \
+"deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+$(. /etc/os-release &amp;&amp; echo "$VERSION_CODENAME") stable" | \
+sudo tee /etc/apt/sources.list.d/docker.list 
+</code></pre></div>    </div>
+  </li>
+  <li>Mac
+Download <a href="https://docs.docker.com/desktop/install/mac-install">docker</a>.</li>
+</ol>
+
+<h3 id="open-webui">Open WebUI</h3>
+<ol>
+  <li>Windows (WSL),  Mac and Linux
+Run in <strong><em>open-webui</em></strong> in a Docker container
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run -d --network=host -v open-webui:/app/backend/data -e OLLAMA_BASE_URL=http://127.0.0.1:11434 --name open-webui --restart always ghcr.io/open-webui/open-webui:main
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="ngrok">Ngrok</h3>
+<ol>
+  <li>Windows (WSL) and Linux
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | sudo tee /etc/apt/trusted.gpg.d/ngrok.asc &gt;/dev/null &amp;&amp; echo "deb https://ngrok-agent.s3.amazonaws.com buster main" | sudo tee /etc/apt/sources.list.d/ngrok.list &amp;&amp; sudo apt update &amp;&amp; sudo apt install ngrok
+</code></pre></div>    </div>
+  </li>
+  <li>Mac <br />
+Download <a href="https://ngrok.com/download">ngrok</a>.</li>
+</ol>
+
+<p><strong>Kudos</strong>
+Thanks to NetworkChuck for this wonderful <a href="https://youtu.be/Wjrdr0NU4Sk?si=dZbwRFkGGLMBIMcZ">YouTube</a> guide.</p>
+
+
+      
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+  </body>
+</html>
