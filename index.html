@@ -811,6 +811,25 @@
             color: var(--matrix-green);
             font-family: 'Source Code Pro', monospace;
         }
+
+        /* Project Links */
+        .project-link {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: rgba(0, 20, 0, 0.3);
+            border: 1px solid var(--matrix-green-dark);
+            border-radius: 3px;
+            color: var(--matrix-green);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            background-color: var(--matrix-green-dark);
+            color: var(--highlight);
+            box-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+        }
     </style>
 </head>
 <body>
@@ -984,6 +1003,7 @@
                     <div class="project-description">
                         <p>APT Mobile is a Product tracking app powered by Google Cloud Vision and Price API.</p>
                         <p><strong>Technologies:</strong> React Native, Firebase, Google Cloud</p>
+                        <a href="https://apps.apple.com/au/app/aptmobile/id6742728069" target="_blank" rel="noopener noreferrer" class="project-link">Download App</a>
                     </div>
                 </div>
                 
@@ -992,6 +1012,7 @@
                     <div class="project-description">
                         <p>AI powered automotive service scheduling and management system</p>
                         <p><strong>Technologies:</strong> Next.js, Tailwind CSS, Firebase</p>
+                        <a href="https://autopilot.startyourbusiness.au" target="_blank" rel="noopener noreferrer" class="project-link">Book a Service</a>
                     </div>
                 </div>
 
@@ -1000,6 +1021,7 @@
                     <div class="project-description">
                         <p>Business management website helping people start their own business in Australia</p>
                         <p><strong>Technologies:</strong> HTML, CSS, JavaScript</p>
+                        <a href="https://startyourbusiness.au" target="_blank" rel="noopener noreferrer" class="project-link">Start Now</a>
                     </div>
                 </div>
                 
