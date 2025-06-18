@@ -1385,16 +1385,27 @@
             const projectCards = document.querySelectorAll('.project-card');
             
             projectCards.forEach(card => {
+                // Handle hover for desktop
                 card.addEventListener('mouseenter', function() {
-                    // Add matrix code symbols around the card on hover
-                    const symbolCount = 8; // Increased number of symbols
-                    for (let i = 0; i < symbolCount; i++) {
-                        setTimeout(() => {
-                            createMatrixSymbol(this);
-                        }, i * 100); // Stagger the creation of symbols
-                    }
+                    createMatrixSymbols(this);
+                });
+
+                // Handle touch for mobile
+                card.addEventListener('touchstart', function(e) {
+                    e.preventDefault(); // Prevent default touch behavior
+                    createMatrixSymbols(this);
                 });
             });
+            
+            function createMatrixSymbols(parent) {
+                // Add matrix code symbols around the card
+                const symbolCount = 8;
+                for (let i = 0; i < symbolCount; i++) {
+                    setTimeout(() => {
+                        createMatrixSymbol(parent);
+                    }, i * 100);
+                }
+            }
             
             function createMatrixSymbol(parent) {
                 const symbol = document.createElement('div');
