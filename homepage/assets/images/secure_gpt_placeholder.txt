@@ -1,2 +1,0 @@
-This is a placeholder for the SecureAI image (images/gemini_secure-gpt.jpeg) found in SecureAI.html.
-In the final implementation, this would be the actual image downloaded from the website.

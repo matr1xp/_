@@ -1,11 +1,1495 @@
 <!DOCTYPE html>
-  <html lang="en">
-  <head>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <title>Links</title>
-    <meta http-equiv="refresh" content="0; url=./final/index_fixed.html">
-  </head>
-  <body>
-    <p>If you are not redirected automatically, follow this <a href="./final/index_fixed.html">./final/index_fixed.html</a>.</p>
-  </body>
-  </html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marlon R. Santos - Matrix Homepage</title>
+    <link rel="preconnect" href="https://developers.google.com/fonts/docs/getting_started">
+    <link rel="preconnect" href="https://stackoverflow.com/questions/74070917/static-urls-to-google-fonts" crossorigin>
+    <link href="https://developers.google.com/fonts/docs/getting_started/css2?family=Courier+Prime:wght@400;700&family=Source+Code+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Matrix-Inspired Theme Variables */
+        :root {
+            --matrix-green: #00FF41;
+            --matrix-green-muted: #2AE600;
+            --matrix-green-dark: #008F11;
+            --deep-green: #003B00;
+            --dark-bg: #000000;
+            --dark-gray: #1A1A1A;
+            --medium-gray: #4F4F4F;
+            --light-gray: #CCCCCC;
+            --highlight: #FFFFFF;
+            --code-green: #4CAF50;
+            --warning-red: #FF0000;
+        }
+
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--dark-bg);
+            color: var(--light-gray);
+            font-family: 'Courier Prime', 'Courier New', monospace;
+            line-height: 1.6;
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Matrix Background Effect */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(0, 20, 0, 0.5) 0%, rgba(0, 0, 0, 0.9) 100%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Matrix Canvas */
+        #matrix-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            opacity: 0.7;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Source Code Pro', monospace;
+            color: var(--matrix-green);
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 0 0 5px rgba(0, 255, 65, 0.5);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            border-bottom: 2px solid var(--matrix-green-dark);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            border-bottom: 1px solid var(--matrix-green-dark);
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            color: var(--matrix-green);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        a:hover {
+            color: var(--highlight);
+            text-shadow: 0 0 8px var(--matrix-green);
+        }
+
+        a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--matrix-green);
+            transition: width 0.3s ease;
+        }
+
+        a:hover::after {
+            width: 100%;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--matrix-green-dark);
+            box-shadow: 0 2px 10px rgba(0, 255, 65, 0.2);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        nav li {
+            margin: 0 1rem;
+        }
+
+        nav a {
+            font-family: 'Source Code Pro', monospace;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: rgba(0, 255, 65, 0.1);
+        }
+
+        /* Sections */
+        section {
+            margin: 4rem 0;
+            padding: 2rem;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 5px;
+            border: 1px solid var(--deep-green);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--matrix-green), transparent);
+        }
+
+        /* Matrix Glitch Effect */
+        .glitch {
+            position: relative;
+            display: inline-block;
+        }
+
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.8;
+        }
+
+        .glitch::before {
+            color: var(--warning-red);
+            z-index: -1;
+            animation: glitch-animation 0.3s infinite;
+        }
+
+        .glitch::after {
+            color: var(--matrix-green);
+            z-index: -2;
+            animation: glitch-animation 0.3s infinite reverse;
+        }
+
+        @keyframes glitch-animation {
+            0% {
+                transform: translate(0);
+            }
+            20% {
+                transform: translate(-2px, 2px);
+            }
+            40% {
+                transform: translate(-2px, -2px);
+            }
+            60% {
+                transform: translate(2px, 2px);
+            }
+            80% {
+                transform: translate(2px, -2px);
+            }
+            100% {
+                transform: translate(0);
+            }
+        }
+
+        /* Buttons */
+        .button {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: var(--dark-gray);
+            color: var(--matrix-green);
+            border: 1px solid var(--matrix-green-dark);
+            border-radius: 3px;
+            font-family: 'Source Code Pro', monospace;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-right: 1rem;
+            margin-bottom: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 65, 0.2), transparent);
+            transition: all 0.6s ease;
+        }
+
+        .button:hover {
+            background-color: var(--deep-green);
+            color: var(--highlight);
+            box-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+        }
+
+        .button:hover::before {
+            left: 100%;
+        }
+
+        /* Hero Buttons */
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .hero-button {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: var(--matrix-green);
+            border: 1px solid var(--matrix-green);
+            border-radius: 3px;
+            font-family: 'Source Code Pro', monospace;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 65, 0.2), transparent);
+            transition: all 0.6s ease;
+        }
+
+        .hero-button:hover {
+            background-color: var(--matrix-green-dark);
+            color: var(--highlight);
+            box-shadow: 0 0 15px rgba(0, 255, 65, 0.7);
+        }
+
+        .hero-button:hover::before {
+            left: 100%;
+        }
+
+        /* Skills */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            margin-bottom: 2rem;
+        }
+
+        .skill-category h3 {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .skill-category h3::before {
+            content: '>';
+            color: var(--matrix-green);
+            margin-right: 0.5rem;
+            font-weight: bold;
+        }
+
+        .skill-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-item {
+            background-color: rgba(0, 20, 0, 0.5);
+            border: 1px solid var(--matrix-green-dark);
+            border-radius: 3px;
+            padding: 0.25rem 0.75rem;
+            font-family: 'Source Code Pro', monospace;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            visibility: hidden; /* Initially hidden for decoding effect */
+        }
+
+        .skill-item:hover {
+            background-color: var(--matrix-green-dark);
+            color: var(--highlight);
+            box-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+            transform: translateY(-2px);
+        }
+
+        /* Experience */
+        .experience-item {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px dashed var(--deep-green);
+            position: relative;
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .experience-title {
+            color: var(--matrix-green-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-company {
+            font-weight: bold;
+        }
+
+        .experience-date {
+            color: var(--medium-gray);
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+
+        .experience-description {
+            margin-bottom: 1rem;
+        }
+
+        .experience-highlights {
+            list-style-type: none;
+        }
+
+        .experience-highlights li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .experience-highlights li::before {
+            content: '>';
+            color: var(--matrix-green);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background-color: rgba(0, 20, 0, 0.3);
+            border: 1px solid var(--deep-green);
+            border-radius: 5px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 255, 65, 0.2);
+            border-color: var(--matrix-green-dark);
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 0;
+            background-color: var(--matrix-green);
+            transition: height 0.3s ease;
+        }
+
+        .project-card:hover::before {
+            height: 100%;
+        }
+
+        .project-title {
+            color: var(--matrix-green-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-description {
+            margin-top: 1rem;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 3px;
+            margin-bottom: 1rem;
+            border: 1px solid var(--matrix-green-dark);
+        }
+
+        .project-icon {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            margin-bottom: 1rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .hero-content {
+            z-index: 2;
+            max-width: 800px;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 5px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            border-bottom: none;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Typing cursor animation */
+        .typing-cursor {
+            display: inline-block;
+            width: 3px;
+            height: 1.2em;
+            background-color: var(--matrix-green);
+            margin-left: 2px;
+            vertical-align: middle;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* Education */
+        .education-item {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px dashed var(--deep-green);
+        }
+
+        .education-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .education-degree {
+            color: var(--matrix-green-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .education-institution {
+            font-weight: bold;
+        }
+
+        .education-date {
+            color: var(--medium-gray);
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .contact-icon {
+            margin-right: 1rem;
+            color: var(--matrix-green);
+            font-size: 1.5rem;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-label {
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+        }
+
+        .contact-value {
+            font-family: 'Source Code Pro', monospace;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+            border-top: 1px solid var(--deep-green);
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+        }
+
+        /* Back to Top Button */
+        #back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: var(--matrix-green);
+            border: 1px solid var(--matrix-green-dark);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 99;
+        }
+
+        #back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        #back-to-top:hover {
+            background-color: var(--deep-green);
+            box-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+        }
+
+        /* Matrix Code Symbol */
+        .matrix-symbol {
+            font-family: 'Source Code Pro', monospace;
+            color: var(--matrix-green);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .experience-header, .education-header {
+                flex-direction: column;
+            }
+            
+            .experience-date, .education-date {
+                margin-top: 0.5rem;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+            }
+            
+            nav li {
+                margin: 0.25rem;
+            }
+            
+            .projects-grid, .skills-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            section {
+                padding: 1.5rem;
+            }
+            
+            .hero-content {
+                padding: 1.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            #back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        /* Loading Animation */
+        .loading-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--dark-bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .loading-container.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loading-text {
+            font-family: 'Source Code Pro', monospace;
+            color: var(--matrix-green);
+            font-size: 1.5rem;
+            position: relative;
+        }
+
+        .loading-text::after {
+            content: '';
+            display: inline-block;
+            width: 0.5em;
+            height: 1em;
+            background-color: var(--matrix-green);
+            margin-left: 0.2em;
+            animation: blink 1s infinite;
+        }
+
+        /* Matrix Particles */
+        .matrix-particle {
+            position: fixed;
+            color: var(--matrix-green);
+            font-family: 'Source Code Pro', monospace;
+            font-size: 1.5rem;
+            pointer-events: none;
+            user-select: none;
+            opacity: 0;
+            animation: fadeInOut 2s ease forwards;
+            z-index: 1000;
+            text-shadow: 0 0 5px var(--matrix-green);
+        }
+
+        @keyframes fadeInOut {
+            0% { 
+                opacity: 0; 
+                transform: scale(0.5) translateY(0);
+            }
+            10% { 
+                opacity: 1; 
+                transform: scale(1) translateY(0);
+            }
+            90% { 
+                opacity: 1; 
+                transform: scale(1) translateY(-20px);
+            }
+            100% { 
+                opacity: 0; 
+                transform: scale(1.5) translateY(-40px);
+            }
+        }
+
+        /* Hover Glow Effect */
+        .glow-on-hover {
+            transition: text-shadow 0.3s ease;
+        }
+
+        .glow-on-hover:hover {
+            text-shadow: 0 0 10px var(--matrix-green), 0 0 20px var(--matrix-green);
+        }
+
+        /* Section Dividers */
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--matrix-green-dark), transparent);
+            margin: 3rem 0;
+            position: relative;
+        }
+
+        .section-divider::before {
+            content: '//';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: var(--dark-bg);
+            padding: 0 1rem;
+            color: var(--matrix-green);
+            font-family: 'Source Code Pro', monospace;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="matrix-canvas"></canvas>
+    
+    <!-- Loading Screen -->
+    <div class="loading-container" id="loading-screen">
+        <div class="loading-text">Initializing system...</div>
+    </div>
+    
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Marlon R. Santos</h1>
+            <p id="hero-text">Information Technology Professional with expertise in Software Engineering & Development</p>
+            <div class="hero-buttons">
+                <a href="#about" class="hero-button">About Me</a>
+                <a href="#experience" class="hero-button">Experience</a>
+                <a href="#projects" class="hero-button">Projects</a>
+                <a href="#contact" class="hero-button">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <section id="about">
+            <h2 class="glitch" data-text="About Me">About Me</h2>
+            <p>I am a dedicated Information Technology professional with decades of experience in software engineering and development. My expertise spans across various domains including web development, database management, and system architecture.</p>
+            <p>Throughout my career, I have consistently delivered high-quality solutions that align with business objectives and user needs. I am passionate about leveraging technology to solve complex problems and create efficient, scalable systems.</p>
+            <p>When I'm not coding, I enjoy spending time with my family, exploring new products & technologies, and contributing to open-source projects.</p>
+        </section>
+
+        <section id="skills">
+            <h2 class="glitch" data-text="Skills">Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">C/C++</div>
+                        <div class="skill-item">Java</div>
+                        <div class="skill-item">JavaScript</div>
+                        <div class="skill-item">Kotlin</div>
+                        <div class="skill-item">Objective-C</div>
+                        <div class="skill-item">PHP</div>
+                        <div class="skill-item">Python</div>
+                        <div class="skill-item">React Native</div>
+                        <div class="skill-item">Ruby on Rails</div>
+                        <div class="skill-item">Swift</div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Web Technologies</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">HTML5</div>
+                        <div class="skill-item">CSS3</div>
+                        <div class="skill-item">React</div>
+                        <div class="skill-item">Angular</div>
+                        <div class="skill-item">Next.js</div>
+                        <div class="skill-item">Node.js</div>
+                        <div class="skill-item">Express</div>
+                        <div class="skill-item">RESTful APIs</div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Database Systems</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">MySQL</div>
+                        <div class="skill-item">NoSQL</div>
+                        <div class="skill-item">PostgreSQL</div>
+                        <div class="skill-item">MongoDB</div>
+                        <div class="skill-item">Oracle</div>
+                        <div class="skill-item">SQL Server</div>
+                        <div class="skill-item">Redis</div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>DevOps & Tools</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">Git</div>
+                        <div class="skill-item">Docker</div>
+                        <div class="skill-item">Kubernetes</div>
+                        <div class="skill-item">Jenkins</div>
+                        <div class="skill-item">AWS</div>
+                        <div class="skill-item">Azure</div>
+                        <div class="skill-item">CI/CD</div>
+                        <div class="skill-item">Agile/Scrum</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2 class="glitch" data-text="Experience">Experience</h2>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <h3 class="experience-title">Senior Product Engineer</h3>
+                        <div class="experience-company">Service NSW</div>
+                    </div>
+                    <div class="experience-date">2020 - 2025</div>
+                </div>
+                <div class="experience-description">
+                    <p>Lead developer for the business mobile application and services, focusing on scalable and maintainable solutions.</p>
+                </div>
+                <ul class="experience-highlights">
+                    <li>Implemented a microservices-based configuration solution that improved personalisation by 40%</li>
+                    <li>Led a team of 4 developers in delivering critical projects on time and within budget</li>
+                    <li>Implemented CI/CD pipelines that reduced deployment time by 60%</li>
+                    <li>Optimized front-end code resulting in 40% faster application performance</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <h3 class="experience-title">Senior Software Engineer</h3>
+                        <div class="experience-company">The University of Sydney</div>
+                    </div>
+                    <div class="experience-date">2017 - 2020</div>
+                </div>
+                <div class="experience-description">
+                    <p>Developed and maintained innovative mobile applications related to mental health with a focus on responsive design and user experience.</p>
+                </div>
+                <ul class="experience-highlights">
+                    <li>Built and deployed over 5 mobile applications using modern frameworks</li>
+                    <li>Developed RESTful APIs for mobile application integration</li>
+                    <li>Contributed to ground-breaking research on wellbeing and mental health</li>
+                    <li>Mentored junior developers and provided technical guidance on best practices</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <h3 class="experience-title">Web Programmer / Engineer</h3>
+                        <div class="experience-company">Macquarie University</div>
+                    </div>
+                    <div class="experience-date">2009 - 2016</div>
+                </div>
+                <div class="experience-description">
+                    <p>Lead general web development initiatives across the University, contributing to its digital presence and functionality.</p>
+                </div>
+                <ul class="experience-highlights">
+                    <li>Developed online handbook system establishing a single source of truth for coursework information</li>
+                    <li>Designed and maintained various web applications for the University</li>
+                    <li>Leveraged a diverse range of technologies to deliver high-quality solutions</li>
+                    <li>Collaborated with business analysts to translate requirements into technical specifications</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2 class="glitch" data-text="Projects">Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3 class="project-title">APTMobile app</h3>
+                    <div class="project-description">
+                        <p>APT Mobile is a Product tracking app powered by Google Cloud Vision and Price API.</p>
+                        <p><strong>Technologies:</strong> React Native, Firebase, Google Cloud</p>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <h3 class="project-title">AutoPilot</h3>
+                    <div class="project-description">
+                        <p>AI powered automotive service scheduling and management system</p>
+                        <p><strong>Technologies:</strong> Next.js, Tailwind CSS, Firebase</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="project-title">Start Your Business</h3>
+                    <div class="project-description">
+                        <p>Business management website helping people start their own business in Australia</p>
+                        <p><strong>Technologies:</strong> HTML, CSS, JavaScript</p>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <section id="education">
+            <h2 class="glitch" data-text="Education">Education</h2>
+            
+            <div class="education-item">
+                <div class="education-header">
+                    <div>
+                        <h3 class="education-degree">Bachelor of Science in Computer Engineering</h3>
+                        <div class="education-institution">Mapúa Institute of Technology</div>
+                    </div>
+                    <div class="education-date">1998 - 2002</div>
+                </div>
+                <p>Specialized in Software Engineering and Information Systems.</p>
+            </div>
+            
+        </section>
+
+        <section id="contact">
+            <h2 class="glitch" data-text="Contact">Contact</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-icon">✉️</div>
+                    <div class="contact-info">
+                        <div class="contact-label">Email</div>
+                        <div class="contact-value">hello@marlsantos.com</div>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <div class="contact-info">
+                        <div class="contact-label">Phone</div>
+                        <div class="contact-value">(4**) 3**-*2*</div>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">🔗</div>
+                    <div class="contact-info">
+                        <div class="contact-label">LinkedIn</div>
+                        <div class="contact-value"><a target="_blank" href="https://linkedin.com/in/marlon-santos-au" class="glow-on-hover">linkedin.com/in/marlon-santos-au</a></div>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">💻</div>
+                    <div class="contact-info">
+                        <div class="contact-label">GitHub</div>
+                        <div class="contact-value"><a target="_blank" href="https://github.com/matr1xp" class="glow-on-hover">github.com/matr1xp</a></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Marlon R. Santos. All rights reserved.</p>
+        <p class="matrix-symbol">// End of Transmission //</p>
+    </footer>
+
+    <button id="back-to-top" title="Back to Top">↑</button>
+
+    <script>
+        // Loading Screen Animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const loadingScreen = document.getElementById('loading-screen');
+            const loadingText = loadingScreen.querySelector('.loading-text');
+            
+            // Simulate loading process with matrix-style text changes
+            const loadingMessages = [
+                "Initializing system...",
+                "Establishing connection...",
+                "Loading matrix protocols...",
+                "Decrypting data structures...",
+                "Rendering virtual environment...",
+                "System ready."
+            ];
+            
+            let messageIndex = 0;
+            
+            const loadingInterval = setInterval(() => {
+                loadingText.textContent = loadingMessages[messageIndex];
+                messageIndex++;
+                
+                if (messageIndex >= loadingMessages.length) {
+                    clearInterval(loadingInterval);
+                    
+                    // Hide loading screen with delay for last message
+                    setTimeout(() => {
+                        loadingScreen.classList.add('hidden');
+                        
+                        // Remove from DOM after transition completes
+                        setTimeout(() => {
+                            loadingScreen.remove();
+                        }, 500);
+                    }, 800);
+                }
+            }, 800);
+        });
+
+        // Matrix Digital Rain Effect
+        document.addEventListener('DOMContentLoaded', function() {
+            const canvas = document.getElementById('matrix-canvas');
+            const ctx = canvas.getContext('2d');
+            
+            // Set canvas to full window size
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            
+            // Characters to display (Matrix-style)
+            const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$+-*/=%\"'#&_(),.;:?!\\|{}<>[]^~";
+            
+            // Font size and columns
+            const fontSize = 14;
+            const columns = Math.floor(canvas.width / fontSize);
+            
+            // Array to track the y position of each column
+            const drops = [];
+            for (let i = 0; i < columns; i++) {
+                drops[i] = Math.random() * -100; // Start above the canvas
+            }
+            
+            // Array to store character colors for each column
+            const columnColors = [];
+            for (let i = 0; i < columns; i++) {
+                // Randomize between regular matrix green and slightly different shades
+                const colorChoice = Math.random();
+                if (colorChoice > 0.8) {
+                    columnColors[i] = '#00FF41'; // Standard Matrix green
+                } else if (colorChoice > 0.6) {
+                    columnColors[i] = '#2AE600'; // Slightly different green
+                } else {
+                    columnColors[i] = '#00DD41'; // Another shade
+                }
+            }
+            
+            // Track last animation time for consistent animation speed
+            let lastTime = 0;
+            const fps = 30; // Target frames per second
+            const frameInterval = 1000 / fps;
+            
+            // Draw the Matrix effect
+            function draw(timestamp) {
+                // Calculate delta time for consistent animation speed
+                if (!lastTime) lastTime = timestamp;
+                const deltaTime = timestamp - lastTime;
+                
+                // Only update animation at target frame rate
+                if (deltaTime > frameInterval) {
+                    // Set semi-transparent black background to create trail effect
+                    ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+                    
+                    // Loop through each column
+                    for (let i = 0; i < drops.length; i++) {
+                        // Generate random character
+                        const text = chars[Math.floor(Math.random() * chars.length)];
+                        
+                        // Set color for this column
+                        ctx.fillStyle = columnColors[i];
+                        ctx.font = `${fontSize}px 'Courier Prime'`;
+                        
+                        // Draw character
+                        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                        
+                        // Move drop down
+                        drops[i]++;
+                        
+                        // Reset drop to top with randomization
+                        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                            drops[i] = 0;
+                        }
+                    }
+                    
+                    lastTime = timestamp;
+                }
+                
+                // Request next frame
+                requestAnimationFrame(draw);
+            }
+            
+            // Update canvas size on window resize
+            window.addEventListener('resize', function() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+                
+                // Recalculate columns
+                const newColumns = Math.floor(canvas.width / fontSize);
+                
+                // Adjust drops array
+                if (newColumns > drops.length) {
+                    // Add new columns
+                    for (let i = drops.length; i < newColumns; i++) {
+                        drops[i] = Math.random() * -100;
+                        
+                        // Add color for new column
+                        const colorChoice = Math.random();
+                        if (colorChoice > 0.8) {
+                            columnColors[i] = '#00FF41';
+                        } else if (colorChoice > 0.6) {
+                            columnColors[i] = '#2AE600';
+                        } else {
+                            columnColors[i] = '#00DD41';
+                        }
+                    }
+                } else {
+                    // Remove excess columns
+                    drops.length = newColumns;
+                    columnColors.length = newColumns;
+                }
+            });
+            
+            // Start the animation
+            requestAnimationFrame(draw);
+        });
+
+        // Typing effect for hero text
+        document.addEventListener('DOMContentLoaded', function() {
+            const heroText = document.getElementById('hero-text');
+            const text = heroText.textContent;
+            
+            // Clear the original text
+            heroText.textContent = '';
+            
+            // Add typing cursor
+            const cursor = document.createElement('span');
+            cursor.className = 'typing-cursor';
+            heroText.appendChild(cursor);
+            
+            // Start typing effect
+            let i = 0;
+            function typeWriter() {
+                if (i < text.length) {
+                    // Insert character before cursor
+                    heroText.insertBefore(document.createTextNode(text.charAt(i)), cursor);
+                    i++;
+                    setTimeout(typeWriter, 50);
+                }
+            }
+            
+            // Start typing with a small delay
+            setTimeout(typeWriter, 500);
+        });
+
+        // Code decoding effect for skills
+        document.addEventListener('DOMContentLoaded', function() {
+            const skillCategories = document.querySelectorAll('.skill-items');
+            
+            skillCategories.forEach(category => {
+                const skills = category.querySelectorAll('.skill-item');
+                
+                // Apply decoding effect to each skill with staggered delay
+                skills.forEach((skill, index) => {
+                    setTimeout(() => {
+                        decodeEffect(skill);
+                    }, index * 200);
+                });
+            });
+            
+            function decodeEffect(element) {
+                const finalText = element.textContent;
+                const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$+-*/=%\"'#&_(),.;:?!\\|{}<>[]^~";
+                const iterations = 8; // Number of iterations before settling on final text
+                
+                // Hide the original text
+                element.textContent = '';
+                element.style.visibility = 'visible';
+                
+                // Create a span for the text
+                const textSpan = document.createElement('span');
+                element.appendChild(textSpan);
+                
+                let counter = 0;
+                
+                // Start the decoding animation
+                const interval = setInterval(() => {
+                    // Generate random text of same length as final text
+                    if (counter < iterations) {
+                        let randomText = '';
+                        for (let i = 0; i < finalText.length; i++) {
+                            // Gradually increase chance of showing correct character
+                            const correctCharChance = counter / iterations;
+                            if (Math.random() < correctCharChance) {
+                                randomText += finalText[i];
+                            } else {
+                                randomText += chars[Math.floor(Math.random() * chars.length)];
+                            }
+                        }
+                        textSpan.textContent = randomText;
+                        counter++;
+                    } else {
+                        // Show final text
+                        textSpan.textContent = finalText;
+                        clearInterval(interval);
+                    }
+                }, 50);
+            }
+        });
+
+        // Smooth scrolling for navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('nav a, .hero-button');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 20,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+
+        // Back to top button
+        document.addEventListener('DOMContentLoaded', function() {
+            const backToTopButton = document.getElementById('back-to-top');
+            
+            // Show/hide button based on scroll position
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.add('visible');
+                } else {
+                    backToTopButton.classList.remove('visible');
+                }
+            });
+            
+            // Scroll to top when clicked
+            backToTopButton.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Reveal elements on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if IntersectionObserver is supported
+            if ('IntersectionObserver' in window) {
+                const sections = document.querySelectorAll('section');
+                
+                const sectionObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = 1;
+                            entry.target.style.transform = 'translateY(0)';
+                            sectionObserver.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.1
+                });
+                
+                sections.forEach(section => {
+                    section.style.opacity = 0;
+                    section.style.transform = 'translateY(20px)';
+                    section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    sectionObserver.observe(section);
+                });
+            }
+        });
+
+        // Matrix particles effect on mouse movement
+        document.addEventListener('DOMContentLoaded', function() {
+            // Remove the mouse movement event listener
+            // We'll keep only the project card hover effect
+        });
+
+        // Interactive project cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            projectCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    // Add matrix code symbols around the card on hover
+                    const symbolCount = 8; // Increased number of symbols
+                    for (let i = 0; i < symbolCount; i++) {
+                        setTimeout(() => {
+                            createMatrixSymbol(this);
+                        }, i * 100); // Stagger the creation of symbols
+                    }
+                });
+            });
+            
+            function createMatrixSymbol(parent) {
+                const symbol = document.createElement('div');
+                symbol.className = 'matrix-particle';
+                
+                // Use more varied matrix characters
+                const chars = "01";
+                symbol.textContent = chars.charAt(Math.floor(Math.random() * chars.length));
+                
+                // Random position around the card
+                const parentRect = parent.getBoundingClientRect();
+                const side = Math.floor(Math.random() * 4); // 0: top, 1: right, 2: bottom, 3: left
+                
+                let x, y;
+                
+                switch(side) {
+                    case 0: // top
+                        x = parentRect.left + Math.random() * parentRect.width;
+                        y = parentRect.top - 20;
+                        break;
+                    case 1: // right
+                        x = parentRect.right + 20;
+                        y = parentRect.top + Math.random() * parentRect.height;
+                        break;
+                    case 2: // bottom
+                        x = parentRect.left + Math.random() * parentRect.width;
+                        y = parentRect.bottom + 20;
+                        break;
+                    case 3: // left
+                        x = parentRect.left - 20;
+                        y = parentRect.top + Math.random() * parentRect.height;
+                        break;
+                }
+                
+                symbol.style.left = `${x}px`;
+                symbol.style.top = `${y}px`;
+                
+                document.body.appendChild(symbol);
+                
+                // Remove after animation completes
+                setTimeout(() => {
+                    symbol.remove();
+                }, 2000);
+            }
+        });
+
+        // Page transition effects
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add transition class to body when page is fully loaded
+            window.addEventListener('load', function() {
+                document.body.classList.add('loaded');
+            });
+            
+            // Handle internal link clicks with matrix transition effect
+            document.querySelectorAll('a[href^="#"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // Don't interfere with the smooth scrolling
+                    if (this.classList.contains('hero-button') || this.parentElement.tagName === 'NAV') {
+                        return;
+                    }
+                    
+                    e.preventDefault();
+                    const href = this.getAttribute('href');
+                    
+                    // Create matrix transition effect
+                    const transition = document.createElement('div');
+                    transition.className = 'matrix-transition';
+                    transition.style.position = 'fixed';
+                    transition.style.top = '0';
+                    transition.style.left = '0';
+                    transition.style.width = '100%';
+                    transition.style.height = '100%';
+                    // transition.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+                    // transition.style.zIndex = '9999';
+                    // transition.style.opacity = '0';
+                    // transition.style.transition = 'opacity 0.3s ease';
+                    
+                    document.body.appendChild(transition);
+                    
+                    // Fade in
+                    setTimeout(() => {
+                        transition.style.opacity = '1';
+                        
+                        // Navigate after fade in
+                        setTimeout(() => {
+                            window.location.href = href;
+                        }, 300);
+                    }, 10);
+                });
+            });
+        });
+
+        // Console easter egg
+        console.log("%c> Welcome to the Matrix", "color: #00FF41; font-family: 'Courier New', monospace; font-size: 20px; font-weight: bold;");
+        console.log("%c> Follow the white rabbit...", "color: #00FF41; font-family: 'Courier New', monospace;");
+    </script>
+</body>
+</html>

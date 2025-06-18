@@ -1,2 +1,0 @@
-This is a placeholder for the APT Mobile icon (icon.png) found in APTMobile.html.
-In the final implementation, this would be the actual icon downloaded from the website.
