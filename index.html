@@ -1462,38 +1462,47 @@
             // Handle internal link clicks with matrix transition effect
             document.querySelectorAll('a[href^="#"]').forEach(link => {
                 link.addEventListener('click', function(e) {
-                    // Don't interfere with the smooth scrolling
-                    if (this.classList.contains('hero-button') || this.parentElement.tagName === 'NAV') {
-                        return;
-                    }
-                    
                     e.preventDefault();
                     const href = this.getAttribute('href');
+                    const targetElement = document.querySelector(href);
                     
-                    // Create matrix transition effect
-                    const transition = document.createElement('div');
-                    transition.className = 'matrix-transition';
-                    transition.style.position = 'fixed';
-                    transition.style.top = '0';
-                    transition.style.left = '0';
-                    transition.style.width = '100%';
-                    transition.style.height = '100%';
-                    // transition.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
-                    // transition.style.zIndex = '9999';
-                    // transition.style.opacity = '0';
-                    // transition.style.transition = 'opacity 0.3s ease';
-                    
-                    document.body.appendChild(transition);
-                    
-                    // Fade in
-                    setTimeout(() => {
-                        transition.style.opacity = '1';
+                    if (targetElement) {
+                        // Create matrix transition effect
+                        const transition = document.createElement('div');
+                        transition.className = 'matrix-transition';
+                        transition.style.position = 'fixed';
+                        transition.style.top = '0';
+                        transition.style.left = '0';
+                        transition.style.width = '100%';
+                        transition.style.height = '100%';
+                        transition.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+                        transition.style.zIndex = '9999';
+                        transition.style.opacity = '0';
+                        transition.style.transition = 'opacity 0.3s ease';
                         
-                        // Navigate after fade in
-                        setTimeout(() => {
-                            window.location.href = href;
-                        }, 300);
-                    }, 10);
+                        document.body.appendChild(transition);
+                        
+                        // Fade in
+                        requestAnimationFrame(() => {
+                            transition.style.opacity = '1';
+                            
+                            // Scroll to target after fade in
+                            setTimeout(() => {
+                                window.scrollTo({
+                                    top: targetElement.offsetTop - 20,
+                                    behavior: 'smooth'
+                                });
+                                
+                                // Remove transition element after scroll completes
+                                setTimeout(() => {
+                                    transition.style.opacity = '0';
+                                    setTimeout(() => {
+                                        transition.remove();
+                                    }, 300);
+                                }, 500);
+                            }, 300);
+                        });
+                    }
                 });
             });
         });
