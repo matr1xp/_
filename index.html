@@ -1029,7 +1029,7 @@
                     <div class="contact-icon">✉️</div>
                     <div class="contact-info">
                         <div class="contact-label">Email</div>
-                        <div class="contact-value">hello@marlsantos.com</div>
+                        <div class="contact-value" id="email-address" data-full-email="hello@marlsantos.com">h****@m***san***.com</div>
                     </div>
                 </div>
                 
@@ -1037,7 +1037,7 @@
                     <div class="contact-icon">📱</div>
                     <div class="contact-info">
                         <div class="contact-label">Phone</div>
-                        <div class="contact-value">(4**) 3**-*2*</div>
+                        <div class="contact-value" id="phone-number" data-full-number="+61 430 325 121">+6* 4** 3** *2*</div>
                     </div>
                 </div>
                 
@@ -1510,6 +1510,304 @@
         // Console easter egg
         console.log("%c> Welcome to the Matrix", "color: #00FF41; font-family: 'Courier New', monospace; font-size: 20px; font-weight: bold;");
         console.log("%c> Follow the white rabbit...", "color: #00FF41; font-family: 'Courier New', monospace;");
+
+        // Phone number reveal effect
+        document.addEventListener('DOMContentLoaded', function() {
+            const phoneNumber = document.getElementById('phone-number');
+            const maskedNumber = phoneNumber.textContent;
+            const fullNumber = phoneNumber.getAttribute('data-full-number');
+            let isRevealed = false;
+
+            function createMatrixSymbols(parent) {
+                const symbolCount = 8;
+                for (let i = 0; i < symbolCount; i++) {
+                    setTimeout(() => {
+                        createMatrixSymbol(parent);
+                    }, i * 100);
+                }
+            }
+
+            function createMatrixSymbol(parent) {
+                const symbol = document.createElement('div');
+                symbol.className = 'matrix-particle';
+                
+                const chars = "01";
+                symbol.textContent = chars.charAt(Math.floor(Math.random() * chars.length));
+                
+                const parentRect = parent.getBoundingClientRect();
+                const side = Math.floor(Math.random() * 4);
+                
+                let x, y;
+                
+                switch(side) {
+                    case 0: // top
+                        x = parentRect.left + Math.random() * parentRect.width;
+                        y = parentRect.top - 20;
+                        break;
+                    case 1: // right
+                        x = parentRect.right + 20;
+                        y = parentRect.top + Math.random() * parentRect.height;
+                        break;
+                    case 2: // bottom
+                        x = parentRect.left + Math.random() * parentRect.width;
+                        y = parentRect.bottom + 20;
+                        break;
+                    case 3: // left
+                        x = parentRect.left - 20;
+                        y = parentRect.top + Math.random() * parentRect.height;
+                        break;
+                }
+                
+                symbol.style.left = `${x}px`;
+                symbol.style.top = `${y}px`;
+                
+                document.body.appendChild(symbol);
+                
+                setTimeout(() => {
+                    symbol.remove();
+                }, 2000);
+            }
+
+            function decodeNumber() {
+                if (isRevealed) return;
+                
+                createMatrixSymbols(phoneNumber);
+                
+                const chars = "0123456789()*-+ ";
+                const iterations = 8;
+                let counter = 0;
+                
+                const interval = setInterval(() => {
+                    if (counter < iterations) {
+                        let decodedNumber = '';
+                        for (let i = 0; i < fullNumber.length; i++) {
+                            const correctCharChance = counter / iterations;
+                            if (Math.random() < correctCharChance) {
+                                decodedNumber += fullNumber[i];
+                            } else {
+                                decodedNumber += chars[Math.floor(Math.random() * chars.length)];
+                            }
+                        }
+                        phoneNumber.textContent = decodedNumber;
+                        counter++;
+                    } else {
+                        phoneNumber.textContent = fullNumber;
+                        clearInterval(interval);
+                        isRevealed = true;
+                        
+                        // Add a subtle glow effect
+                        phoneNumber.style.textShadow = '0 0 10px var(--matrix-green)';
+                        
+                        // Revert back to masked number after 5 seconds
+                        setTimeout(() => {
+                            // Create reverse decoding effect
+                            let counter = 0;
+                            const reverseInterval = setInterval(() => {
+                                if (counter < iterations) {
+                                    let maskedNumber = '';
+                                    for (let i = 0; i < fullNumber.length; i++) {
+                                        const maskChance = counter / iterations;
+                                        if (Math.random() < maskChance) {
+                                            // Use the original masked pattern
+                                            if (fullNumber[i] === '+') maskedNumber += '+';
+                                            else if (fullNumber[i] === ' ') maskedNumber += ' ';
+                                            else if (fullNumber[i] === '6' && i === 1) maskedNumber += '6';
+                                            else if (fullNumber[i] === '1' && i === 2) maskedNumber += '1';
+                                            else if (fullNumber[i] === '4' && i === 4) maskedNumber += '4';
+                                            else if (fullNumber[i] === '3' && i === 8) maskedNumber += '3';
+                                            else if (fullNumber[i] === '2' && i === 12) maskedNumber += '2';
+                                            else if (fullNumber[i] === '1' && i === 13) maskedNumber += '1';
+                                            else maskedNumber += '*';
+                                        } else {
+                                            maskedNumber += fullNumber[i];
+                                        }
+                                    }
+                                    phoneNumber.textContent = maskedNumber;
+                                    counter++;
+                                } else {
+                                    phoneNumber.textContent = maskedNumber;
+                                    clearInterval(reverseInterval);
+                                    isRevealed = false;
+                                    phoneNumber.style.textShadow = 'none';
+                                }
+                            }, 50);
+                        }, 5000); // 5 seconds
+                    }
+                }, 50);
+            }
+
+            // Handle both click and touch events
+            phoneNumber.addEventListener('click', decodeNumber);
+            phoneNumber.addEventListener('touchstart', function(e) {
+                e.preventDefault();
+                decodeNumber();
+            });
+
+            // Add cursor style to indicate interactivity
+            phoneNumber.style.cursor = 'pointer';
+        });
+
+        // Email address reveal effect
+        document.addEventListener('DOMContentLoaded', function() {
+            const emailAddress = document.getElementById('email-address');
+            const maskedEmail = emailAddress.textContent;
+            const fullEmail = emailAddress.getAttribute('data-full-email');
+            let isRevealed = false;
+
+            function createMatrixSymbols(parent) {
+                const symbolCount = 8;
+                for (let i = 0; i < symbolCount; i++) {
+                    setTimeout(() => {
+                        createMatrixSymbol(parent);
+                    }, i * 100);
+                }
+            }
+
+            function createMatrixSymbol(parent) {
+                const symbol = document.createElement('div');
+                symbol.className = 'matrix-particle';
+                
+                const chars = "01";
+                symbol.textContent = chars.charAt(Math.floor(Math.random() * chars.length));
+                
+                const parentRect = parent.getBoundingClientRect();
+                const side = Math.floor(Math.random() * 4);
+                
+                let x, y;
+                
+                switch(side) {
+                    case 0: // top
+                        x = parentRect.left + Math.random() * parentRect.width;
+                        y = parentRect.top - 20;
+                        break;
+                    case 1: // right
+                        x = parentRect.right + 20;
+                        y = parentRect.top + Math.random() * parentRect.height;
+                        break;
+                    case 2: // bottom
+                        x = parentRect.left + Math.random() * parentRect.width;
+                        y = parentRect.bottom + 20;
+                        break;
+                    case 3: // left
+                        x = parentRect.left - 20;
+                        y = parentRect.top + Math.random() * parentRect.height;
+                        break;
+                }
+                
+                symbol.style.left = `${x}px`;
+                symbol.style.top = `${y}px`;
+                
+                document.body.appendChild(symbol);
+                
+                setTimeout(() => {
+                    symbol.remove();
+                }, 2000);
+            }
+
+            function decodeEmail() {
+                if (isRevealed) return;
+                
+                createMatrixSymbols(emailAddress);
+                
+                const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@._-";
+                const iterations = 8;
+                let counter = 0;
+                
+                const interval = setInterval(() => {
+                    if (counter < iterations) {
+                        let decodedEmail = '';
+                        for (let i = 0; i < fullEmail.length; i++) {
+                            const correctCharChance = counter / iterations;
+                            if (Math.random() < correctCharChance) {
+                                decodedEmail += fullEmail[i];
+                            } else {
+                                decodedEmail += chars[Math.floor(Math.random() * chars.length)];
+                            }
+                        }
+                        emailAddress.textContent = decodedEmail;
+                        counter++;
+                    } else {
+                        emailAddress.textContent = fullEmail;
+                        clearInterval(interval);
+                        isRevealed = true;
+                        
+                        // Add a subtle glow effect
+                        emailAddress.style.textShadow = '0 0 10px var(--matrix-green)';
+                        
+                        // Revert back to masked email after 5 seconds
+                        setTimeout(() => {
+                            // Create reverse decoding effect
+                            let counter = 0;
+                            const reverseInterval = setInterval(() => {
+                                if (counter < iterations) {
+                                    let maskedEmail = '';
+                                    for (let i = 0; i < fullEmail.length; i++) {
+                                        const maskChance = counter / iterations;
+                                        if (Math.random() < maskChance) {
+                                            // Use the original masked pattern
+                                            if (fullEmail[i] === '@' || fullEmail[i] === '.') {
+                                                maskedEmail += fullEmail[i];
+                                            } else if (i === 0) {
+                                                maskedEmail += fullEmail[i];
+                                            } else if (i === 5) {
+                                                maskedEmail += fullEmail[i];
+                                            } else if (i === 6) {
+                                                maskedEmail += fullEmail[i];
+                                            } else if (i === 7) {
+                                                maskedEmail += fullEmail[i];
+                                            } else if (i === 8) {
+                                                maskedEmail += fullEmail[i];
+                                            } else if (i === 9) {
+                                                maskedEmail += fullEmail[i];
+                                            } else if (i === 10) {
+                                                maskedEmail += fullEmail[i];
+                                            } else if (i === 11) {
+                                                maskedEmail += fullEmail[i];
+                                            } else if (i === 12) {
+                                                maskedEmail += fullEmail[i];
+                                            } else if (i === 13) {
+                                                maskedEmail += fullEmail[i];
+                                            } else if (i === 14) {
+                                                maskedEmail += fullEmail[i];
+                                            } else if (i === 15) {
+                                                maskedEmail += fullEmail[i];
+                                            } else if (i === 16) {
+                                                maskedEmail += fullEmail[i];
+                                            } else if (i === 17) {
+                                                maskedEmail += fullEmail[i];
+                                            } else if (i === 18) {
+                                                maskedEmail += fullEmail[i];
+                                            } else {
+                                                maskedEmail += '*';
+                                            }
+                                        } else {
+                                            maskedEmail += fullEmail[i];
+                                        }
+                                    }
+                                    emailAddress.textContent = maskedEmail;
+                                    counter++;
+                                } else {
+                                    emailAddress.textContent = maskedEmail;
+                                    clearInterval(reverseInterval);
+                                    isRevealed = false;
+                                    emailAddress.style.textShadow = 'none';
+                                }
+                            }, 50);
+                        }, 5000); // 5 seconds
+                    }
+                }, 50);
+            }
+
+            // Handle both click and touch events
+            emailAddress.addEventListener('click', decodeEmail);
+            emailAddress.addEventListener('touchstart', function(e) {
+                e.preventDefault();
+                decodeEmail();
+            });
+
+            // Add cursor style to indicate interactivity
+            emailAddress.style.cursor = 'pointer';
+        });
     </script>
 </body>
 </html>
