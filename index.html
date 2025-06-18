@@ -1414,13 +1414,20 @@
 
                 // Handle touch for mobile
                 card.addEventListener('touchstart', function(e) {
-                    e.preventDefault(); // Prevent default touch behavior
+                    // Don't prevent default here to allow link clicks
                     createMatrixSymbols(this);
                 });
             });
             
+            // Add touch handling for project links
+            document.querySelectorAll('.project-link').forEach(link => {
+                link.addEventListener('touchstart', function(e) {
+                    // Stop propagation to prevent card touch event from interfering
+                    e.stopPropagation();
+                });
+            });
+            
             function createMatrixSymbols(parent) {
-                // Add matrix code symbols around the card
                 const symbolCount = 8;
                 for (let i = 0; i < symbolCount; i++) {
                     setTimeout(() => {
