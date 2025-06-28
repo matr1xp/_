@@ -109,15 +109,25 @@ function showLoginForm() {
     title.textContent = 'Protected Content';
     title.style.marginBottom = '1rem';
 
+    const infoText = document.createElement('p');
+    infoText.textContent = 'Please enter your password or purchase to continue.';
+    infoText.style.cssText = `
+        color: #666;
+        margin-bottom: 1.5rem;
+        font-size: 14px;
+        text-align: center;
+    `;
+
     const input = document.createElement('input');
     input.type = 'password';
     input.placeholder = 'Enter password';
     input.style.cssText = `
         padding: 0.5rem;
-        margin: 0.5rem 0;
+        margin: 0.5rem 0.5rem 0.5rem 0;
         width: 200px;
         border: 1px solid #ddd;
         border-radius: 4px;
+        display: inline-block;
     `;
 
     const button = document.createElement('button');
@@ -129,7 +139,9 @@ function showLoginForm() {
         border: none;
         border-radius: 4px;
         cursor: pointer;
-        margin-top: 0.5rem;
+        margin: 0.5rem 0;
+        display: inline-block;
+        vertical-align: top;
     `;
 
     const errorMsg = document.createElement('p');
@@ -154,6 +166,7 @@ function showLoginForm() {
     };
 
     loginForm.appendChild(title);
+    loginForm.appendChild(infoText);
     loginForm.appendChild(input);
     loginForm.appendChild(button);
     loginForm.appendChild(errorMsg);
