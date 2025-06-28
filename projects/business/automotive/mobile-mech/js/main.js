@@ -355,8 +355,8 @@ function initChecklist() {
         }, 3000);
     }
     
-    // Add section navigation functionality
-    const sectionLinks = document.querySelectorAll('nav ul li a');
+    // Add section navigation functionality only for anchor links
+    const sectionLinks = document.querySelectorAll('nav ul li a[href^="#"]');
     sectionLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
