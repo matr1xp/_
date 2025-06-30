@@ -5,7 +5,7 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     // Fetch the checklist data
-    fetch('../js/checklist_structure.json')
+    fetch('./js/checklist_structure.json')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -137,6 +137,28 @@ function initializeChecklist(checklistData) {
     
     // Initialize progress
     updateProgress();
+    // Load saved state after rendering checklist
+    loadChecklistState();
+    
+    // Attach Save button event listener after rendering - use setTimeout to ensure DOM is ready
+    setTimeout(() => {
+        const saveButton = document.getElementById('save-checklist');
+        if (saveButton) {
+            saveButton.addEventListener('click', function() {
+                saveChecklistState();
+                // Show toast notification
+                const toast = document.getElementById('toast-notification');
+                if (toast) {
+                    toast.style.display = 'block';
+                    toast.style.opacity = '1';
+                    setTimeout(() => {
+                        toast.style.opacity = '0';
+                        setTimeout(() => { toast.style.display = 'none'; }, 400);
+                    }, 1800);
+                }
+            });
+        }
+    }, 100);
 }
 
 /**
@@ -251,9 +273,17 @@ function loadChecklistState() {
             const state = JSON.parse(savedState);
             Object.entries(state).forEach(([itemId, checked]) => {
                 const checkbox = document.querySelector(`#checkbox-${itemId}`);
-                if (checkbox && !checkbox.disabled) {
+                if (checkbox) {
                     checkbox.checked = checked;
-                    updateItemStatus(itemId, checked);
+                    // Directly update UI for completed state
+                    const item = document.getElementById(`item-${itemId}`);
+                    if (item) {
+                        if (checked) {
+                            item.classList.add('completed');
+                        } else {
+                            item.classList.remove('completed');
+                        }
+                    }
                 }
             });
             updateProgress();
@@ -289,7 +319,4 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-    
-    // Load saved state after initialization
-    setTimeout(loadChecklistState, 500);
 });
