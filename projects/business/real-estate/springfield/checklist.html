@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Checklist - Springfield Real Estate Investment Guide</title>
+    <meta name="description" content="Interactive checklist for property investors in Springfield, Queensland, covering financial preparation, market research, property selection, and ongoing management.">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        /* Additional Checklist Specific Styles */
+        .checklist-progress {
+            margin: 30px 0;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+        
+        .progress {
+            height: 100%;
+            background-color: #27ae60;
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+        
+        .progress-text {
+            text-align: right;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .checklist-item {
+            transition: background-color 0.3s ease;
+        }
+        
+        .checklist-item.completed {
+            background-color: #e8f5e9;
+        }
+        
+        .checklist-checkbox {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+        
+        .checklist-checkbox:disabled {
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+        
+        .checklist-dependencies {
+            margin-top: 10px;
+            padding: 8px;
+            background-color: #f8f8f8;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+        
+        .checklist-dependencies ul {
+            margin: 5px 0 0 20px;
+        }
+        
+        .checklist-resource {
+            text-decoration: none;
+            margin-right: 8px;
+            margin-bottom: 5px;
+            display: inline-block;
+            padding: 3px 8px;
+            background-color: #e0e0e0;
+            border-radius: 3px;
+            font-size: 0.85rem;
+            color: #333;
+            transition: background-color 0.3s ease;
+        }
+        
+        .checklist-resource:hover {
+            background-color: #d0d0d0;
+        }
+        
+        .checklist-resource[data-type="visualization"] {
+            background-color: #e3f2fd;
+        }
+        
+        .checklist-resource[data-type="tool"] {
+            background-color: #e8f5e9;
+        }
+        
+        .checklist-header {
+            margin-bottom: 40px;
+        }
+        
+        .checklist-actions {
+            display: flex;
+            justify-content: space-between;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <span class="logo-text">Springfield Investment Guide</span>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="market-research.html">Market Research</a></li>
+                    <li><a href="business-strategy.html">Business Strategy</a></li>
+                    <li><a href="tax-information.html">Tax Information</a></li>
+                    <li><a href="checklist.html" class="active">Investment Checklist</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Title -->
+    <section class="section" style="margin-top: 80px; padding-top: 40px; padding-bottom: 40px; background-color: #f5f5f5;">
+        <div class="container">
+            <h1>Springfield Property Investment Checklist</h1>
+            <p class="section-subtitle">Your step-by-step guide to successful property investment in Springfield</p>
+        </div>
+    </section>
+
+    <!-- Checklist Overview Section -->
+    <section id="checklist-overview" class="section">
+        <div class="container">
+            <h2 class="section-title">Checklist Overview</h2>
+            <p class="section-subtitle">How to use this interactive investment checklist</p>
+            
+            <div class="row">
+                <div class="col col-md-6 col-12">
+                    <h3>Purpose and Benefits</h3>
+                    <p>This comprehensive checklist is designed to guide you through every step of the property investment process in Springfield, Queensland. It covers:</p>
+                    
+                    <ul>
+                        <li>Financial preparation steps to ensure you're ready to invest</li>
+                        <li>Market research guidance to help you understand the Springfield market</li>
+                        <li>Investment strategy development to align with your financial goals</li>
+                        <li>Property selection criteria to find the right investment property</li>
+                        <li>Financing options to optimize your investment structure</li>
+                        <li>Tax planning considerations to maximize your returns</li>
+                        <li>Property management best practices for ongoing success</li>
+                        <li>Regular review procedures to monitor and adjust your investment</li>
+                    </ul>
+                    
+                    <p>By following this checklist, you'll ensure you've considered all important aspects of property investment and are making informed decisions based on accurate, up-to-date information about the Springfield market.</p>
+                </div>
+                <div class="col col-md-6 col-12">
+                    <h3>How to Use the Interactive Features</h3>
+                    <p>This checklist is fully interactive and designed to help you track your progress:</p>
+                    
+                    <ul>
+                        <li><strong>Check off items</strong> as you complete them to track your progress</li>
+                        <li><strong>Sequential dependencies</strong> ensure you complete prerequisite steps first</li>
+                        <li><strong>Progress tracking</strong> shows how far along you are in the investment process</li>
+                        <li><strong>Resource links</strong> provide additional information and tools</li>
+                        <li><strong>Save functionality</strong> remembers your progress between visits</li>
+                    </ul>
+                    
+                    <div class="card">
+                        <div class="card-content">
+                            <h4 class="card-title">Getting Started</h4>
+                            <p class="card-text">Begin with the Financial Preparation section and work your way through each category. Some items will be locked until prerequisite steps are completed. Your progress is automatically saved to your browser.</p>
+                            <button id="reset-checklist" class="btn btn-outline">Reset Checklist Progress</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Checklist Section -->
+    <section id="interactive-checklist" class="section" style="background-color: #f5f5f5;">
+        <div class="container">
+            <h2 class="section-title">Interactive Investment Checklist</h2>
+            <p class="section-subtitle">Track your progress through the investment process</p>
+            
+            <div id="checklist-container" class="checklist">
+                <!-- Checklist content will be loaded dynamically via JavaScript -->
+                <div class="loading-indicator">
+                    <p>Loading checklist...</p>
+                </div>
+            </div>
+            
+            <div class="checklist-actions">
+                <button id="expand-all" class="btn btn-outline">Expand All Categories</button>
+                <button id="collapse-all" class="btn btn-outline">Collapse All Categories</button>
+                <button id="print-checklist" class="btn btn-outline">Print Checklist</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Resources Section -->
+    <section id="additional-resources" class="section">
+        <div class="container">
+            <h2 class="section-title">Additional Resources</h2>
+            <p class="section-subtitle">Tools and information to support your investment journey</p>
+            
+            <div class="row">
+                <div class="col col-md-4 col-sm-6 col-12">
+                    <div class="card">
+                        <div class="card-content">
+                            <h3 class="card-title">Market Research Resources</h3>
+                            <ul>
+                                <li><a href="market-research.html#market-overview">Springfield Market Overview</a></li>
+                                <li><a href="market-research.html#price-analysis">Property Price Analysis</a></li>
+                                <li><a href="market-research.html#rental-market">Rental Market Analysis</a></li>
+                                <li><a href="market-research.html#population">Population and Demographics</a></li>
+                                <li><a href="market-research.html#infrastructure">Infrastructure Development</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-md-4 col-sm-6 col-12">
+                    <div class="card">
+                        <div class="card-content">
+                            <h3 class="card-title">Investment Strategy Resources</h3>
+                            <ul>
+                                <li><a href="business-strategy.html#investment-approaches">Investment Approaches</a></li>
+                                <li><a href="business-strategy.html#property-selection">Property Selection Criteria</a></li>
+                                <li><a href="business-strategy.html#financing">Financing Options</a></li>
+                                <li><a href="business-strategy.html#roi-calculator">ROI Analysis</a></li>
+                                <li><a href="business-strategy.html#risk-mitigation">Risk Mitigation Strategies</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-md-4 col-sm-6 col-12">
+                    <div class="card">
+                        <div class="card-content">
+                            <h3 class="card-title">Tax Planning Resources</h3>
+                            <ul>
+                                <li><a href="tax-information.html#capital-gains-tax">Capital Gains Tax</a></li>
+                                <li><a href="tax-information.html#negative-gearing">Negative Gearing</a></li>
+                                <li><a href="tax-information.html#tax-deductions">Tax Deductible Expenses</a></li>
+                                <li><a href="tax-information.html#property-depreciation">Property Depreciation</a></li>
+                                <li><a href="tax-information.html#tax-planning">Tax Planning Strategies</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row" style="margin-top: 30px;">
+                <div class="col col-12">
+                    <div class="card">
+                        <div class="card-content">
+                            <h3 class="card-title">External Resources</h3>
+                            <p class="card-text">These external resources provide additional information and tools for property investors:</p>
+                            
+                            <div class="row">
+                                <div class="col col-md-4 col-sm-6 col-12">
+                                    <h4>Government Resources</h4>
+                                    <ul>
+                                        <li><a href="https://www.qld.gov.au/housing/buying-owning-home/investing-property" target="_blank">Queensland Government - Property Investment</a></li>
+                                        <li><a href="https://www.ato.gov.au/individuals/investments-and-assets/residential-rental-properties/" target="_blank">Australian Taxation Office - Rental Properties</a></li>
+                                        <li><a href="https://www.qld.gov.au/environment/land/title/valuation" target="_blank">Queensland Land Valuations</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col col-md-4 col-sm-6 col-12">
+                                    <h4>Financial Calculators</h4>
+                                    <ul>
+                                        <li><a href="https://moneysmart.gov.au/home-loans/mortgage-calculator" target="_blank">MoneySmart Mortgage Calculator</a></li>
+                                        <li><a href="https://www.realestate.com.au/home-loans/calculators" target="_blank">Realestate.com.au Investment Calculators</a></li>
+                                        <li><a href="https://www.ato.gov.au/calculators-and-tools/host/?anchor=IIRLC" target="_blank">ATO Rental Property Calculator</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col col-md-4 col-sm-6 col-12">
+                                    <h4>Market Data</h4>
+                                    <ul>
+                                        <li><a href="https://www.realestate.com.au/neighbourhoods/" target="_blank">Realestate.com.au Neighborhood Data</a></li>
+                                        <li><a href="https://www.domain.com.au/research/" target="_blank">Domain Property Research</a></li>
+                                        <li><a href="https://www.abs.gov.au/statistics/people/housing" target="_blank">ABS Housing Statistics</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3 class="footer-title">Springfield Investment Guide</h3>
+                <p>Your comprehensive resource for property investment in Springfield, Queensland, Australia.</p>
+            </div>
+            <div class="footer-section">
+                <h3 class="footer-title">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="market-research.html">Market Research</a></li>
+                    <li><a href="business-strategy.html">Business Strategy</a></li>
+                    <li><a href="tax-information.html">Tax Information</a></li>
+                    <li><a href="checklist.html">Investment Checklist</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3 class="footer-title">Disclaimer</h3>
+                <p>This website is for informational purposes only and does not constitute financial advice. Always consult with qualified professionals before making investment decisions.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 Springfield Real Estate Investment Guide. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/checklist.js"></script>
+    <script type="module" src="js/auth.js"></script>
+    
+    <script>
+        // Additional checklist functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize checklist data directly
+            const checklistData = {
+                "title": "Springfield Property Investment Checklist",
+                "description": "A comprehensive checklist for property investors in Springfield, Queensland",
+                "categories": [
+                    {
+                        "id": "financial-preparation",
+                        "title": "Financial Preparation",
+                        "description": "Steps to prepare your finances for property investment",
+                        "items": [
+                            {
+                                "id": "borrowing-power",
+                                "title": "Determine your borrowing power",
+                                "description": "Calculate how much you can borrow based on your income, expenses, and existing debts",
+                                "completed": false,
+                                "resources": [
+                                    {
+                                        "title": "Borrowing Power Calculator",
+                                        "type": "tool",
+                                        "url": "https://moneysmart.gov.au/home-loans/mortgage-calculator"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "pre-approval",
+                                "title": "Get pre-approval for financing",
+                                "description": "Approach lenders to get pre-approved for a loan before starting your property search",
+                                "completed": false,
+                                "dependencies": ["borrowing-power"]
+                            },
+                            {
+                                "id": "deposit-savings",
+                                "title": "Save for deposit and purchase costs",
+                                "description": "Aim for at least 20% deposit plus additional funds for stamp duty, legal fees, and other costs",
+                                "completed": false
+                            },
+                            {
+                                "id": "budget-calculation",
+                                "title": "Calculate all potential expenses",
+                                "description": "Include mortgage payments, council rates, insurance, maintenance, and management fees",
+                                "completed": false
+                            },
+                            {
+                                "id": "emergency-fund",
+                                "title": "Establish an emergency fund",
+                                "description": "Set aside funds for unexpected repairs, vacancies, or other emergencies",
+                                "completed": false
+                            }
+                        ]
+                    },
+                    {
+                        "id": "market-research",
+                        "title": "Market Research",
+                        "description": "Research steps to understand the Springfield property market",
+                        "items": [
+                            {
+                                "id": "price-trends",
+                                "title": "Analyze Springfield price trends",
+                                "description": "Review historical and current property price trends in Springfield (6.8% annual growth for houses, 23.7% for units)",
+                                "completed": false,
+                                "resources": [
+                                    {
+                                        "title": "Springfield Price Trends Chart",
+                                        "type": "visualization",
+                                        "url": "market-research.html#price-analysis"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "neighborhood-comparison",
+                                "title": "Compare Springfield neighborhoods",
+                                "description": "Evaluate Springfield Central, Springfield Lakes, and Springfield Rise for investment potential",
+                                "completed": false,
+                                "resources": [
+                                    {
+                                        "title": "Neighborhood Comparison Chart",
+                                        "type": "visualization",
+                                        "url": "market-research.html#neighborhood"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "rental-yields",
+                                "title": "Assess rental yields",
+                                "description": "Compare rental yields across different property types (houses: 3.9-4.1%, units: 4.43-4.52%)",
+                                "completed": false,
+                                "resources": [
+                                    {
+                                        "title": "Rental Yield Comparison Chart",
+                                        "type": "visualization",
+                                        "url": "market-research.html#rental-market"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "population-growth",
+                                "title": "Review population growth data",
+                                "description": "Analyze Springfield's strong population growth (6.0% per annum) and demographic trends",
+                                "completed": false,
+                                "resources": [
+                                    {
+                                        "title": "Population Growth Chart",
+                                        "type": "visualization",
+                                        "url": "market-research.html#population"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "infrastructure-projects",
+                                "title": "Research infrastructure developments",
+                                "description": "Investigate the $17 billion infrastructure investment and $6 billion Springfield Central Precinct expansion",
+                                "completed": false,
+                                "resources": [
+                                    {
+                                        "title": "Infrastructure Development Details",
+                                        "type": "information",
+                                        "url": "market-research.html#infrastructure"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "investment-strategy",
+                        "title": "Investment Strategy",
+                        "description": "Develop your property investment strategy for Springfield",
+                        "items": [
+                            {
+                                "id": "investment-goals",
+                                "title": "Define your investment goals",
+                                "description": "Clarify whether you're focusing on rental income, capital growth, or a combination",
+                                "completed": false,
+                                "resources": [
+                                    {
+                                        "title": "Investment Approaches Guide",
+                                        "type": "information",
+                                        "url": "business-strategy.html#investment-approaches"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "timeframe",
+                                "title": "Determine your investment timeframe",
+                                "description": "Decide between short-term (under 5 years) or long-term (7+ years) investment approach",
+                                "completed": false,
+                                "dependencies": ["investment-goals"]
+                            },
+                            {
+                                "id": "property-type",
+                                "title": "Select property type",
+                                "description": "Choose between houses (6.8% growth) or units (23.7% growth) based on your strategy",
+                                "completed": false,
+                                "dependencies": ["investment-goals", "timeframe"]
+                            },
+                            {
+                                "id": "risk-assessment",
+                                "title": "Assess and plan for risks",
+                                "description": "Identify potential risks and develop mitigation strategies",
+                                "completed": false,
+                                "resources": [
+                                    {
+                                        "title": "Risk Mitigation Strategies",
+                                        "type": "information",
+                                        "url": "business-strategy.html#risk-mitigation"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "exit-strategy",
+                                "title": "Plan your exit strategy",
+                                "description": "Determine how and when you might sell or leverage the property in the future",
+                                "completed": false,
+                                "dependencies": ["investment-goals", "timeframe"]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "property-selection",
+                        "title": "Property Selection",
+                        "description": "Steps to select the right property in Springfield",
+                        "items": [
+                            {
+                                "id": "location-criteria",
+                                "title": "Establish location criteria",
+                                "description": "Prioritize proximity to transport, schools, shopping centers, and other amenities",
+                                "completed": false,
+                                "resources": [
+                                    {
+                                        "title": "Springfield Neighborhoods Guide",
+                                        "type": "information",
+                                        "url": "market-research.html#neighborhood"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "property-inspections",
+                                "title": "Conduct thorough property inspections",
+                                "description": "Inspect multiple properties and arrange professional building and pest inspections",
+                                "completed": false,
+                                "dependencies": ["location-criteria"]
+                            },
+                            {
+                                "id": "property-analysis",
+                                "title": "Analyze property potential",
+                                "description": "Evaluate the property's potential for capital growth and rental income",
+                                "completed": false,
+                                "dependencies": ["property-inspections"],
+                                "resources": [
+                                    {
+                                        "title": "Investment Scenarios Chart",
+                                        "type": "visualization",
+                                        "url": "business-strategy.html#roi-calculator"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "negotiation",
+                                "title": "Negotiate purchase price",
+                                "description": "Research comparable sales and develop a negotiation strategy",
+                                "completed": false,
+                                "dependencies": ["property-analysis"]
+                            },
+                            {
+                                "id": "due-diligence",
+                                "title": "Complete due diligence",
+                                "description": "Review contract, title, zoning, and other legal considerations",
+                                "completed": false,
+                                "dependencies": ["negotiation"]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "financing",
+                        "title": "Financing",
+                        "description": "Steps to secure financing for your Springfield property",
+                        "items": [
+                            {
+                                "id": "loan-comparison",
+                                "title": "Compare loan options",
+                                "description": "Research interest-only loans, fixed-rate loans, equity loans, and other financing options",
+                                "completed": false,
+                                "resources": [
+                                    {
+                                        "title": "Financing Options Guide",
+                                        "type": "information",
+                                        "url": "business-strategy.html#financing"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "lender-selection",
+                                "title": "Select a lender",
+                                "description": "Compare rates and terms from traditional banks and alternative financing sources",
+                                "completed": false,
+                                "dependencies": ["loan-comparison"]
+                            },
+                            {
+                                "id": "loan-application",
+                                "title": "Complete loan application",
+                                "description": "Prepare and submit all required documentation for your loan application",
+                                "completed": false,
+                                "dependencies": ["lender-selection"]
+                            },
+                            {
+                                "id": "loan-approval",
+                                "title": "Secure final loan approval",
+                                "description": "Meet all conditions and obtain final approval from your lender",
+                                "completed": false,
+                                "dependencies": ["loan-application"]
+                            },
+                            {
+                                "id": "settlement-preparation",
+                                "title": "Prepare for settlement",
+                                "description": "Arrange for funds transfer and complete all financing requirements for settlement",
+                                "completed": false,
+                                "dependencies": ["loan-approval"]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "tax-planning",
+                        "title": "Tax Planning",
+                        "description": "Steps to optimize your tax position as a property investor",
+                        "items": [
+                            {
+                                "id": "tax-advisor",
+                                "title": "Consult a tax professional",
+                                "description": "Engage an accountant or tax advisor with property investment expertise",
+                                "completed": false
+                            },
+                            {
+                                "id": "ownership-structure",
+                                "title": "Determine optimal ownership structure",
+                                "description": "Decide between individual, joint, trust, or SMSF ownership based on tax implications",
+                                "completed": false,
+                                "dependencies": ["tax-advisor"],
+                                "resources": [
+                                    {
+                                        "title": "Ownership Structure Guide",
+                                        "type": "information",
+                                        "url": "tax-information.html#tax-planning"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "depreciation-schedule",
+                                "title": "Arrange a tax depreciation schedule",
+                                "description": "Engage a quantity surveyor to prepare a comprehensive depreciation schedule",
+                                "completed": false,
+                                "resources": [
+                                    {
+                                        "title": "Depreciation Benefits Guide",
+                                        "type": "information",
+                                        "url": "tax-information.html#property-depreciation"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "deduction-tracking",
+                                "title": "Set up system for tracking deductions",
+                                "description": "Establish a record-keeping system for all tax-deductible expenses",
+                                "completed": false,
+                                "resources": [
+                                    {
+                                        "title": "Tax Deductions Guide",
+                                        "type": "information",
+                                        "url": "tax-information.html#tax-deductions"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "cgt-planning",
+                                "title": "Plan for Capital Gains Tax",
+                                "description": "Understand the 2025 CGT changes (discount reduced from 50% to 25%) and plan accordingly",
+                                "completed": false,
+                                "dependencies": ["tax-advisor"],
+                                "resources": [
+                                    {
+                                        "title": "CGT Guide",
+                                        "type": "information",
+                                        "url": "tax-information.html#capital-gains-tax"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "property-management",
+                        "title": "Property Management",
+                        "description": "Steps to effectively manage your Springfield investment property",
+                        "items": [
+                            {
+                                "id": "management-decision",
+                                "title": "Decide on self-management or professional management",
+                                "description": "Evaluate the pros and cons of managing the property yourself versus hiring a property manager",
+                                "completed": false,
+                                "resources": [
+                                    {
+                                        "title": "Property Management Guide",
+                                        "type": "information",
+                                        "url": "business-strategy.html#property-management"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "manager-selection",
+                                "title": "Select a property manager",
+                                "description": "Research and interview property managers with experience in Springfield",
+                                "completed": false,
+                                "dependencies": ["management-decision"]
+                            },
+                            {
+                                "id": "tenant-selection",
+                                "title": "Establish tenant selection criteria",
+                                "description": "Define criteria for selecting reliable tenants with stable income",
+                                "completed": false
+                            },
+                            {
+                                "id": "lease-agreement",
+                                "title": "Prepare comprehensive lease agreement",
+                                "description": "Ensure your lease agreement covers all necessary terms and conditions",
+                                "completed": false,
+                                "dependencies": ["tenant-selection"]
+                            },
+                            {
+                                "id": "maintenance-plan",
+                                "title": "Develop a maintenance plan",
+                                "description": "Create a schedule for regular maintenance and set aside funds for repairs",
+                                "completed": false
+                            }
+                        ]
+                    },
+                    {
+                        "id": "ongoing-review",
+                        "title": "Ongoing Review",
+                        "description": "Steps to regularly review and optimize your investment",
+                        "items": [
+                            {
+                                "id": "performance-tracking",
+                                "title": "Track investment performance",
+                                "description": "Regularly monitor rental income, expenses, and property value",
+                                "completed": false
+                            },
+                            {
+                                "id": "market-monitoring",
+                                "title": "Monitor Springfield market changes",
+                                "description": "Stay informed about property market trends and infrastructure developments",
+                                "completed": false
+                            },
+                            {
+                                "id": "annual-tax-review",
+                                "title": "Conduct annual tax review",
+                                "description": "Review tax position and maximize deductions with your tax advisor",
+                                "completed": false
+                            },
+                            {
+                                "id": "equity-assessment",
+                                "title": "Assess equity position",
+                                "description": "Regularly evaluate your equity position for potential refinancing or additional investments",
+                                "completed": false
+                            },
+                            {
+                                "id": "strategy-adjustment",
+                                "title": "Adjust investment strategy as needed",
+                                "description": "Review and adjust your strategy based on performance and market changes",
+                                "completed": false,
+                                "dependencies": ["performance-tracking", "market-monitoring", "equity-assessment"]
+                            }
+                        ]
+                    }
+                ]
+            };
+            
+            // Initialize the checklist with the embedded data
+            initializeChecklist(checklistData);
+            
+            // Expand/collapse functionality
+            document.getElementById('expand-all').addEventListener('click', function() {
+                document.querySelectorAll('.checklist-category').forEach(category => {
+                    const itemsContainer = category.querySelector('.checklist-items');
+                    if (itemsContainer) {
+                        itemsContainer.style.display = 'block';
+                    }
+                });
+            });
+            
+            document.getElementById('collapse-all').addEventListener('click', function() {
+                document.querySelectorAll('.checklist-category').forEach(category => {
+                    const itemsContainer = category.querySelector('.checklist-items');
+                    if (itemsContainer) {
+                        itemsContainer.style.display = 'none';
+                    }
+                });
+            });
+            
+            // Print functionality
+            document.getElementById('print-checklist').addEventListener('click', function() {
+                window.print();
+            });
+        });
+    </script>
+</body>
+</html>
