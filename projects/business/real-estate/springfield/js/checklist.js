@@ -5,7 +5,7 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     // Fetch the checklist data
-    fetch('../temp/checklist_structure.json')
+    fetch('../js/checklist_structure.json')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');

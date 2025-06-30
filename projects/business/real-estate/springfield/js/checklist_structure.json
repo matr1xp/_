@@ -1,0 +1,349 @@
+{
+  "checklist": {
+    "title": "Springfield Property Investment Checklist",
+    "description": "A comprehensive checklist for property investors in Springfield, Queensland",
+    "categories": [
+      {
+        "id": "financial-preparation",
+        "title": "Financial Preparation",
+        "description": "Steps to prepare your finances for property investment",
+        "items": [
+          {
+            "id": "borrowing-power",
+            "title": "Determine your borrowing power",
+            "description": "Calculate how much you can borrow based on your income, expenses, and existing debts",
+            "completed": false,
+            "resources": [
+              {
+                "title": "Borrowing Power Calculator",
+                "type": "tool",
+                "url": "#calculator"
+              }
+            ]
+          },
+          {
+            "id": "pre-approval",
+            "title": "Get pre-approval for financing",
+            "description": "Approach lenders to get pre-approved for a loan before starting your property search",
+            "completed": false,
+            "dependencies": ["borrowing-power"]
+          },
+          {
+            "id": "deposit-savings",
+            "title": "Save for deposit and purchase costs",
+            "description": "Aim for at least 20% deposit plus additional funds for stamp duty, legal fees, and other costs",
+            "completed": false
+          },
+          {
+            "id": "budget-calculation",
+            "title": "Calculate all potential expenses",
+            "description": "Include mortgage payments, council rates, insurance, maintenance, and management fees",
+            "completed": false
+          },
+          {
+            "id": "emergency-fund",
+            "title": "Establish an emergency fund",
+            "description": "Set aside funds for unexpected repairs, vacancies, or other emergencies",
+            "completed": false
+          }
+        ]
+      },
+      {
+        "id": "market-research",
+        "title": "Market Research",
+        "description": "Research steps to understand the Springfield property market",
+        "items": [
+          {
+            "id": "price-trends",
+            "title": "Analyze Springfield price trends",
+            "description": "Review historical and current property price trends in Springfield (7.6% annual growth for houses, 25.5% for units)",
+            "completed": false,
+            "resources": [
+              {
+                "title": "Springfield Price Trends Chart",
+                "type": "visualization",
+                "url": "#price-trends-chart"
+              }
+            ]
+          },
+          {
+            "id": "neighborhood-comparison",
+            "title": "Compare Springfield neighborhoods",
+            "description": "Evaluate Springfield Central, Springfield Lakes, and Springfield Rise for investment potential",
+            "completed": false,
+            "resources": [
+              {
+                "title": "Neighborhood Comparison Chart",
+                "type": "visualization",
+                "url": "#neighborhood-comparison-chart"
+              }
+            ]
+          },
+          {
+            "id": "rental-yields",
+            "title": "Assess rental yields",
+            "description": "Compare rental yields across different property types (houses: 3.9-4.1%, units: 4.43-4.52%)",
+            "completed": false,
+            "resources": [
+              {
+                "title": "Rental Yield Comparison Chart",
+                "type": "visualization",
+                "url": "#rental-yield-chart"
+              }
+            ]
+          },
+          {
+            "id": "population-growth",
+            "title": "Review population growth data",
+            "description": "Analyze Springfield's strong population growth (6.0% per annum) and demographic trends",
+            "completed": false
+          },
+          {
+            "id": "infrastructure-projects",
+            "title": "Research infrastructure developments",
+            "description": "Investigate the $17 billion infrastructure investment and $6 billion Springfield Central Precinct expansion",
+            "completed": false
+          }
+        ]
+      },
+      {
+        "id": "investment-strategy",
+        "title": "Investment Strategy",
+        "description": "Develop your property investment strategy for Springfield",
+        "items": [
+          {
+            "id": "investment-goals",
+            "title": "Define your investment goals",
+            "description": "Clarify whether you're focusing on rental income, capital growth, or a combination",
+            "completed": false
+          },
+          {
+            "id": "timeframe",
+            "title": "Determine your investment timeframe",
+            "description": "Decide between short-term (under 5 years) or long-term (7+ years) investment approach",
+            "completed": false,
+            "dependencies": ["investment-goals"]
+          },
+          {
+            "id": "property-type",
+            "title": "Select property type",
+            "description": "Choose between houses (7.6% growth) or units (25.5% growth) based on your strategy",
+            "completed": false,
+            "dependencies": ["investment-goals", "timeframe"]
+          },
+          {
+            "id": "risk-assessment",
+            "title": "Assess and plan for risks",
+            "description": "Identify potential risks and develop mitigation strategies",
+            "completed": false
+          },
+          {
+            "id": "exit-strategy",
+            "title": "Plan your exit strategy",
+            "description": "Determine how and when you might sell or leverage the property in the future",
+            "completed": false,
+            "dependencies": ["investment-goals", "timeframe"]
+          }
+        ]
+      },
+      {
+        "id": "property-selection",
+        "title": "Property Selection",
+        "description": "Steps to select the right property in Springfield",
+        "items": [
+          {
+            "id": "location-criteria",
+            "title": "Establish location criteria",
+            "description": "Prioritize proximity to transport, schools, shopping centers, and other amenities",
+            "completed": false
+          },
+          {
+            "id": "property-inspections",
+            "title": "Conduct thorough property inspections",
+            "description": "Inspect multiple properties and arrange professional building and pest inspections",
+            "completed": false,
+            "dependencies": ["location-criteria"]
+          },
+          {
+            "id": "property-analysis",
+            "title": "Analyze property potential",
+            "description": "Evaluate the property's potential for capital growth and rental income",
+            "completed": false,
+            "dependencies": ["property-inspections"]
+          },
+          {
+            "id": "negotiation",
+            "title": "Negotiate purchase price",
+            "description": "Research comparable sales and develop a negotiation strategy",
+            "completed": false,
+            "dependencies": ["property-analysis"]
+          },
+          {
+            "id": "due-diligence",
+            "title": "Complete due diligence",
+            "description": "Review contract, title, zoning, and other legal considerations",
+            "completed": false,
+            "dependencies": ["negotiation"]
+          }
+        ]
+      },
+      {
+        "id": "financing",
+        "title": "Financing",
+        "description": "Steps to secure financing for your Springfield property",
+        "items": [
+          {
+            "id": "loan-comparison",
+            "title": "Compare loan options",
+            "description": "Research interest-only loans, fixed-rate loans, equity loans, and other financing options",
+            "completed": false
+          },
+          {
+            "id": "lender-selection",
+            "title": "Select a lender",
+            "description": "Compare rates and terms from traditional banks and alternative financing sources",
+            "completed": false,
+            "dependencies": ["loan-comparison"]
+          },
+          {
+            "id": "loan-application",
+            "title": "Complete loan application",
+            "description": "Prepare and submit all required documentation for your loan application",
+            "completed": false,
+            "dependencies": ["lender-selection"]
+          },
+          {
+            "id": "loan-approval",
+            "title": "Secure final loan approval",
+            "description": "Meet all conditions and obtain final approval from your lender",
+            "completed": false,
+            "dependencies": ["loan-application"]
+          },
+          {
+            "id": "settlement-preparation",
+            "title": "Prepare for settlement",
+            "description": "Arrange for funds transfer and complete all financing requirements for settlement",
+            "completed": false,
+            "dependencies": ["loan-approval"]
+          }
+        ]
+      },
+      {
+        "id": "tax-planning",
+        "title": "Tax Planning",
+        "description": "Steps to optimize your tax position as a property investor",
+        "items": [
+          {
+            "id": "tax-advisor",
+            "title": "Consult a tax professional",
+            "description": "Engage an accountant or tax advisor with property investment expertise",
+            "completed": false
+          },
+          {
+            "id": "ownership-structure",
+            "title": "Determine optimal ownership structure",
+            "description": "Decide between individual, joint, trust, or SMSF ownership based on tax implications",
+            "completed": false,
+            "dependencies": ["tax-advisor"]
+          },
+          {
+            "id": "depreciation-schedule",
+            "title": "Arrange a tax depreciation schedule",
+            "description": "Engage a quantity surveyor to prepare a comprehensive depreciation schedule",
+            "completed": false
+          },
+          {
+            "id": "deduction-tracking",
+            "title": "Set up system for tracking deductions",
+            "description": "Establish a record-keeping system for all tax-deductible expenses",
+            "completed": false
+          },
+          {
+            "id": "cgt-planning",
+            "title": "Plan for Capital Gains Tax",
+            "description": "Understand the 2025 CGT changes (discount reduced from 50% to 25%) and plan accordingly",
+            "completed": false,
+            "dependencies": ["tax-advisor"]
+          }
+        ]
+      },
+      {
+        "id": "property-management",
+        "title": "Property Management",
+        "description": "Steps to effectively manage your Springfield investment property",
+        "items": [
+          {
+            "id": "management-decision",
+            "title": "Decide on self-management or professional management",
+            "description": "Evaluate the pros and cons of managing the property yourself versus hiring a property manager",
+            "completed": false
+          },
+          {
+            "id": "manager-selection",
+            "title": "Select a property manager",
+            "description": "Research and interview property managers with experience in Springfield",
+            "completed": false,
+            "dependencies": ["management-decision"]
+          },
+          {
+            "id": "tenant-selection",
+            "title": "Establish tenant selection criteria",
+            "description": "Define criteria for selecting reliable tenants with stable income",
+            "completed": false
+          },
+          {
+            "id": "lease-agreement",
+            "title": "Prepare comprehensive lease agreement",
+            "description": "Ensure your lease agreement covers all necessary terms and conditions",
+            "completed": false,
+            "dependencies": ["tenant-selection"]
+          },
+          {
+            "id": "maintenance-plan",
+            "title": "Develop a maintenance plan",
+            "description": "Create a schedule for regular maintenance and set aside funds for repairs",
+            "completed": false
+          }
+        ]
+      },
+      {
+        "id": "ongoing-review",
+        "title": "Ongoing Review",
+        "description": "Steps to regularly review and optimize your investment",
+        "items": [
+          {
+            "id": "performance-tracking",
+            "title": "Track investment performance",
+            "description": "Regularly monitor rental income, expenses, and property value",
+            "completed": false
+          },
+          {
+            "id": "market-monitoring",
+            "title": "Monitor Springfield market changes",
+            "description": "Stay informed about property market trends and infrastructure developments",
+            "completed": false
+          },
+          {
+            "id": "annual-tax-review",
+            "title": "Conduct annual tax review",
+            "description": "Review tax position and maximize deductions with your tax advisor",
+            "completed": false
+          },
+          {
+            "id": "equity-assessment",
+            "title": "Assess equity position",
+            "description": "Regularly evaluate your equity position for potential refinancing or additional investments",
+            "completed": false
+          },
+          {
+            "id": "strategy-adjustment",
+            "title": "Adjust investment strategy as needed",
+            "description": "Review and adjust your strategy based on performance and market changes",
+            "completed": false,
+            "dependencies": ["performance-tracking", "market-monitoring", "equity-assessment"]
+          }
+        ]
+      }
+    ]
+  }
+}
